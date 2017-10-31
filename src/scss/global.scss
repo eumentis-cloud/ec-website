@@ -7,19 +7,16 @@
 body {
   font-family: $ec-base-font-family;
   color: $ec-text-color;
-  background-color: $ec-bg-color;
+  background-color: $body-background-color;
   font-size: 1rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 50px;
 }
 
 html, body {
   //min-height: 100vh;
   width: 100%;
-}
-
-.container-fluid {
-  padding-bottom: 50px;
 }
 
 a {
@@ -28,7 +25,61 @@ a {
   white-space: nowrap;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6, .heading {
   font-family: $ec-headings-font-family;
   color: $ec-headings-color;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.8;
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    height: 25px;
+    display: block;
+  }
+
+  img {
+    height: 25px;
+  }
+}
+
+#primary-nav {
+  text-align: center;
+  background-color: #000000;
+
+  div {
+    padding: 10px 8px;
+  }
+
+  a {
+    color: #FFFF00;
+  }
+}
+
+.primary-nav-active {
+  i {
+    position: absolute;
+    bottom: -9px;
+    left: 39%;
+    font-size: 1.6rem;
+    color: $ec-bg-color;
+  }
 }
