@@ -1,0 +1,191 @@
+@import "global";
+
+$service-box-padding: 10px;
+//$service-box-background-color: #E4AB6D;
+//$service-box-background-color: #0CE856;
+//$service-box-background-color: #008BFF;
+$service-box-background-color: #EFEF00;
+$body-background-color: #FFFFDA;
+
+$service-icon-width: 3;
+$service-icon-height: 35px;
+$test1: #333300;
+$service-icon-color: $test1;
+$service-box-header-color: $test1;
+$service-box-text-color: $test1;
+
+body {
+  background-color: $body-background-color;
+}
+
+#primary-nav {
+  text-align: center;
+  background-color: #000000;
+
+  div {
+    padding: 10px 15px;
+  }
+
+  a {
+    color: #FFFF00;
+  }
+}
+
+.primary-nav-active {
+  i {
+    position: absolute;
+    bottom: -9px;
+    left: 39%;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+  }
+}
+
+#company-details {
+  text-align: center;
+  padding: 15px 0;
+
+  img {
+    height: 60px;
+  }
+
+  #company-name {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#services {
+  padding-left: $service-box-padding;
+  //background-color: $service-box-background-color;
+}
+.service-box {
+  text-align: center;
+  padding: 0 $service-box-padding $service-box-padding 0;
+
+  .service-box-container {
+    border-radius: 4px;
+    height: 100%;
+    padding: 15px 5px 10px;
+    background-color: $service-box-background-color;
+
+    box-shadow: 0 1px 3px rgba(150,150,0,0.12), 0 1px 2px rgba(150,150,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+  //.service-box-container:hover {
+  //  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  //}
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 8px 0 5px;
+    color: $service-box-header-color;
+  }
+
+  p {
+    font-size: 0.86rem;
+    margin: 0;
+    color: $service-box-text-color;
+  }
+
+  svg {
+    height: $service-icon-height;
+  }
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.8;
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    height: 25px;
+    display: block;
+  }
+
+  img {
+    height: 25px;
+  }
+}
+
+svg * {
+  fill: none;
+  stroke: $service-icon-color;
+  stroke-width: $service-icon-width;
+}
+
+svg#dt-icon {
+  .st0{
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1{
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#dig-icon {
+  .st0{
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1{
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#online-icon {
+  .st0 {
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    stroke-miterlimit: 10;
+  }
+  .st2 {
+    fill: $service-icon-color;
+    stroke: none;
+  }
+}
+
+svg#startups-icon {
+  .st0 {
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#devops-icon {
+  .st0 {
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#appDev-icon {
+  .st0 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}

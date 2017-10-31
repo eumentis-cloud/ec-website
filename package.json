@@ -1,0 +1,22 @@
+{
+  "name": "ec-website",
+  "version": "1.0.0",
+  "description": "Eumentis Cloud website",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass --watch --recursive --source-map true src/scss/ --output dist/css/",
+    "build": "node-sass --recursive --source-map true src/scss/ --output dist/css/",
+    "bs": "browser-sync start --server dist --files dist --port 2999"
+  },
+  "author": "Pawan Samdani",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "node-sass": "^4.5.3"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-beta.2",
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^7.0.0"
+  }
+}
