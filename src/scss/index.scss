@@ -1,22 +1,5 @@
 @import "variables";
 
-$service-box-padding: 8px;
-//$service-box-background-color: #E4AB6D;
-//$service-box-background-color: #0CE856;
-//$service-box-background-color: #008BFF;
-$service-box-background-color: #FFFF77;
-//$service-box-background-color: #F3F300;
-//$service-box-background-color: #FFBB77;
-//$service-box-background-color: $ec-bg-color;
-
-
-$service-icon-width: 3;
-$service-icon-height: 35px;
-$test1: #333300;
-$service-icon-color: $test1;
-$service-box-header-color: $test1;
-$service-box-text-color: $test1;
-
 #company-details {
   text-align: center;
   padding: 15px 0;
@@ -33,7 +16,6 @@ $service-box-text-color: $test1;
   }
 }
 
-$service-box-border-color: #FAFA00;
 
 #services {
   padding-left: $service-box-padding;
@@ -54,7 +36,7 @@ $service-box-border-color: #FAFA00;
     padding: 15px 10px 10px;
     background-color: $service-box-background-color;
 
-    box-shadow: 0 1px 3px rgba(150,150,0,0.12), 0 1px 2px rgba(150,150,0,0.24);
+    box-shadow: 0 1px 3px rgba(150,150,150,0.12), 0 1px 2px rgba(150,150,150,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 

@@ -43,7 +43,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: $primary-nav-bg-color;
   opacity: 0.8;
   padding: 10px 0;
 
@@ -63,14 +63,14 @@ footer {
 
 #primary-nav {
   text-align: center;
-  background-color: #000000;
+  background-color: $primary-nav-bg-color;
 
   div {
     padding: 10px 8px;
   }
 
   a {
-    color: #FFFF00;
+    color: $primary-nav-links-color;
   }
 }
 
