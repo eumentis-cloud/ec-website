@@ -1,8 +1,21 @@
 @import "variables";
 
+$service-box-padding: 8px;
+$service-box-gradient-low: #FFFF9F;
+$service-box-gradient-high: #FFFF80;
+$service-box-background-color: $service-box-gradient-high;
+$service-box-border-color: #F9F900;
+
+$service-icon-width: 3;
+$service-icon-height: 35px;
+
+$service-icon-color: #333300;
+$service-box-header-color: #333300;
+$service-box-text-color: #333300;
+
 #company-details {
   text-align: center;
-  padding: 15px 0;
+  padding: 12px 0 18px;
 
   img {
     height: 60px;
@@ -16,13 +29,8 @@
   }
 }
 
-
 #services {
   padding-left: $service-box-padding;
-  padding-top: $service-box-padding;
-  background-color: $service-box-border-color;
-  //border-left: 2px solid $service-box-border-color;
-  //border-top: 2px solid $service-box-border-color;
 }
 .service-box {
   text-align: center;
@@ -30,13 +38,15 @@
 
   .service-box-container {
     border-radius: 4px;
-    //border-right: 2px solid $service-box-border-color;
-    //border-bottom: 2px solid $service-box-border-color;
     height: 100%;
     padding: 15px 10px 10px;
-    background-color: $service-box-background-color;
 
-    box-shadow: 0 1px 3px rgba(150,150,150,0.12), 0 1px 2px rgba(150,150,150,0.24);
+    background: $service-box-background-color;
+    background: radial-gradient(ellipse at center,  $service-box-gradient-low 0%, $service-box-gradient-high 100%);
+
+    border: 1px solid $service-box-border-color;
+
+    box-shadow: 0 1px 3px rgba(200,200,0,0.12), 0 1px 2px rgba(200,200,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 

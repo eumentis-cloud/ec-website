@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "node-sass --watch --recursive --source-map true src/scss/ --output dist/css/",
     "build": "node-sass --recursive --source-map true src/scss/ --output dist/css/",
-    "bs": "browser-sync start --server dist --files dist --port 2999"
+    "bs": "browser-sync start --server dist --files dist --port 3001"
   },
   "author": "Pawan Samdani",
   "license": "ISC",
