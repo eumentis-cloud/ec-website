@@ -45,19 +45,49 @@ footer {
   left: 0;
   background-color: $primary-nav-bg-color;
   opacity: 0.8;
-  padding: 10px 0;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
 
   a {
-    height: 25px;
+    height: 45px;
+    padding: 10px 0;
+    @include media-breakpoint-up(md) {
+      padding: 10px 15px;
+    }
     display: block;
   }
+  a.hoverable:hover {
+    background-color: #FFFF00;
+    span {
+      color: #000000;
+    }
+    svg * {
+      fill: #000000;
+    }
+  }
 
-  img {
+  @include media-breakpoint-up(md) {
+    #contact-call-container {
+      cursor: default;
+    }
+  }
+
+  svg {
     height: 25px;
+  }
+
+  span {
+    color: #FFFFFF;
+    margin-left: 10px;
+    vertical-align: top;
+  }
+
+  svg * {
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill: #FFFF00;
   }
 }
 
@@ -65,28 +95,68 @@ footer {
   text-align: center;
   background-color: $primary-nav-bg-color;
 
-  div {
+  .primary-nav-item {
     padding: 10px 8px;
+    @include media-breakpoint-up(sm) {
+      padding: 10px 15px;
+    }
+    @include media-breakpoint-up(lg) {
+      padding: 10px 20px;
+    }
+    cursor: pointer;
+  }
+  .primary-nav-item:hover {
+    background-color: #FFFFFF;
+    a {
+      color: #000000;
+    }
   }
 
   a {
     color: $primary-nav-links-color;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .primary-nav-active {
+    cursor: default !important;
+
+    a {
+      cursor: default !important;
+    }
+
+    i {
+      position: absolute;
+      bottom: -9px;
+      left: 39%;
+      font-size: 1.6rem;
+      color: $ec-bg-color;
+    }
+  }
+  .primary-nav-active:hover {
+    background-color: $primary-nav-bg-color;
+    a {
+      color: $primary-nav-links-color;
+    }
   }
 }
 
-.primary-nav-active {
-  i {
-    position: absolute;
-    bottom: -9px;
-    left: 39%;
-    font-size: 1.6rem;
-    color: $ec-bg-color;
+
+.visible-md-down {
+  visibility: hidden;
+  @include media-breakpoint-down(sm) {
+    visibility: visible;
   }
 }
 
-#social-media-icons {
-  padding: 5px 10px 0;
-  img.social-media-icon{
-    height: 20px;
+.show-md-up {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+.hide-md-up {
+  @include media-breakpoint-up(md) {
+    display: none;
   }
 }
