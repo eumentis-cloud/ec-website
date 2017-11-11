@@ -160,3 +160,63 @@ footer {
     display: none;
   }
 }
+
+svg#dt-icon {
+  .st0{
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1{
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#dig-icon {
+  .st0{
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1{
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#online-icon {
+  .st0 {
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#startups-icon {
+  .st0 {
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#devops-icon {
+  .st0 {
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .st1 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
+
+svg#appDev-icon {
+  .st0 {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
