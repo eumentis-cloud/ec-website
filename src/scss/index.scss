@@ -2,11 +2,6 @@
 
 @import "node_modules/bootstrap/scss/bootstrap-grid";
 
-$service-box-padding: (
-  xs: 8px,
-  sm: 20px,
-  lg: 25px,
-);
 $service-box-gradient-low: #FFFF9F;
 $service-box-gradient-high: #FFFF80;
 $service-box-background-color: $service-box-gradient-high;
@@ -21,6 +16,27 @@ $service-icon-height: (
 $service-icon-color: #333300;
 $service-box-header-color: #333300;
 $service-box-text-color: #333300;
+
+body {
+  padding-bottom: 46px !important;
+}
+
+#primary-nav {
+  .primary-nav-active {
+    i {
+      color: #FFFFFF;
+    }
+  }
+
+  .primary-nav-item:not(.primary-nav-active):hover {
+    background-color: #FFFFFF;
+  }
+}
+
+#index-main-content {
+  padding-right: 0;
+  padding-left: 0;
+}
 
 #company-details {
   text-align: center;
@@ -60,28 +76,24 @@ $service-box-text-color: #333300;
 }
 
 #services {
-  padding-left: map_get($service-box-padding, xs);
-  @include media-breakpoint-up(sm) {
-    padding-left: map_get($service-box-padding, sm);
-  }
-  @include media-breakpoint-up(lg) {
-    padding-left: map_get($service-box-padding, lg);
-  }
+  margin-left: -8px;
+  margin-right: -8px;
 }
+
 .service-box {
   text-align: center;
-  padding: 0 map_get($service-box-padding, xs) map_get($service-box-padding, xs) 0;
+  padding: 4px !important;
   @include media-breakpoint-up(sm) {
-    padding: 0 map_get($service-box-padding, sm) map_get($service-box-padding, sm) 0;
+    padding: 10px !important;
   }
   @include media-breakpoint-up(lg) {
-    padding: 0 map_get($service-box-padding, lg) map_get($service-box-padding, lg) 0;
+    padding: 15px !important;
   }
 
   .service-box-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 4px;
     height: 100%;
     padding: 15px 10px 10px;
@@ -97,7 +109,6 @@ $service-box-text-color: #333300;
     border: 1px solid $service-box-border-color;
 
     box-shadow: 0 1px 3px rgba(200,200,0,0.12), 0 1px 2px rgba(200,200,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 
   .service-box-container:hover {
@@ -118,6 +129,7 @@ $service-box-text-color: #333300;
   }
 
   p {
+    white-space: normal;
     font-family: $ec-base-font-family;
     font-size: 0.86rem;
     @include media-breakpoint-up(lg) {
@@ -136,6 +148,9 @@ $service-box-text-color: #333300;
 }
 
 svg * {
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   fill: none;
   stroke: $service-icon-color;
   stroke-width: $service-icon-width;
@@ -147,3 +162,8 @@ svg#online-icon {
   }
 }
 
+#index-footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $footer-bg-color;
+}

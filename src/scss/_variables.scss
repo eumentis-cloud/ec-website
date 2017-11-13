@@ -4,10 +4,44 @@ $ec-links-font-family: 'PT Sans Narrow', sans-serif;
 $ec-quote-font-family: 'PT Sans Caption', sans-serif;
 
 $ec-bg-color: #FFFFFF;
-$ec-text-color: #333333;
+$ec-text-color: #000000;
 $ec-headings-color: #000000;
 
 $body-background-color: $ec-bg-color;
 
+/*
+    Primary nav bar
+ */
 $primary-nav-bg-color: #000000;
 $primary-nav-links-color: #FFFF00;
+$primary-nav-hover-bg-color: #FFFF66;
+$primary-nav-hover-links-color: #000000;
+
+/*
+    Secondary nav bar
+ */
+$sec-nav-bg-color: #FFFF66;
+$sec-nav-links-color: #888800;
+$sec-nav-icons-height: 30px;
+$sec-nav-items-border-color: #EEEE00;
+$sec-nav-hover-links-color: #000000;
+
+$sec-nav-active-bg-color: #FFFFFF;
+$sec-nav-active-links-color: #333300;
+
+/*
+    Footer
+ */
+$footer-bg-color: rgba(0,0,0,0.8);
+
+$footer-content-color: #FFFF00;
+$footer-content-hover-color: #FFFFFF;
+
+$footer-contact-height: 45px;
+$footer-contact-icons-height: 25px;
+
+$footer-company-details-bg-color: #FFFFFF;
+$footer-company-details-height: 62px;
+$footer-company-details-border-width: 6px;
+$footer-company-logo-height: 35px;
+

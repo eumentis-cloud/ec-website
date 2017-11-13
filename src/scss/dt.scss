@@ -2,129 +2,58 @@
 
 @import "node_modules/bootstrap/scss/bootstrap-grid";
 
-#primary-nav {
-  .primary-nav-active {
-    i {
-      color: #FFFF66;
-    }
+#primary-container {
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(lg) {
+    min-height: calc(100vh - 65px);
   }
-}
-
-#secondary-nav {
-  text-align: center;
-  background-color: #FFFF66;
-
-  svg {
-    height: 30px;
-  }
-
-  .secondary-nav-item {
-    padding: 10px 5px;
-    border-right: 1px solid #EEEE00;
-    border-bottom: 1px solid #F0F000;
-
-    box-shadow: inset 0 -10px 10px -10px rgba(150,150,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-    @include media-breakpoint-up(lg) {
-      display: flex;
-      flex-direction: row;
-      padding: 12px 0;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .secondary-nav-item:hover {
-    //box-shadow: 4px 4px 10px rgba(150,150,0,0.12), -4px 0 10px rgba(150,150,0,0.12);
-    background-color: #FFFFFF;
-  }
-
-  $coll: #888800;
-
-  .secondary-nav-item-title {
-    margin: 0;
-    padding: 0;
-    font-family: $ec-headings-font-family;
-    font-size: 0.75rem;
-    color: $coll;
-
-    @include media-breakpoint-up(lg) {
-      margin-left: 15px;
-      font-size: 0.9rem;
-    }
-  }
-
-  svg * {
-    fill: none;
-    stroke: $coll;
-    stroke-width: 3;
-    @include media-breakpoint-up(lg) {
-      stroke-width: 4;
-    }
-  }
-  svg#online-icon {
-    .st2 {
-      fill: $coll;
-      stroke: none;
-    }
-  }
-
-  .secondary-nav-item-active {
-    background-color: #FFFFFF;
-    border-bottom: none;
-    box-shadow: 4px -5px 8px rgba(150,150,0,0.12), -4px -5px 8px rgba(150,150,0,0.12);
-    h4 {
-      color: #333300;
-    }
-
-    svg * {
-      fill: none;
-      stroke: #333300;
-      stroke-width: 3;
-    }
-    svg#online-icon {
-      .st2 {
-        fill: #333300;
-        stroke: none;
-      }
-    }
-  }
-}
-
-
-#page-company-logo {
-  height: 40px;
 }
 
 #page-title {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
+  margin: 20px 0;
+  @include media-breakpoint-up(sm) {
+    font-size: 2.1rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 25px 0;
+  }
   text-align: center;
-  margin: 15px 0;
   font-weight: 700;
 }
 
-#page-content-header {
-  padding: 15px 0 25px;
-}
+#page-image-container {
+  text-align: center;
 
-#page-image {
-  background-image: url("../img/services_dt.png");
-  min-height: 280px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+  #page-image {
+    width: 90%;
+    @include media-breakpoint-down(md) {
+      width: 75%;
+      max-width: 350px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 450px;
+    }
+  }
 }
 
 #page-content {
-  padding-top: 25px;
+  text-align: justify;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 30px;
+  }
 }
 
-#page-company-details {
-  display: flex;
-  align-items: center;
-  h4 {
-    margin-left: 10px;
-    margin-bottom: 0;
+@include media-breakpoint-up(lg) {
+  #page-content-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  #page-content-section {
+    flex: 1;
   }
 }
