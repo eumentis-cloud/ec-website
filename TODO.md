@@ -1,7 +1,7 @@
 # Work to be done
 
-## contact.html
-
-* Add social media icons
-* Add contact form
-* Add email and phone number
+* Minimize HTML and CSS files
+* Reduce the photos size
+* Move to either React, Vue or other templating system
+* Add animations
+* Combine all services page into one. All about page into one
