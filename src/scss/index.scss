@@ -21,18 +21,6 @@ body {
   padding-bottom: 46px !important;
 }
 
-#primary-nav {
-  .primary-nav-active {
-    i {
-      color: #FFFFFF;
-    }
-  }
-
-  .primary-nav-item:not(.primary-nav-active):hover {
-    background-color: #FFFFFF;
-  }
-}
-
 #index-main-content {
   padding-right: 0;
   padding-left: 0;

@@ -1,5 +1,7 @@
 # Work to be done
 
-## index.html
+## contact.html
 
-* Add links to social media icons
+* Add social media icons
+* Add contact form
+* Add email and phone number
