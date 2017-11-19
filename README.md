@@ -7,3 +7,8 @@ For development run the following commands:
 npm run watch
 npm run bs
 ```
+
+Production
+```
+npm run build
+```
