@@ -2,10 +2,10 @@
 
 @import "node_modules/bootstrap/scss/bootstrap-grid";
 
-$service-box-gradient-low: #FFFF9F;
-$service-box-gradient-high: #FFFF80;
+$service-box-gradient-low: #ffff9f;
+$service-box-gradient-high: #ffff80;
 $service-box-background-color: $service-box-gradient-high;
-$service-box-border-color: #F9F900;
+$service-box-border-color: #f9f900;
 
 $service-icon-width: 3;
 $service-icon-height: (
@@ -55,7 +55,7 @@ body {
   @include media-breakpoint-up(lg) {
     padding: 8px 10px 0;
   }
-  img.social-media-icon{
+  img.social-media-icon {
     height: 20px;
     @include media-breakpoint-up(lg) {
       height: 25px;
@@ -92,15 +92,21 @@ body {
     }
 
     background: $service-box-background-color;
-    background: radial-gradient(ellipse at center,  $service-box-gradient-low 0%, $service-box-gradient-high 100%);
+    background: radial-gradient(
+      ellipse at center,
+      $service-box-gradient-low 0%,
+      $service-box-gradient-high 100%
+    );
 
     border: 1px solid $service-box-border-color;
 
-    box-shadow: 0 1px 3px rgba(200,200,0,0.12), 0 1px 2px rgba(200,200,0,0.24);
+    box-shadow: 0 1px 3px rgba(200, 200, 0, 0.12),
+      0 1px 2px rgba(200, 200, 0, 0.24);
   }
 
   .service-box-container:hover {
-    box-shadow: 0 14px 28px rgba(150,150,0,0.25), 0 10px 10px rgba(150,150,0,0.22);
+    box-shadow: 0 14px 28px rgba(150, 150, 0, 0.25),
+      0 10px 10px rgba(150, 150, 0, 0.22);
   }
 
   h4 {
@@ -152,6 +158,23 @@ svg#online-icon {
 
 #index-footer {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   background-color: $footer-bg-color;
+  // a:link,
+  // a:visited,
+  // a:hover,
+  // a:focus,
+  // a:active {
+  //   text-decoration: none;
+  //   color: #ffff00;
+  // }
+  img.social-media-icon {
+    height: 25px;
+    width: 25px;
+    @include media-breakpoint-down(sm) {
+      height: 20px;
+      width: 20px;
+    }
+  }
 }
