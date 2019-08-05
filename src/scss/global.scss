@@ -487,7 +487,6 @@ padding-top: 10px;
 width: auto;
 height: 330px;
 -webkit-transform: rotateY(-180deg);
-overflow: scroll;
 }
 
 .info-card:hover .back {
@@ -575,3 +574,10 @@ height: 100%;
   color: #AAAA00;
 }
 
+// Our Team page
+
+.core-team-header{
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+}
