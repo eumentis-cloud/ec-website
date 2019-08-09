@@ -140,9 +140,6 @@ body * {
     cursor: pointer;
     padding: 10px 5px;
     border-right: 1px solid $sec-nav-items-border-color;
-
-    //box-shadow: inset 0 -10px 10px -10px rgba(150,150,0,0.24);
-
     @include media-breakpoint-up(lg) {
       display: flex;
       flex-direction: row;
@@ -157,13 +154,13 @@ body * {
       font-family: $ec-headings-font-family;
       font-size: 0.75rem;
       color: $sec-nav-links-color;
-
       @include media-breakpoint-up(lg) {
         margin-left: 15px;
         font-size: 0.9rem;
       }
     }
   }
+
   .secondary-nav-item:not(.secondary-nav-item-active):hover {
     h4 {
       color: $sec-nav-hover-links-color;
@@ -271,7 +268,6 @@ footer {
     background-color: $footer-company-details-bg-color;
     height: $footer-company-details-height;
     min-width: $footer-company-details-height;
-
     margin: -15px 0 0;
     border-radius: 50%;
     @include media-breakpoint-up(md) {
@@ -279,14 +275,11 @@ footer {
       border-radius: 30px;
       margin: -18px 0 0;
     }
-
     box-shadow: inset 1px 1px 6px 2px rgba(0,0,0,0.16);
     border: $footer-company-details-border-width solid $footer-bg-color;
-
     #footer-company-logo {
       height: $footer-company-logo-height;
     }
-
     #footer-company-name {
       margin: 0 0 0 10px;
       font-size: 1.2rem;
@@ -320,7 +313,6 @@ footer {
 
 #page-image-container {
   text-align: center;
-
   #page-image {
     width: 90%;
     @include media-breakpoint-down(md) {
@@ -335,12 +327,12 @@ footer {
 
 #page-content {
   text-align: justify;
-
   @include media-breakpoint-down(md) {
     padding-top: 30px;
     padding-bottom: 20px;
   }
 }
+
 #page-content.no-justify {
   text-align: left !important;
 }
@@ -381,56 +373,9 @@ footer {
 }
 
 /*
-    Our Work
+    Our Work page new
  */
-// .project-container {
-//   text-align: left;
-//   padding-bottom: 15px;
 
-//   .client-logo {
-//     text-align: center;
-
-//     img {
-//       max-height: 300px;
-//       max-width: 100%;
-//     }
-//   }
-
-//   .client-sector {
-//     margin: 15px 0 0;
-//     font-size: 1.4rem;
-//     font-style: italic;
-//     text-align: center;
-//   }
-
-//   .client-name {
-//     font-size: 1.8rem;
-//     font-weight: 700;
-//     margin: 15px 10px 0;
-//   }
-
-//   .client-location {
-//     margin: 0 10px;
-//     font-size: 1.2rem;
-//   }
-
-//   .client-work-description {
-//     margin: 15px 10px;
-//     text-align: justify;
-//   }
-
-//   .app-link {
-//     display: block;
-//     font-size: 1.1rem;
-//     img {
-//       margin-right: 10px;
-//     }
-//     margin-bottom: 15px;
-//   }
-// }
-
-
-// new-work-page
 
 #page-content-container{
   .front{
@@ -483,7 +428,7 @@ z-index: 1;
 
 .back {
 background: #ffff01;
-padding: 30px;
+padding: 17px;
 padding-top: 20px;
 width: auto;
 height: 330px;
@@ -713,9 +658,6 @@ body{
     0%, 20%, 50%, 80%, 100% {
       transform: translateY(0);
     }
-    // 40% {
-    //   transform: translateY(-30px);
-    // }
     60% {
       transform: translateY(-20px);
     }
@@ -739,7 +681,7 @@ body{
       text-align: center;
       text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
       margin-top: 75px;
-      @include media-breakpoint-down(sm) { 
+      @include media-breakpoint-down(sm){ 
         margin-top: 15px;
        }
       z-index: 3;
@@ -816,11 +758,15 @@ body{
     margin-top: 50px;
     div{
       .project-name{
-        font-size: 25px;
+        font-size: 23px;
         font-weight: 600;
-        @include media-breakpoint-down(sm){
-          font-size: 20px;
-          font-weight: 500;
+      }
+      .project-place{
+        padding-top: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        @include media-breakpoint-up(md){
+          text-align: end;
         }
       }
     }
@@ -853,6 +799,11 @@ body{
       }
     }
     .youtube-link{
+      i{
+        font-size: 25px;
+        color: red ;
+        margin-left: 10px;
+      }
       @include media-breakpoint-up(md){
       display: flex;
       justify-content: flex-end;
@@ -862,12 +813,10 @@ body{
         align-items: center;
         font-size: 15px;
         font-weight: 500;
-        i{
-          font-size: 25px;
-          color: red;
-          margin-left: 10px;
         }
-        }
+      }
+      @include media-breakpoint-down(sm){
+        margin-top: 20px;
       }
     }
   }
