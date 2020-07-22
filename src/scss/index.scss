@@ -14,11 +14,21 @@ $service-icon-height: (
 );
 
 $service-icon-color: #333300;
-$service-box-header-color: #333300;
 $service-box-text-color: #333300;
 
 body {
   padding-bottom: 46px !important;
+}
+
+// rendering a cursor to any link when hovered
+a:-webkit-any-link {
+  cursor: pointer;
+}
+a:any-link {
+  cursor: pointer;
+}
+a:-moz-any-link {
+  cursor: pointer;
 }
 
 #index-main-content {

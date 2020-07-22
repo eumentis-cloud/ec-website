@@ -101,3 +101,8 @@ function openContactForm(event) {
 
   event.preventDefault();
 }
+
+// enabling tooltip everywhere
+$(() => {
+  $('[data-toggle="tooltip"]').tooltip()
+})
