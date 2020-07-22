@@ -169,20 +169,11 @@ svg#online-icon {
  // swiper carosuel for showcasing clients
 
 .swiper-container {
-  width: 100%;
-  height: 100%;
+  @include swiper-container();
 }
 
 .swiper-slide {
-  text-align: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+  @include swiper-slide();
   img {
     object-fit: cover;
     max-height: 100px;
@@ -196,6 +187,13 @@ svg#online-icon {
     @include media-breakpoint-up(lg) {
       font-size: 1.2rem;
     }
+  }
+}
+
+.swiper-slide {
+  img.vertical-img {
+    max-height: 10px;
+    max-width: 100%;
   }
 }
 

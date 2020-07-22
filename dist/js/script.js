@@ -106,3 +106,4 @@ function openContactForm(event) {
 $(() => {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
