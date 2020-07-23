@@ -161,3 +161,64 @@ function stickyHeader() {
     fixedHeader.classList.remove("sticky-carousel");
   }
 }
+
+$('#myList a').on('click', function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+// projects detials slider
+
+let swiper1 = new Swiper('.swiper-container-navigation', {
+  loop: true,
+  preloadImages: true,
+  updateOnImagesReady: true,
+  mousewheel: true,
+  centeredSlides: true,
+  // spaceBetween: 60,
+  breakpoints: {
+    320: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      direction: 'horizontal',
+    },
+    480: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      direction: 'horizontal',
+    },
+    640: {
+      slidesPerView: 'auto',
+      loopedSlides: 5,
+      slidesPerColumnFill: 'column',
+      direction: 'vertical',
+      spaceBetween: 60,
+    },
+    768: {
+      slidesPerView: 'auto',
+      loopedSlides: 5,
+      slidesPerColumnFill: 'column',
+      direction: 'vertical',
+      spaceBetween: 60,
+    },
+    1024: {
+      slidesPerView: 'auto',
+      loopedSlides: 5,
+      slidesPerColumnFill: 'column',
+      direction: 'vertical',
+      spaceBetween: 60,
+    },
+  }
+});
+
+// app screenshots slider
+
+let swiper2 = new Swiper('.swiper-container', {
+  centeredSlides: true,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});

@@ -20,7 +20,7 @@ body {
   padding-bottom: 46px !important;
 }
 
-// rendering a cursor to any link when hovered
+// rendering a cursor to any link when hoverswiper-containered
 a:-webkit-any-link {
   cursor: pointer;
 }
@@ -169,6 +169,10 @@ svg#online-icon {
  // swiper carosuel for showcasing clients
 
 .swiper-container {
+  @include swiper-container();
+}
+
+.swiper-container-navigation {
   @include swiper-container();
 }
 
