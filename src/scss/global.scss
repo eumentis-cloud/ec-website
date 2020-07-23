@@ -442,9 +442,8 @@ footer {
 
 // v2.2
 
-div.card {
+div.card.work-card {
   @include card-box-shadow();
-
   &:hover {
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -468,9 +467,6 @@ div.card {
 }
 
 div.card-body {
-  h5.card-title {
-    @include h4_heading();
-  }
   div span.card-subtitle {
     font-family: $ec-headings-font-family;
   }
@@ -484,6 +480,33 @@ div.card-body {
 Our Work > Project details page (v2.2)
 */
 
+
+@include media-breakpoint-only(xs) {
+  .sticky-carousel {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: $ec-bg-color;
+  }
+
+  .sticky-carousel + .main {
+    padding-top: 50px;
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .sticky-carousel {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: $ec-bg-color;
+  }
+
+  .sticky-carousel + .main {
+    padding-top: 50px;
+  }
+}
+
 #vertical-swiper {
   @include media-breakpoint-up(md) {
    max-height: 100vh;
@@ -491,6 +514,7 @@ Our Work > Project details page (v2.2)
 }
 
 #projects-carousel {
+  z-index: 9999;
   @include media-breakpoint-up(md) {
     position: fixed;
     overflow: hidden;
@@ -510,6 +534,37 @@ nav.project-details-nav {
   z-index: 9999;
 }
 
+.parallax-window {
+  min-height: calc(100vh - 45px);
+  background: transparent;
+}
+
+#jumbo-fold {
+  @include media-breakpoint-only(sm) {
+    height: calc(100vh - 123px);
+  }
+  height: calc(100vh - 45px);
+}
+
+img.company-logo {
+  max-height: 80px;
+  max-width: 100%;
+}
+
+h4.demo-video {
+  font-family: $ec-headings-font-family;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+h5.project-title {
+  text-transform: uppercase;
+}
+
+h5.card-title {
+  font-family: $card-title-font-family;
+  font-size: 1.8rem;
+}
 
 /*
     Contact Us

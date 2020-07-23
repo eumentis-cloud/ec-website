@@ -107,3 +107,57 @@ $(() => {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+// scroll animations using basicScroll lib
+
+// const instance = basicScroll.create({
+//   elem: document.querySelector('#jumbo-fold'),
+//   from: '0px',
+//   to: '100px',
+//   props: {
+//     '--opacity': {
+//       from: .01,
+//       to: .99
+//     }
+//   }
+// })
+//
+// instance.start()
+
+// anime js animation for project details title
+
+// Wrap every letter in a span
+let projectTitleContainer = document.querySelector('.project-title');
+projectTitleContainer.innerHTML = projectTitleContainer.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.project-title .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+  }).add({
+  targets: '.project-title .letter',
+  translateX: [0,-30],
+  opacity: [1,0],
+  easing: "easeInExpo",
+  duration: 1100,
+  delay: (el, i) => 100 + 30 * i
+});
+
+// sticky carousel with horizontal slider
+
+window.onscroll = function() {stickyHeader()};
+
+let fixedHeader = document.getElementById('projects-carousel');
+let sticky = fixedHeader.offsetTop;
+
+function stickyHeader() {
+  if (window.pageYOffset > sticky) {
+    fixedHeader.classList.add("sticky-carousel");
+  } else {
+    fixedHeader.classList.remove("sticky-carousel");
+  }
+}
