@@ -484,13 +484,6 @@ div.card-body {
 Our Work > Project details page (v2.2)
 */
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
-
 #vertical-swiper {
   @include media-breakpoint-up(md) {
    max-height: 100vh;
@@ -498,17 +491,6 @@ Our Work > Project details page (v2.2)
 }
 
 #projects-carousel {
-  @include card-box-shadow();
-  @include media-breakpoint-up(sm) {
-    img {
-      object-fit: cover;
-      max-height: 200px;
-      max-width: 100%;
-    }
-  }
-  div.swiper-slide {
-
-  }
   @include media-breakpoint-up(md) {
     position: fixed;
     overflow: hidden;

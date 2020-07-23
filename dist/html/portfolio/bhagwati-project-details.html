@@ -38,7 +38,7 @@
   </script>
 </head>
 <body>
-<div id="primary-container" class="container-fluid">
+<div id="primary-container" class="d-flex overflow-hidden">
   <nav id="primary-nav" class="row justify-content-center white-hover project-details-nav">
     <div class="col-auto primary-nav-item"><a href="../../index.html">Home</a></div>
     <div class="col-auto primary-nav-item"><a href="../about/eumentis.html">About Us</a></div>
@@ -47,10 +47,10 @@
   </nav>
   <div class="container-fluid">
     <div class="row">
-      <div id="projects-carousel" class="col-md-3 col-lg-2 d-md-block">
+      <div id="projects-carousel" class="col-md-1 col-lg-1 col-xl-1 d-md-block shadow">
           <!-- Swiper -->
-          <div class="swiper-container" id="vertical-swiper">
-            <div class="swiper-wrapper my-md-1 align-items-center d-flex">
+          <div class="swiper-container align-items-center" id="vertical-swiper">
+            <div class="swiper-wrapper py-3 d-flex">
               <div class="swiper-slide">
                 <img src="../../img/projects_sarda.jpg" class="img-fluid" alt="Responsive image">
               </div>
@@ -79,7 +79,7 @@
           </div>
       </div>
 
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <main role="main" class="col-md-11 ml-sm-auto col-lg-11 col-xl-11 px-md-4 bg-light">
         details section
       </main>
     </div>
@@ -157,35 +157,38 @@
     updateOnImagesReady: true,
     mousewheel: true,
     centeredSlides: true,
-    spaceBetween: 60,
+    // spaceBetween: 60,
     breakpoints: {
       320: {
-        slidesPerView: 3,
-        spaceBetween: 60,
+        slidesPerView: 5,
+        spaceBetween: 30,
         direction: 'horizontal',
       },
       480: {
-        slidesPerView: 3,
-        spaceBetween: 60,
+        slidesPerView: 5,
+        spaceBetween: 30,
         direction: 'horizontal',
       },
       640: {
         slidesPerView: 'auto',
         loopedSlides: 5,
         slidesPerColumnFill: 'column',
-        direction: 'vertical'
+        direction: 'vertical',
+        spaceBetween: 60,
       },
       768: {
         slidesPerView: 'auto',
         loopedSlides: 5,
         slidesPerColumnFill: 'column',
-        direction: 'vertical'
+        direction: 'vertical',
+        spaceBetween: 60,
       },
       1024: {
         slidesPerView: 'auto',
         loopedSlides: 5,
         slidesPerColumnFill: 'column',
-        direction: 'vertical'
+        direction: 'vertical',
+        spaceBetween: 60,
       },
     }
   });
