@@ -175,7 +175,6 @@ let swiper1 = new Swiper('.swiper-container-navigation', {
   updateOnImagesReady: true,
   mousewheel: true,
   centeredSlides: true,
-  // spaceBetween: 60,
   breakpoints: {
     320: {
       slidesPerView: 5,

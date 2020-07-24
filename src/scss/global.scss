@@ -453,7 +453,7 @@ div.card.work-card {
   }
   img {
     object-fit: contain;
-    max-height: 15rem;
+    max-height: 10rem;
   }
   div.card-header {
     span.flag-icon {
@@ -530,6 +530,14 @@ Our Work > Project details page (v2.2)
 
 #projects-carousel {
   z-index: 9999;
+  div.swiper-slide {
+    img {
+      max-width: 100%;
+      max-height: 4rem;
+      align-self: center;
+      display: flex;
+    }
+  }
   @include media-breakpoint-up(md) {
     position: fixed;
     overflow: hidden;
@@ -561,18 +569,24 @@ i.play-demo-icon {
   }
 }
 
-img.project-details-stack {
-  max-width: 100%;
-  max-height: 50px;
-}
-
 ul.list-group-horizontal {
   li.list-group-item {
     font-family: $card-title-font-family;
     font-size: 1.2rem;
-    background-color: $ec-bg-color;
+    background-color: rgba(255,255,255,0.6);
     letter-spacing: .1rem;
   }
+}
+
+.launch-web-btn {
+  font-family: $ec-headings-font-family;
+}
+
+.tech-icons {
+  @include media-breakpoint-up(md) {
+    font-size: 4em;
+  }
+  font-size: 2em;
 }
 
 footer#project-details-footer {
@@ -608,7 +622,7 @@ h4.demo-video {
 
 h5.card-title {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 /*
