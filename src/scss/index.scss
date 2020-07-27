@@ -198,11 +198,11 @@ svg#online-icon {
   }
   h4 {
     font-family: $ec-headings-font-family;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: $service-box-header-color;
-    @include media-breakpoint-up(md) {
-      font-size: 1.2rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.6rem;
     }
   }
 }
