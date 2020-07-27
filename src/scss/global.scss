@@ -456,14 +456,14 @@ div.card.work-card {
     max-height: 10rem;
   }
   div.card-header {
-    span.flag-icon {
-      line-height: 1.6em;
-      width: 3rem;
-    }
-    span.industry-type {
+    span.project-display-name {
       @include h4_heading();
     }
   }
+}
+
+i.fa {
+  color: $ec-text-color;
 }
 
 div.card-body {
@@ -473,6 +473,10 @@ div.card-body {
   span.card-text {
     font-family: $ec-headings-font-family;
     color: $service-box-header-color;
+  }
+  span.know-more {
+    font-family: $ec-headings-font-family;
+    font-weight: 700;
   }
 }
 
@@ -507,12 +511,6 @@ Our Work > Project details page (v2.2)
   }
 }
 
-#vertical-swiper {
-  @include media-breakpoint-up(md) {
-   max-height: 100vh;
-  }
-}
-
 .section-title {
   font-family: $ec-headings-font-family;
   font-size: 2rem;
@@ -526,27 +524,6 @@ Our Work > Project details page (v2.2)
 .swiper-button-prev {
   color: $sec-nav-hover-links-color;
   padding-left: 2rem;
-}
-
-#projects-carousel {
-  z-index: 9999;
-  div.swiper-slide {
-    img {
-      max-width: 100%;
-      max-height: 4rem;
-      align-self: center;
-      display: flex;
-    }
-  }
-  @include media-breakpoint-up(md) {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1; /* Behind the navbar */
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-  }
 }
 
 i.play-demo-icon {
@@ -598,8 +575,8 @@ nav.project-details-nav {
 }
 
 .parallax-window {
-  min-height: calc(100vh - 45px);
-  background: transparent;
+  max-height: 50vh;
+  background: $jumbo-background-color;
 }
 
 #jumbo-fold {
