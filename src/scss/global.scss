@@ -456,6 +456,7 @@ div.card {
     a img.card-logo {
       object-fit: contain;
       max-height: 6rem;
+      height: 6rem;
     }
     div.card-header {
       span.project-display-name {
@@ -524,7 +525,7 @@ section#testimonials {
   @include media-breakpoint-up(md) {
     img {
       max-width: 100%;
-      max-height: 7rem;
+      max-height: 8rem;
     }
   }
   .media-body {
@@ -543,15 +544,19 @@ section#testimonials {
   padding: .75rem 1rem;
   @include media-breakpoint-up(md) {
     padding-top: .75rem;
-    padding-right: 7rem;
+    padding-right: 8rem;
     padding-bottom: .75rem;
   }
 }
 
 #demo-videos-col {
   @include media-breakpoint-up(md) {
-    padding-right: 1rem;
+    padding-right: 2.5rem;
   }
+}
+
+.work-section-next {
+  right: -1rem;
 }
 
 @include media-breakpoint-only(xs) {
@@ -593,11 +598,11 @@ h6.stack-title {
 
 i.play-demo-icon {
   @include media-breakpoint-up(md) {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: $youtube-play-color;
   }
   @include media-breakpoint-up(xs) {
-    font-size: 3rem;
+    font-size: 4rem;
     color: $youtube-play-color;
   }
 }
@@ -616,10 +621,10 @@ i.play-demo-icon {
   color: $primary-nav-links-color;
   background-color: $primary-nav-bg-color;
   border-color: $primary-nav-bg-color;
-  &:hover, &:focus {
-    background-color: $sec-nav-active-bg-color;
-    border-color: $sec-nav-active-bg-color;
-    color: $primary-nav-bg-color;
+  &:hover {
+    color: $ec-bg-color;
+    background-color: $primary-nav-bg-color;
+    border-color: $primary-nav-links-colorcolor;
   }
 }
 
@@ -640,7 +645,7 @@ nav.project-details-nav {
 }
 
 .parallax-window {
-  min-height: 65vh;
+  min-height: 30vh;
   background: $jumbo-background-color;
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
@@ -650,6 +655,9 @@ nav.project-details-nav {
   }
   @include media-breakpoint-up(md) {
     height: 65vh;
+  }
+  @media (min-width: 1367px) {
+    height: 45vh;
   }
 }
 

@@ -185,6 +185,10 @@ svg#online-icon {
 }
 
 .swiper-slide {
+  img.vertical-img {
+    max-height: 10px;
+    max-width: 100%;
+  }
   @include swiper-slide();
   img {
     object-fit: contain;
@@ -201,16 +205,6 @@ svg#online-icon {
     font-size: 1.2rem;
     font-weight: 700;
     color: $client-country-color;
-    @include media-breakpoint-up(lg) {
-      font-size: 1.6rem;
-    }
-  }
-}
-
-.swiper-slide {
-  img.vertical-img {
-    max-height: 10px;
-    max-width: 100%;
   }
 }
 
