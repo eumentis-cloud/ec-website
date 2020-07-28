@@ -451,9 +451,9 @@ div.card.work-card {
     -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   }
-  img {
+  a img.card-logo {
     object-fit: contain;
-    max-height: 10rem;
+    max-height: 6rem;
   }
   div.card-header {
     span.project-display-name {
@@ -461,7 +461,6 @@ div.card.work-card {
     }
   }
 }
-
 i.fa {
   color: $ec-text-color;
 }
@@ -491,6 +490,16 @@ Our Work > Project details page (v2.2)
   li.breadcrumb-mobile {
     padding: 0.75rem 0;
   }
+}
+
+.tech-stack-seperator {
+  @include media-breakpoint-up(md) {
+    border-right: 1px solid $sec-nav-hover-links-color;
+  }
+}
+
+i.quote-icon {
+  color: $primary-nav-hover-links-color;
 }
 
 section#testimonials {
