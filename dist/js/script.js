@@ -126,26 +126,51 @@ $(() => {
 // anime js animation for project details title
 
 // Wrap every letter in a span
-let projectTitleContainer = document.querySelector('.project-title');
-projectTitleContainer.innerHTML = projectTitleContainer.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.project-title .letter',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 1200,
-    delay: (el, i) => 500 + 30 * i
-  }).add({
-  targets: '.project-title .letter',
-  translateX: [0,-30],
-  opacity: [1,0],
-  easing: "easeInExpo",
-  duration: 1100,
-  delay: (el, i) => 100 + 30 * i
+// let projectTitleContainer = document.querySelector('.project-title');
+// projectTitleContainer.innerHTML = projectTitleContainer.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+// anime.timeline({loop: true})
+//   .add({
+//     targets: '.project-title .letter',
+//     translateX: [40,0],
+//     translateZ: 0,
+//     opacity: [0,1],
+//     easing: "easeOutExpo",
+//     duration: 1200,
+//     delay: (el, i) => 500 + 30 * i
+//   }).add({
+//   targets: '.project-title .letter',
+//   translateX: [0,-30],
+//   opacity: [1,0],
+//   easing: "easeInExpo",
+//   duration: 1100,
+//   delay: (el, i) => 100 + 30 * i
+// });
+
+var logo_anim_in = anime({
+  targets: [".play-demo-icon"],
+  duration: 800,
+  autoplay: false,
+  scale: 1,
+  easing: "easeInOutQuad",
+  loop: false
 });
+
+function over() {
+  logo_anim_in.play({
+    scale: 1.4
+  });
+}
+
+function out() {
+  logo_anim_in.play({
+    scale: 0
+  });
+}
+
+$(".play-demo-icon").hover(over, out);
+
 
 // sticky carousel with horizontal slider
 
@@ -167,57 +192,4 @@ $('#myList a').on('click', function (e) {
   $(this).tab('show')
 })
 
-// projects detials slider
 
-// let swiper1 = new Swiper('.swiper-container-navigation', {
-//   loop: true,
-//   preloadImages: true,
-//   updateOnImagesReady: true,
-//   mousewheel: true,
-//   centeredSlides: true,
-//   breakpoints: {
-//     320: {
-//       slidesPerView: 5,
-//       spaceBetween: 30,
-//       direction: 'horizontal',
-//     },
-//     480: {
-//       slidesPerView: 5,
-//       spaceBetween: 30,
-//       direction: 'horizontal',
-//     },
-//     640: {
-//       slidesPerView: 'auto',
-//       loopedSlides: 5,
-//       slidesPerColumnFill: 'column',
-//       direction: 'vertical',
-//       spaceBetween: 60,
-//     },
-//     768: {
-//       slidesPerView: 'auto',
-//       loopedSlides: 5,
-//       slidesPerColumnFill: 'column',
-//       direction: 'vertical',
-//       spaceBetween: 60,
-//     },
-//     1024: {
-//       slidesPerView: 'auto',
-//       loopedSlides: 5,
-//       slidesPerColumnFill: 'column',
-//       direction: 'vertical',
-//       spaceBetween: 60,
-//     },
-//   }
-// });
-
-// app screenshots slider
-
-// let swiper2 = new Swiper('.swiper-container', {
-//   centeredSlides: true,
-//   spaceBetween: 0,
-//   loop: true,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-// });
