@@ -379,15 +379,29 @@ footer {
   padding-bottom: 15px;
 
   h4 {
-    font-weight: 500;
+    font-weight: 600;
     margin: 10px 0;
     font-size: 1.7rem;
+    text-transform: uppercase;
   }
 
   h5 {
+    &.core-team-college {
+      color: $sec-nav-items-border-color;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
     margin-top: 0;
     margin-bottom: 3px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+  }
+  img {
+    clip-path: circle(9rem at center);
+    &.developer-pic {
+      @include media-breakpoint-up(md) {
+        clip-path: circle(7.5rem at center);
+      }
+    }
   }
 }
 
