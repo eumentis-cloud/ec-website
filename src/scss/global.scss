@@ -11,7 +11,7 @@
   font-weight: 700;
   color: $service-box-header-color;
   @include media-breakpoint-up(lg) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -396,12 +396,27 @@ footer {
     font-size: 1.2rem;
   }
   img {
-    clip-path: circle(9rem at center);
-    &.developer-pic {
-      @include media-breakpoint-up(md) {
-        clip-path: circle(7.5rem at center);
-      }
+    clip-path: circle(7.8rem at center);
+    @include media-breakpoint-down(sm) {
+      clip-path: circle(9rem at center);
     }
+  }
+}
+
+.img-fluid#dev-1-img {
+  @include media-breakpoint-up(md) {
+    max-height: 255px;
+  }
+}
+
+#core-team-container {
+  img {
+    @include media-breakpoint-up(md) {
+      width: 275px;
+      height: 275px;
+    }
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -469,14 +484,19 @@ div.card {
     }
     a img.card-logo {
       object-fit: contain;
-      max-height: 6rem;
+      max-height: 7rem;
       max-width: 100%;
-      height: 6rem;
+      height: 7rem;
     }
     div.card-header {
       span.project-display-name {
         @include h4_heading();
       }
+    }
+    h5.card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $sec-nav-active-links-color;
     }
   }
 }
@@ -485,6 +505,11 @@ i.fa {
 }
 
 div.card-body {
+  span.badge {
+    font-family: $ec-links-font-family;
+    font-size: .95rem;
+    font-weight: 500;
+  }
   div span.card-subtitle {
     font-family: $ec-headings-font-family;
   }
