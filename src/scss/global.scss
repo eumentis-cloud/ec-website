@@ -622,16 +622,20 @@ section#testimonials {
   .media-body {
     text-align: center;
     h5 {
+      color: $sec-nav-active-links-color;
       font-size: 1.4rem;
       font-weight: 700;
       @include media-breakpoint-down(sm) {
         font-size: 1.8rem;
       }
+      @media (min-width: 1367px) {
+        font-size: 1.6rem;
+      }
     }
     div span.card-subtitle {
       font-family: $ec-links-font-family;
       font-size: 1.25rem;
-      @include media-breakpoint-down(sm) {
+      @media (min-width: 1367px) {
         font-size: 1.4rem;
       }
     }
@@ -643,6 +647,9 @@ section#testimonials {
       @include media-breakpoint-down(sm) {
         margin: 0 5rem;
         font-size: 1.3rem;
+      }
+      @media (min-width: 1367px) {
+        margin-right: 16rem;
       }
     }
   }
@@ -719,6 +726,9 @@ i.play-demo-icon {
   @include media-breakpoint-up(md) {
     margin-top: -8vh;
   }
+  @media (min-width: 1367px) {
+    margin-top: -4vh;
+  }
   @include media-breakpoint-up(xs) {
     margin-top: -7vh;
   }
@@ -782,9 +792,17 @@ h4.demo-video {
   font-size: 1.4rem;
 }
 
-h5.project-title {
-  font-weight: 700;
-  font-size: 1.8rem;
+span.project-title {
+  @include card-header();
+  @include media-breakpoint-up(lg) {
+    font-size: 1.4rem !important;
+  }
+  @media (min-width: 1367px) {
+    font-size: 2rem !important;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 1.8rem;
+  }
 }
 
 /*
