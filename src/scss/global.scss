@@ -4,15 +4,31 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/font-awesome/scss/font-awesome";
 
+@mixin heading_text() {
+  font-size: 1rem;
+  color: $service-box-header-color;
+}
 
 @mixin h4_heading() {
-  font-family: $ec-headings-font-family;
-  font-size: 1rem;
   font-weight: 700;
-  color: $service-box-header-color;
+  font-family: $ec-headings-font-family;
+  @include heading-text();
   @include media-breakpoint-up(lg) {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
+}
+
+@mixin card_header() {
+  font-family: $card-title-font-family;
+  @include heading-text();
+  letter-spacing: .1rem;
+  @include media-breakpoint-up(lg) {
+    font-size: 1.20rem;
+  }
+  @media (min-width: 1367px) {
+    font-size: 1.8rem;
+  }
+  border-bottom: .35rem solid;
 }
 
 @mixin page-title-mixin() {
@@ -26,6 +42,34 @@
   text-align: center;
   font-weight: 700;
 }
+
+.badge-finance {
+  background-color: $badge-finance-color;
+  color: $ec-bg-color;
+}
+
+.border-finance {
+  border-color: $badge-finance-color !important;
+}
+
+.badge-commodities {
+  background-color: $badge-commodities-color;
+  color: $ec-bg-color;
+}
+
+.border-commodities {
+  border-color: $badge-commodities-color !important;
+}
+
+.badge-construction {
+  background-color: $badge-construction-color;
+  color: $ec-bg-color;
+}
+
+.border-construction {
+  border-color: $badge-construction-color !important;
+}
+
 
 body {
   font-family: $ec-base-font-family;
@@ -490,11 +534,11 @@ div.card {
     }
     div.card-header {
       span.project-display-name {
-        @include h4_heading();
+        @include card_header();
       }
     }
     h5.card-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: $sec-nav-active-links-color;
     }
