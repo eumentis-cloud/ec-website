@@ -43,6 +43,12 @@
   font-weight: 700;
 }
 
+@mixin badge_style() {
+  font-family: $ec-links-font-family;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .badge-finance {
   background-color: $badge-finance-color;
   color: $ec-bg-color;
@@ -70,6 +76,9 @@
   border-color: $badge-construction-color !important;
 }
 
+.card-disabled-hover-shadow {
+  pointer-events: none !important;
+}
 
 body {
   font-family: $ec-base-font-family;
@@ -550,9 +559,7 @@ i.fa {
 
 div.card-body {
   span.badge {
-    font-family: $ec-links-font-family;
-    font-size: .95rem;
-    font-weight: 500;
+   @include badge_style();
   }
   div span.card-subtitle {
     font-family: $ec-headings-font-family;
@@ -613,13 +620,30 @@ section#testimonials {
     }
   }
   .media-body {
+    text-align: center;
     h5 {
       font-size: 1.4rem;
       font-weight: 700;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.8rem;
+      }
     }
     div span.card-subtitle {
       font-family: $ec-links-font-family;
       font-size: 1.25rem;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.4rem;
+      }
+    }
+    span.badge {
+      @include badge_style();
+      @include media-breakpoint-up(md) {
+        margin-right: 4rem;
+      }
+      @include media-breakpoint-down(sm) {
+        margin: 0 5rem;
+        font-size: 1.3rem;
+      }
     }
   }
 }
@@ -730,7 +754,7 @@ nav.project-details-nav {
 
 .parallax-window {
   min-height: 30vh;
-  background: $jumbo-background-color;
+  background: $ec-bg-color;
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
   }
