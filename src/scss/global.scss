@@ -24,12 +24,18 @@
   letter-spacing: .1rem;
   @include media-breakpoint-up(lg) {
     font-size: 1.20rem;
+    line-height: 1.6;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 1.4rem;
+    line-height: 1.6;
   }
   @media (min-width: 1367px) {
     font-size: 1.8rem;
   }
   border-bottom: .35rem solid;
 }
+
 
 @mixin page-title-mixin() {
   font-size: 1.9rem;
@@ -456,12 +462,6 @@ footer {
   }
 }
 
-.img-fluid#dev-1-img {
-  @include media-breakpoint-up(md) {
-    max-height: 255px;
-  }
-}
-
 #core-team-container {
   img {
     @include media-breakpoint-up(md) {
@@ -544,6 +544,7 @@ div.card {
     div.card-header {
       span.project-display-name {
         @include card_header();
+        white-space: normal !important;
       }
     }
     h5.card-title {
@@ -584,6 +585,12 @@ Our Work > Project details page (v2.2)
   }
   li.breadcrumb-mobile {
     padding: 0.75rem 0;
+  }
+}
+
+img.bizminder-logo {
+  @include media-breakpoint-up(md) {
+    padding: 0 4rem !important;
   }
 }
 
@@ -633,8 +640,7 @@ section#testimonials {
       }
     }
     div span.card-subtitle {
-      font-family: $ec-links-font-family;
-      font-size: 1.25rem;
+      font-family: $ec-headings-font-family;
       @media (min-width: 1367px) {
         font-size: 1.4rem;
       }
@@ -642,7 +648,7 @@ section#testimonials {
     span.badge {
       @include badge_style();
       @include media-breakpoint-up(md) {
-        margin-right: 4rem;
+        margin-right: 5rem;
       }
       @include media-breakpoint-down(sm) {
         margin: 0 5rem;
@@ -764,7 +770,7 @@ nav.project-details-nav {
 
 .parallax-window {
   min-height: 30vh;
-  background: $ec-bg-color;
+  background: #f3f3f3;
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
   }

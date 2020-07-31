@@ -102,94 +102,70 @@ function openContactForm(event) {
   event.preventDefault();
 }
 
-// enabling tooltip everywhere
-$(() => {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-// scroll animations using basicScroll lib
-
-// const instance = basicScroll.create({
-//   elem: document.querySelector('#jumbo-fold'),
-//   from: '0px',
-//   to: '100px',
-//   props: {
-//     '--opacity': {
-//       from: .01,
-//       to: .99
-//     }
-//   }
-// })
-//
-// instance.start()
-
-// anime js animation for project details title
-
-// Wrap every letter in a span
-
-// let projectTitleContainer = document.querySelector('.project-title');
-// projectTitleContainer.innerHTML = projectTitleContainer.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-// anime.timeline({loop: true})
-//   .add({
-//     targets: '.project-title .letter',
-//     translateX: [40,0],
-//     translateZ: 0,
-//     opacity: [0,1],
-//     easing: "easeOutExpo",
-//     duration: 1200,
-//     delay: (el, i) => 500 + 30 * i
-//   }).add({
-//   targets: '.project-title .letter',
-//   translateX: [0,-30],
-//   opacity: [1,0],
-//   easing: "easeInExpo",
-//   duration: 1100,
-//   delay: (el, i) => 100 + 30 * i
-// });
-
-var logo_anim_in = anime({
-  targets: [".play-demo-icon"],
-  duration: 800,
-  autoplay: false,
-  scale: 1,
-  easing: "easeInOutQuad",
-  loop: false
+const sliderConfig = {
+  preloadImages: true,
+  updateOnImagesReady: true,
+  centeredSlides: true,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+}
+// Testimonials swiper carousel
+let swiper2 = new Swiper('#testimonialSlider', {
+  ...sliderConfig,
+  pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
-function over() {
-  logo_anim_in.play({
-    scale: 1.4
-  });
-}
-
-function out() {
-  logo_anim_in.play({
-    scale: 0
-  });
-}
-
-$(".play-demo-icon").hover(over, out);
-
-
-// sticky carousel with horizontal slider
-
-window.onscroll = function() {stickyHeader()};
-
-let fixedHeader = document.getElementById('projects-carousel');
-let sticky = fixedHeader.offsetTop;
-
-function stickyHeader() {
-  if (window.pageYOffset > sticky) {
-    fixedHeader.classList.add("sticky-carousel");
-  } else {
-    fixedHeader.classList.remove("sticky-carousel");
+// Other Work swiper carousel
+let swiper3 = new Swiper('#otherWorkSlider', {
+  ...sliderConfig,
+  // autoplay: {
+  //   delay: 2000,
+  //   disableOnInteraction: true,
+  // },
+  mouseWheel:false,
+  cssMode: true,
+  slidesPerView: 3,
+  spaceBetween : 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    480: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    640: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    768: {
+      slidesPerView: 3,
+      height: '100%',
+    },
+    1024: {
+      slidesPerView: 3,
+      height: '100%',
+    },
   }
-}
-
-$('#myList a').on('click', function (e) {
-  e.preventDefault()
-  $(this).tab('show')
 })
 
 
