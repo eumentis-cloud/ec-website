@@ -129,9 +129,9 @@ let swiper2 = new Swiper('#testimonialSlider', {
 let swiper3 = new Swiper('#otherWorkSlider', {
   ...sliderConfig,
   mouseWheel:false,
-  cssMode: true,
   slidesPerView: 3,
   spaceBetween : 30,
+  loop: true,
   breakpoints: {
     320: {
       slidesPerView: 1,
