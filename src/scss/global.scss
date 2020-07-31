@@ -746,9 +746,11 @@ i.play-demo-icon {
   background-color: $primary-nav-bg-color;
   border-color: $primary-nav-bg-color;
   &:hover {
-    color: $ec-bg-color;
+    color: $project-details-bg-color;
+    transition: 0.6s ease-in-out;
     background-color: $primary-nav-bg-color;
-    border-color: $primary-nav-links-color;
+    border-color: $primary-nav-bg-color;
+    font-weight: 700;
   }
 }
 
@@ -770,7 +772,7 @@ nav.project-details-nav {
 
 .parallax-window {
   min-height: 30vh;
-  background: #f3f3f3;
+  background: $project-details-bg-color;
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
   }
