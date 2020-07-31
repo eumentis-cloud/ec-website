@@ -112,6 +112,10 @@ const sliderConfig = {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: true,
+  },
 }
 // Testimonials swiper carousel
 let swiper2 = new Swiper('#testimonialSlider', {
@@ -124,10 +128,6 @@ let swiper2 = new Swiper('#testimonialSlider', {
 // Other Work swiper carousel
 let swiper3 = new Swiper('#otherWorkSlider', {
   ...sliderConfig,
-  // autoplay: {
-  //   delay: 2000,
-  //   disableOnInteraction: true,
-  // },
   mouseWheel:false,
   cssMode: true,
   slidesPerView: 3,
@@ -158,12 +158,10 @@ let swiper3 = new Swiper('#otherWorkSlider', {
       },
     },
     768: {
-      slidesPerView: 3,
-      height: '100%',
+      slidesPerView: 3
     },
     1024: {
-      slidesPerView: 3,
-      height: '100%',
+      slidesPerView: 3
     },
   }
 })
