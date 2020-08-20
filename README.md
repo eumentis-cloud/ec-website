@@ -12,3 +12,8 @@ Production
 ```
 npm run build
 ```
+For deployment, run the following commands (first switch to the branch that you want to deploy):
+```
+yarn run build
+firebase deploy
+```
