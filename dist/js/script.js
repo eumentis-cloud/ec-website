@@ -101,3 +101,69 @@ function openContactForm(event) {
 
   event.preventDefault();
 }
+
+const sliderConfig = {
+  preloadImages: true,
+  updateOnImagesReady: true,
+  centeredSlides: true,
+  spaceBetween: 0,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: true,
+  },
+}
+// Testimonials swiper carousel
+let swiper2 = new Swiper('#testimonialSlider', {
+  ...sliderConfig,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+// Other Work swiper carousel
+let swiper3 = new Swiper('#otherWorkSlider', {
+  ...sliderConfig,
+  mouseWheel:false,
+  slidesPerView: 3,
+  spaceBetween : 30,
+  loop: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    480: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    640: {
+      slidesPerView: 1,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+    },
+    768: {
+      slidesPerView: 3
+    },
+    1024: {
+      slidesPerView: 3
+    },
+  }
+})
+
+

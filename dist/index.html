@@ -18,12 +18,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="384x384" href="./android-chrome-384x384.png">
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./vendor-css/vex.css">
   <link rel="stylesheet" href="./vendor-css/vex-theme-os.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous" />
-
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109848057-1"></script>
   <script>
@@ -56,7 +58,7 @@
     </div>
   </header>
   <section id="services" class="row no-gutters">
-    <div class="col-6 col-md-4 service-box">
+    <div class="col-6 col-md-6 service-box">
       <a href="html/services/dt.html">
       <div class="service-box-container">
         <svg version="1.1" id="dt-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122 125.3" style="enable-background:new 0 0 122 125.3;" xml:space="preserve">
@@ -86,72 +88,7 @@
       </div>
       </a>
     </div>
-    <div class="col-6 col-md-4 service-box">
-      <a href="html/services/digitize.html">
-      <div class="service-box-container">
-        <svg version="1.1" id="dig-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.6 125" style="enable-background:new 0 0 152.6 125;" xml:space="preserve">
-        <path id="XMLID_91_" class="st0" d="M22.9,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C24.4,38.8,23.7,39.4,22.9,39.4z"/>
-        <path id="XMLID_90_" class="st0" d="M36.8,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C38.3,38.8,37.6,39.4,36.8,39.4z"/>
-        <path id="XMLID_89_" class="st0" d="M50.7,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C52.2,38.8,51.5,39.4,50.7,39.4z"/>
-        <path id="XMLID_88_" class="st0" d="M64.6,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C66.1,38.8,65.4,39.4,64.6,39.4z"/>
-        <path id="XMLID_87_" class="st0" d="M78.5,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C80,38.8,79.3,39.4,78.5,39.4z"/>
-        <path id="XMLID_86_" class="st0" d="M92.4,39.4H88c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C93.9,38.8,93.2,39.4,92.4,39.4z"/>
-        <path id="XMLID_85_" class="st0" d="M106.3,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C107.8,38.8,107.1,39.4,106.3,39.4z"/>
-        <path id="XMLID_84_" class="st0" d="M50.7,53.5h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 V52C52.2,52.9,51.5,53.5,50.7,53.5z"/>
-        <path id="XMLID_83_" class="st0" d="M64.6,53.5h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 V52C66.1,52.9,65.4,53.5,64.6,53.5z"/>
-        <path id="XMLID_82_" class="st0" d="M78.5,53.5h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 V52C80,52.9,79.3,53.5,78.5,53.5z"/>
-        <path id="XMLID_81_" class="st0" d="M92.4,53.5H88c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5V52 C93.9,52.9,93.2,53.5,92.4,53.5z"/>
-        <path id="XMLID_80_" class="st0" d="M64.6,67.6h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C66.1,66.9,65.4,67.6,64.6,67.6z"/>
-        <path id="XMLID_79_" class="st0" d="M78.5,67.6h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C80,66.9,79.3,67.6,78.5,67.6z"/>
-        <path id="XMLID_78_" class="st0" d="M92.4,67.6H88c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C93.9,66.9,93.2,67.6,92.4,67.6z"/>
-        <path id="XMLID_77_" class="st0" d="M106.3,53.5h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 V52C107.8,52.9,107.1,53.5,106.3,53.5z"/>
-        <path id="XMLID_76_" class="st0" d="M120.2,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C121.7,38.8,121,39.4,120.2,39.4z"/>
-        <path id="XMLID_75_" class="st0" d="M134.1,39.4h-4.4c-0.8,0-1.5-0.7-1.5-1.5v-4.4c0-0.8,0.7-1.5,1.5-1.5h4.4c0.8,0,1.5,0.7,1.5,1.5 v4.4C135.6,38.8,134.9,39.4,134.1,39.4z"/>
-        <path class="st1" d="M127.1,71.3V61.1h4c2.2,0,4,1.8,4,4"/>
-        <path class="st1" d="M151.1,79.4c-0.2,7.6-1.5,15.1-3.8,22.3c-0.8,2.3-1.1,4.2-1.1,4.2H129"/>
-        <path class="st1" d="M127.1,61.1V50.4c0-2.2-1.8-4-4-4l0,0c-2.2,0-4,1.8-4,4V80l-2.8-7.2c-0.7-1.8-2.5-3-4.4-3l0,0 c-2.6,0-4.7,2.1-4.7,4.7l0,0c0,4.8,1.3,9.5,3.7,13.6c0.9,1.6,2.1,3.2,3.4,4.7c4.9,5.5,6.2,12.9,6.2,12.9"/>
-        <path class="st1" d="M135.1,74.3V64h4c2.2,0,4,1.8,4,4v9.7"/>
-        <path class="st1" d="M143.1,69.2h4c2.2,0,4,1.8,4,4v6.2"/>
-        <rect x="117.4" y="111.2" class="st1" width="31" height="12.3"/>
-        <circle class="st1" cx="141.5" cy="117.3" r="1.2"/>
-        <polyline class="st0" points="143.1,57.7 143.1,25 9.5,25 9.5,57.7 "/>
-        <line class="st1" x1="43.5" y1="99.9" x2="108.8" y2="99.9"/>
-        <path class="st1" d="M25.5,71.3V61.1h-4c-2.2,0-4,1.8-4,4"/>
-        <path class="st1" d="M1.5,79.4c0.2,7.6,1.5,15.1,3.8,22.3c0.8,2.3,1.1,4.2,1.1,4.2h17.2"/>
-        <path class="st1" d="M25.5,61.1V50.4c0-2.2,1.8-4,4-4l0,0c2.2,0,4,1.8,4,4V80l2.8-7.2c0.7-1.8,2.5-3,4.4-3l0,0 c2.6,0,4.7,2.1,4.7,4.7l0,0c0,4.8-1.3,9.5-3.7,13.6c-0.9,1.6-2.1,3.2-3.4,4.7c-4.9,5.5-6.2,12.9-6.2,12.9"/>
-        <path class="st1" d="M17.5,74.3V64h-4c-2.2,0-4,1.8-4,4v9.7"/>
-        <path class="st1" d="M9.5,69.2h-4c-2.2,0-4,1.8-4,4v6.2"/>
-        <rect x="4.2" y="111.2" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 39.3968 234.6981)" class="st1" width="31" height="12.3"/>
-        <circle class="st1" cx="11.1" cy="117.3" r="1.2"/>
-        <path class="st0" d="M76.3,1.5h25.3c2.2,0,3.9,1.8,3.9,3.9l0,0c0,2.2-1.8,3.9-3.9,3.9H51c-2.2,0-3.9,1.8-3.9,3.9v0 c0,2.2,1.8,3.9,3.9,3.9h21.4c2.2,0,3.9,1.8,3.9,3.9V25"/>
-      </svg>
-        <h4>Digitize</h4>
-        <p>Business automation and digitization</p>
-      </div>
-      </a>
-    </div>
-    <div class="col-6 col-md-4 service-box">
-      <a href="html/services/web.html">
-      <div class="service-box-container">
-      <svg version="1.1" id="online-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 147.6 125" style="enable-background:new 0 0 147.6 125;" xml:space="preserve">
-        <circle class="st0" cx="125.1" cy="102.6" r="20.9"/>
-        <polyline class="st0" points="116.2,103.7 123.3,110 134.9,95.9 "/>
-        <path class="st1" d="M104.2,102.6H3.8c-1.3,0-2.3-1-2.3-2.3V3.8c0-1.3,1-2.3,2.3-2.3h119c1.3,0,2.3,1,2.3,2.3v77.9"/>
-        <circle class="st1" cx="44.2" cy="14.9" r="1.5"/>
-        <circle class="st1" cx="30.6" cy="15" r="1.5"/>
-        <circle class="st1" cx="17" cy="15.1" r="1.5"/>
-        <line class="st1" x1="1.5" y1="28.5" x2="125.1" y2="28.5"/>
-        <line class="st0" x1="64" y1="15" x2="113.2" y2="15"/>
-        <path class="st2" d="M38.4,70.2h0.1l3.2-15.8h3.6l-5,22.2h-3.1l-4.3-15.7h-0.1l-4.3,15.7h-3.1l-5-22.2h3.6l3.2,15.7h0.1l4.1-15.7h3 L38.4,70.2z"/>
-        <path class="st2" d="M68.9,70.2H69l3.2-15.8h3.6l-5,22.2h-3.1l-4.3-15.7h-0.1L59,76.6h-3.1l-5-22.2h3.6l3.2,15.7h0.1l4.1-15.7h3 L68.9,70.2z"/>
-        <path class="st2" d="M99.5,70.2h0.1l3.2-15.8h3.6l-5,22.2h-3.1l-4.3-15.7h-0.1l-4.3,15.7h-3.1l-5-22.2H85l3.2,15.7h0.1l4.1-15.7h3 L99.5,70.2z"/>
-      </svg>
-      <h4>Web</h4>
-      <p>Establish online presence</p>
-      </div>
-      </a>
-    </div>
-    <div class="col-6 col-md-4 service-box">
+    <div class="col-6 col-md-6 service-box">
       <a href="html/services/startups.html">
       <div class="service-box-container">
       <svg version="1.1" id="startups-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 107.5 125.3" style="enable-background:new 0 0 107.5 125.3;" xml:space="preserve">
@@ -171,7 +108,7 @@
       </div>
       </a>
     </div>
-    <div class="col-6 col-md-4 service-box">
+    <div class="col-6 col-md-6 service-box">
       <a href="html/services/devops.html">
       <div class="service-box-container">
       <svg version="1.1" id="devops-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.3 125" style="enable-background:new 0 0 108.3 125;" xml:space="preserve">
@@ -218,7 +155,7 @@
       </div>
       </a>
     </div>
-    <div class="col-6 col-md-4 service-box">
+    <div class="col-6 col-md-6 service-box">
       <a href="html/services/appdev.html">
       <div class="service-box-container">
       <svg version="1.1" id="appDev-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 94.7 125" style="enable-background:new 0 0 94.7 125;" xml:space="preserve">
@@ -249,8 +186,51 @@
       </a>
     </div>
   </section>
+    <section class="container-fluid position-sticky py-4">
+      <div>
+        <h4 class="text-center" id="page-title">Top Clients</h4>
+      </div>
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/client-logos/landolakes.png" data-toggle="popover" data-title="Land O' Lakes" class="img-fluid py-3 landolakes-logo" alt="Land O' Lakes">
+            <h4>USA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/purina.png" class="img-fluid py-3" alt="Purina">
+            <h4>USA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="img/client-logos/4sight.png" class="img-fluid py-3" alt="4ISIGHT">
+            <h4>UAE</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/s2c.png" class="img-fluid py-3" alt="Survey 2 Connect">
+            <h4>INDIA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/xhibit.png" class="img-fluid py-3" alt="Xhibit">
+            <h4>INDIA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/bizminder.png" class="img-fluid py-3" alt="Bizminder">
+            <h4>INDIA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/mazuri.png" class="img-fluid py-3" alt="Mazuri">
+            <h4>USA</h4>
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/client-logos/nutritoo.png" class="img-fluid py-3" alt="Nutritoo">
+            <h4>INDIA</h4>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
+
 <footer id="index-footer">
   <a class="hoverable" href="#" onclick="openContactForm(event);">
     <svg version="1.1" id="contact-email-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 550.8 550.8" style="enable-background:new 0 0 550.8 550.8;" xml:space="preserve">
@@ -287,10 +267,45 @@
     <span class="show-md-up">Message on Messenger</span>
   </a>
 </footer>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" integrity="sha256-aXHOBRCjmgqoEhY6VBWs3Bc+E3447Iuywezt+nkgeZk=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
 <script src="./js/vex.combined.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="./js/script.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    centeredSlides: true,
+    cssMode: true,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 5,
+    spaceBetween : 60,
+    preloadImages: true,
+    updateOnImagesReady: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      480: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 5,
+      },
+      1024: {
+        slidesPerView: 5,
+      },
+    }
+  });
+</script>
 </body>
 </html>
