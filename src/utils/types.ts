@@ -1,6 +1,5 @@
-// type definitions
+// global type def
 
-// gatsby internal routing prop
 import {FluidObject} from "gatsby-image";
 
 // location props for routing
@@ -29,19 +28,30 @@ export type FluidImageType = {
     }
 }
 
+// client's csv data type fetched using graphql query
 export type AllClientsDataType = {
     allClientsDataCsv: {
         edges: Array<{
             node: {
+                // unique id
                 id?: string;
+                // client's country
                 countryName: string;
+                // client's logo
                 clientLogo: string;
+                // client's project name
                 projectDisplayName: string;
+                // client's name
                 clientName: string;
+                // client's city
                 city: string;
+                // client's state
                 state: string;
+                // client's country code
                 countryCode: string;
+                // project category
                 projectCategory: string;
+                // project description
                 projectCardDescription: string;
             }
         }>
