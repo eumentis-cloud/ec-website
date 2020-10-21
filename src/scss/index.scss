@@ -1,7 +1,5 @@
 @import "variables";
 
-@import "node_modules/bootstrap/scss/bootstrap-grid";
-
 $service-box-gradient-low: #FFFF9F;
 $service-box-gradient-high: #FFFF80;
 $service-box-background-color: $service-box-gradient-high;
@@ -22,7 +20,8 @@ body {
   padding-bottom: 46px !important;
 }
 
-// rendering a cursor to any link when hoverswiper-containered
+// rendering a cursor to any link when hover over swiper-container
+
 a:-webkit-any-link {
   cursor: pointer;
 }
@@ -161,6 +160,7 @@ svg * {
   stroke: $service-icon-color;
   stroke-width: $service-icon-width;
 }
+
 svg#online-icon {
   .st2 {
     fill: $service-icon-color;
@@ -173,44 +173,4 @@ svg#online-icon {
   justify-content: space-evenly;
   background-color: $footer-bg-color;
 }
-
- // swiper carosuel for showcasing clients
-
-.swiper-container {
-  @include swiper-container();
-}
-
-.swiper-container-navigation {
-  @include swiper-container();
-}
-
-.swiper-slide {
-  img.vertical-img {
-    max-height: 10px;
-    max-width: 100%;
-  }
-  @include swiper-slide();
-  img {
-    object-fit: contain;
-    max-width: 100%;
-    @include media-breakpoint-up(xs) {
-      max-height: 100px;
-    }
-    @include media-breakpoint-up(md) {
-      height: 60px;
-    }
-  }
-  h4 {
-    font-family: $ec-headings-font-family;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: $client-country-color;
-  }
-}
-
-span.flag-icon {
-  line-height: 1.6em;
-  width: 3rem;
-}
-
 

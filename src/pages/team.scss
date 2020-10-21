@@ -1,0 +1,56 @@
+@import '../scss/variables';
+@import '../scss/globals';
+
+@mixin page-title-mixin() {
+  font-size: 1.9rem;
+  font-family: $ec-headings-font-family;
+  @include media-breakpoint-up(sm) {
+    font-size: 2.1rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 25px 0;
+  }
+  text-align: center;
+  font-weight: 700;
+}
+
+.page-content-container {
+  padding-bottom: 12%;
+}
+
+@include media-breakpoint-up(lg) {
+  .page-content-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 10%;
+  }
+
+  #page-content-section {
+    flex: 1;
+  }
+}
+
+.page-title {
+  margin: 20px 0;
+  @include page-title-mixin();
+}
+
+#page-content {
+  text-align: justify;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+}
+#page-content.no-justify {
+  text-align: left !important;
+}
+
+.section-title {
+  font-family: $ec-headings-font-family;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: -2rem;
+}

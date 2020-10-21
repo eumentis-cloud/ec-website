@@ -1,0 +1,185 @@
+@import "../scss/variables";
+
+.index-main-content {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.company-details {
+  text-align: center;
+  padding: 12px 0 18px;
+  @include media-breakpoint-up(lg) {
+    padding: 40px 0;
+  }
+
+  .eumentis-cloud-logo {
+    height: 60px;
+    @include media-breakpoint-up(lg) {
+      height: 80px;
+    }
+  }
+
+  .company-name {
+    font-weight: 700;
+    font-family: $ec-headings-font-family;
+    font-size: 2rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 2.3rem;
+    }
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.social-media-icons {
+  padding: 5px 10px 0;
+  @include media-breakpoint-up(lg) {
+    padding: 8px 10px 0;
+  }
+  img.social-media-icon{
+    height: 20px;
+    @include media-breakpoint-up(lg) {
+      height: 25px;
+    }
+  }
+}
+
+#services {
+  margin-left: -8px;
+  margin-right: -8px;
+  @include media-breakpoint-up(md) {
+    padding: 0 8rem;
+  }
+}
+
+.service-box {
+  text-align: center;
+  padding: 4px !important;
+  @include media-breakpoint-up(sm) {
+    padding: 10px !important;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 15px !important;
+  }
+
+  .service-box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 4px;
+    height: 100%;
+    padding: 15px 10px 10px;
+
+    @include media-breakpoint-up(lg) {
+      border-radius: 6px;
+      padding: 30px 15px;
+    }
+
+    background: $service-box-background-color;
+    background: radial-gradient(ellipse at center,  $service-box-gradient-low 0%, $service-box-gradient-high 100%);
+
+    border: 1px solid $service-box-border-color;
+
+    box-shadow: 0 1px 3px rgba(200,200,0,0.12), 0 1px 2px rgba(200,200,0,0.24);
+  }
+
+  .service-box-container:hover {
+    box-shadow: 0 14px 28px rgba(150,150,0,0.25), 0 10px 10px rgba(150,150,0,0.22);
+  }
+
+  h4 {
+    font-family: $ec-headings-font-family;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 8px 0 5px;
+    color: $service-box-header-color;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.8rem;
+      margin: 15px 0;
+    }
+  }
+
+  p {
+    white-space: normal;
+    font-family: $ec-base-font-family;
+    font-size: 0.86rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 1rem;
+    }
+    margin: 0;
+    color: $service-box-text-color;
+  }
+
+  svg {
+    height: map_get($service-icon-height, sm);
+    @include media-breakpoint-only(md) {
+      height: map_get($service-icon-height, sm);
+    }
+    @include media-breakpoint-up(lg) {
+      height: map_get($service-icon-height, lg);
+    }
+  }
+}
+
+.service-img {
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke: $service-icon-color;
+  stroke-width: $service-icon-width;
+}
+
+// swiper carousel
+
+@mixin swiper-container() {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin swiper-slide() {
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-container {
+  @include swiper-container();
+}
+
+.swiper-slide {
+  margin-bottom: 5rem;
+  img.vertical-img {
+    max-height: 10px;
+    max-width: 100%;
+  }
+  @include swiper-slide();
+  .top-client-img {
+    img {
+      object-fit: contain;
+      max-width: 100%;
+      @include media-breakpoint-up(xs) {
+        max-height: 100px;
+      }
+      @include media-breakpoint-up(md) {
+        height: 2rem;
+      }
+    }
+  }
+  h4 {
+    font-family: $ec-headings-font-family;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $client-country-color;
+  }
+}
+

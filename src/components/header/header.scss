@@ -1,0 +1,59 @@
+// site header styles
+@import "../../scss/variables";
+
+#primary-nav {
+  text-align: center;
+  background-color: $primary-nav-bg-color;
+
+  .primary-nav-item {
+    font-family: $ec-links-font-family;
+    cursor: pointer;
+    padding: 10px 8px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 10px 20px;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    .primary-nav-item {
+      padding: 10px 15px;
+    }
+  }
+  .primary-nav-item:not(.primary-nav-active):hover {
+    background-color: $ec-bg-color;
+    a {
+      color: $primary-nav-hover-links-color;
+    }
+  }
+
+  a {
+    color: $primary-nav-links-color;
+    @include media-breakpoint-up(lg) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .primary-nav-active {
+    cursor: default !important;
+
+    a {
+      cursor: default !important;
+    }
+
+    i {
+      position: relative !important;
+      bottom: -9px;
+      left: 39%;
+      font-size: 1.6rem;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.yellow-triangle {
+  div.primary-nav-active {
+    i {
+      color: $sec-nav-bg-color !important;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../scss/variables";
+
+div.card {
+  border-radius: 8px;
+  &.work-card {
+    div.card-body {
+      span.badge {
+        @include badge_style();
+      }
+      div span.card-subtitle {
+        font-family: $ec-headings-font-family;
+      }
+      span.card-text {
+        font-family: $ec-headings-font-family;
+        color: $service-box-header-color;
+      }
+    }
+    @include card-box-shadow();
+    &:hover {
+      @include box-shadow_hover();
+    }
+    div.card-header {
+      span.project-display-name {
+        @include card_header();
+        white-space: normal !important;
+      }
+    }
+    h5.card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $sec-nav-active-links-color;
+      font-family: $ec-headings-font-family;
+    }
+  }
+}
+
+.bg-finance {
+  background-color: $badge-finance-color;
+  color: $ec-bg-color;
+}
+
+.border-finance {
+  border-color: $badge-finance-color !important;
+}
+
+.bg-commodities {
+  background-color: $badge-commodities-color;
+  color: $ec-bg-color;
+}
+
+.border-commodities {
+  border-color: $badge-commodities-color !important;
+}
+
+.bg-construction {
+  background-color: $badge-construction-color;
+  color: $ec-bg-color;
+}
+
+.border-construction {
+  border-color: $badge-construction-color !important;
+}
+
