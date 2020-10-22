@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import './header.scss'
+import CaretIcon from '../../images/svgAssets/caret-up.svg';
 
 // header component props
 type HeaderProps = {
@@ -21,14 +22,22 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
         }`}
       >
           <Link className="nav-item" activeClassName="nav-item active" to={'/'}>Home</Link>
+        {location.pathname === '/' ?
+            <div style={{top: '1.6rem', paddingLeft: 8, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
+              <CaretIcon />
+            </div> : null}
       </div>
 
       <div
         className={`col-auto primary-nav-item ${
-          location.pathname === '/AboutUs/' ? 'primary-nav-active' : ''
+          location.pathname === '/AboutUs/' || location.pathname === '/OurStoryOurMission/' || location.pathname === '/Team/' ? 'primary-nav-active' : ''
         }`}
       >
           <Link className="nav-item" activeClassName="nav-item active" to={'/AboutUs/'}>About Us</Link>
+        {location.pathname === '/AboutUs/' ?
+            <div style={{top: '1.6rem', paddingLeft: 14, position: 'absolute', fontSize: '1.2rem', color: '#FFFF66'}}>
+              <CaretIcon />
+            </div> : null}
       </div>
       <div
         className={`col-auto primary-nav-item ${
@@ -36,6 +45,10 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
         }`}
       >
         <Link className="nav-item" activeClassName="nav-item active" to={'/OurWork/'}>Our Work</Link>
+        {location.pathname === '/OurWork/' ?
+            <div style={{top: '1.6rem', paddingLeft: 16, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
+              <CaretIcon />
+            </div> : null}
       </div>
       <div
         className={`col-auto primary-nav-item ${
@@ -43,6 +56,10 @@ const Header: React.FC<HeaderProps> = ({ location }: HeaderProps) => {
         }`}
       >
         <Link className="nav-item" activeClassName="nav-item active" to={'/ContactUs/'}>Contact Us</Link>
+        {location.pathname === '/ContactUs/' ?
+            <div style={{top: '1.6rem', paddingLeft: 18, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
+              <CaretIcon />
+            </div> : null}
       </div>
     </nav>
   )

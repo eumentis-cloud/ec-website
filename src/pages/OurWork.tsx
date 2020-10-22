@@ -4,6 +4,7 @@ import {AllClientsDataType, LocationProps, ProjectCateoryType} from "../utils/ty
 import ProjectCard from "../components/projectCard/ProjectCard";
 import {useStaticQuery, graphql} from "gatsby";
 
+// FC
 const OurWork: React.FC<LocationProps> = ({location}) => {
 
     const allClientsData: AllClientsDataType = useStaticQuery(graphql`
@@ -36,7 +37,7 @@ const OurWork: React.FC<LocationProps> = ({location}) => {
                 <div className="row row-cols-1 row-cols-md-3">
                     {
                         allClientsData.allClientsDataCsv.edges.map((data) => (
-                            <ProjectCard projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} projectCategory={data.node.projectCategory as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
+                            <ProjectCard key={data.node.id} projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} projectCategory={data.node.projectCategory as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
                         ))
                     }
                 </div>

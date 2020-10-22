@@ -3,12 +3,10 @@ import Layout from "../layouts/Layout";
 import SubHeader from "../components/servicesHeader/ServicesSubHeader";
 import ContentSection from "../components/contentSection/ContentSection";
 import AppDevArtwork from '../images/png/appDev.png';
+import {LocationProps} from "../utils/types";
 
-type AppDevSectionProps = {
-    location: Location;
-}
-
-const AppDev: React.FC<AppDevSectionProps> = ({location}) => {
+// FC
+const AppDev: React.FC<LocationProps> = ({location}) => {
     return (
         <Layout location={location}>
             <SubHeader location={location} />

@@ -35,25 +35,14 @@
 
   .primary-nav-active {
     cursor: default !important;
-
-    a {
-      cursor: default !important;
-    }
-
-    i {
-      position: relative !important;
-      bottom: -9px;
-      left: 39%;
-      font-size: 1.6rem;
-      color: #FFFFFF;
-    }
-  }
-}
-
-.yellow-triangle {
-  div.primary-nav-active {
-    i {
-      color: $sec-nav-bg-color !important;
+    .nav-item {
+      //div.caret-icon {
+      //  position: absolute;
+      //  top: 1.5rem;
+      //  padding-left: 8px;
+      //  font-size: 1.2rem;
+      //  color: #FFFFFF;
+      //}
     }
   }
 }

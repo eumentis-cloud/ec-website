@@ -10,7 +10,7 @@ declare module "*.png" {
   export = value;
 }
 
-// ts support for svgAssets files
+// ts support for svg files
 declare module "*.svg" {
   const content: any;
   export = content;

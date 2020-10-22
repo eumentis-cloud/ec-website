@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import Layout from "../layouts/Layout";
-import "./index.scss";
+import "../scss/index.scss";
 import ServicesCard from "../components/servicesCard/ServicesCard";
 import DigitalTransformationLogo from '../images/svgAssets/dt.svg';
 import StartupsLogo from '../images/svgAssets/startups.svg';
@@ -19,7 +19,7 @@ import SwiperCore, {Autoplay} from 'swiper';
 import SocialMediaBar from "../components/SocialMediaBar";
 import 'swiper/swiper-bundle.css';
 
-// using swiper's core features to autoplay slider
+// using swiper core features to autoplay slider
 SwiperCore.use([Autoplay]);
 
 // index page company logo + social bar
@@ -99,7 +99,7 @@ const IndexPage: React.FC<LocationProps> = ({ location }) => {
                   {
                       topClientsImgData.allFile.edges.map((item): JSX.Element => (
                           <SwiperSlide key={item.node.base}>
-                                  <GatsbyImage style={{ height: '5rem'}} imgStyle={{ height: '4.5rem', objectFit: 'contain'}} className="top-client-img" fluid={item.node.childImageSharp.fluid} alt={item.node.base.split('.')[0]} />
+                                  <GatsbyImage style={{ height: '6rem'}} imgStyle={{ height: item.node.base === 'bizminder.png' ? '4rem' : '5rem', objectFit: 'contain'}} className="top-client-img" fluid={item.node.childImageSharp.fluid} alt={item.node.base.split('.')[0]} />
                               <TopClientsCountrySlider baseImg={item.node.base} />
                           </SwiperSlide>
                       ))

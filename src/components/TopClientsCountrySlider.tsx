@@ -31,7 +31,7 @@ const TopClientsCountrySlider: React.FC<TopClientsCountrySliderProps> = ({baseIm
             {topClientsData.allClientsDataCsv.edges.filter((item, index) => {
                 return item.node.clientLogo === baseImg;
             }).splice(0,1).map((data): JSX.Element => (
-                <h4>{data.node.countryName}</h4>
+                <h4 key={data.node.id}>{data.node.countryName}</h4>
             ))}
         </>
     )

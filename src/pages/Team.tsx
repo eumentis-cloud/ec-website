@@ -3,12 +3,11 @@ import Layout from "../layouts/Layout";
 import SubHeader from "../components/aboutUsSubHeader/AboutUsHeader";
 import {graphql} from "gatsby";
 import TeamMember from "../components/teamTile/TeamMember";
-import './team.scss'
+import '../scss/team.scss'
+import {LocationProps} from "../utils/types";
 
 // Team page props
 type TeamDataType = {
-    // accessing typescript location object
-    location: Location;
     // team members csv data
     data: {
         allEcTeamDataCsv: {
@@ -31,7 +30,7 @@ type TeamDataType = {
 }
 
 // Functional Component
-const Team: React.FC<TeamDataType> = ({location, data}) => {
+const Team: React.FC<TeamDataType & LocationProps> = ({location, data}) => {
     return (
         <Layout location={location}>
             <SubHeader location={location} />
@@ -72,7 +71,6 @@ const Team: React.FC<TeamDataType> = ({location, data}) => {
                     </div>
                 </div>
             </section>
-
         </Layout>
     )
 }

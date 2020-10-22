@@ -4,6 +4,7 @@ import LocationIcon from '../../images/svgAssets/location.svg';
 import {graphql, useStaticQuery} from "gatsby";
 import { FluidImageType, ProjectCateoryType} from "../../utils/types";
 import GatsbyImage from "gatsby-image";
+import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../../utils/helpers";
 
 type ProjectCardProps = {
     projectDisplayName: string;
@@ -40,25 +41,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
         }
     `)
 
-
-    const setColorClass = (projectCategory: ProjectCateoryType): string => {
-        return ({
-            "Food & Agriculture": 'success',
-            "Technology Startup": 'warning',
-            "Marketing": "info",
-            "Health": "danger",
-            "Commodities Trading": "commodities",
-            "Manufacturing": "primary",
-            "Finance": "finance",
-            "Construction": "construction",
-        }[projectCategory]);
-    }
-
     return (
         <div className="col mb-4">
             <div className="card work-card h-100">
                     <div className="card-header border-0 bg-transparent">
-                        <span className={`project-display-name border-${setColorClass(projectCategory)}`}>{projectDisplayName}</span>
+                        <span className={`project-display-name border-${setProjectCategoryBackgroundClass(projectCategory)}`}>{projectDisplayName}</span>
                     </div>
                 {
                     allClientImages.allFile.edges.filter((img) => {
@@ -73,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
                                 <LocationIcon />
                                 <span className="card-subtitle mb-2 text-muted pl-2">{city}, {state} ({countryCode})</span>
                             </div>
-                            <span className={`badge rounded-pill bg-${setColorClass(projectCategory)} px-2 py-1 mb-2`}>{projectCategory}</span>
+                            <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(projectCategory)} px-2 py-1 mb-2 text-${setProjectCategoryColorClass(projectCategory)}`}>{projectCategory}</span>
                             <span className="card-text text-wrap d-block">{projectCardDescription}</span>
                         </div>
             </div>
