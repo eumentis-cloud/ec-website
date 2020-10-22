@@ -5,7 +5,7 @@ module.exports = {
         'Digital transformation, Business digitization and automation, Online presence, Startup development, App development, IT automation',
     siteUrl: 'https://eumentis.com',
     author: 'Eumentis',
-    twitter: '',
+    twitter: 'https://twitter.com/eumentis_cloud',
     adsense: '',
   },
   pathPrefix: '/',

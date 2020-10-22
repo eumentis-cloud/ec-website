@@ -1,18 +1,4 @@
 @import '../scss/variables';
-@import '../scss/globals';
-
-@mixin page-title-mixin() {
-  font-size: 1.9rem;
-  font-family: $ec-headings-font-family;
-  @include media-breakpoint-up(sm) {
-    font-size: 2.1rem;
-  }
-  @include media-breakpoint-up(lg) {
-    margin: 25px 0;
-  }
-  text-align: center;
-  font-weight: 700;
-}
 
 .page-content-container {
   padding-bottom: 12%;
