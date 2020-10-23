@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from "../layouts/Layout";
-import SubHeader from "../components/servicesHeader/ServicesSubHeader";
-import ContentSection from "../components/contentSection/ContentSection";
-import DevOpsArtwork from '../images/png/devOps.png';
-import {LocationProps} from "../utils/types";
+import Layout from "../../layouts/Layout";
+import SubHeader from "../../components/servicesHeader/ServicesSubHeader";
+import ContentSection from "../../components/contentSection/ContentSection";
+import DevOpsArtwork from '../../images/png/devOps.png';
+import {LocationProps} from "../../utils/types";
 
 // FC
 const DevOps: React.FC<LocationProps> = ({location}): JSX.Element => (

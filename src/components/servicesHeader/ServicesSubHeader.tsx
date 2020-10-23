@@ -10,10 +10,10 @@ import AppDevLogo from '../../images/svgAssets/appDev.svg';
 const ServicesSubHeader: React.FC<LocationProps> = ({location}) => {
     return (
        <nav className="row justify-content-center secondary-nav">
-           <SubHeaderTab location={location} route="/DigitalTransformation/" tabTitle="DT" logo={<DtLogo />} gridStyle="col-3" />
-           <SubHeaderTab location={location} route="/Startups/" tabTitle="Startups" logo={<StartupsLogo />} gridStyle="col-3" />
-           <SubHeaderTab location={location} route="/DevOps/" tabTitle="DevOps" logo={<DevOpsLogo />} gridStyle="col-3" />
-           <SubHeaderTab location={location} route="/AppDev/" tabTitle="App Dev" logo={<AppDevLogo />} gridStyle="col-3" />
+           <SubHeaderTab location={location} route="/Services/DigitalTransformation/" tabTitle="DT" logo={<DtLogo />} gridStyle="col-3" />
+           <SubHeaderTab location={location} route="/Services/Startups/" tabTitle="Startups" logo={<StartupsLogo />} gridStyle="col-3" />
+           <SubHeaderTab location={location} route="/Services/DevOps/" tabTitle="DevOps" logo={<DevOpsLogo />} gridStyle="col-3" />
+           <SubHeaderTab location={location} route="/Services/AppDev/" tabTitle="App Dev" logo={<AppDevLogo />} gridStyle="col-3" />
        </nav>
     )
 }

@@ -68,10 +68,10 @@ const IndexPage: React.FC<LocationProps> = ({ location }) => {
         <div className="container index-main-content">
           {CompanyHeader()}
           <section id="services" className="row no-gutters">
-              <ServicesCard navigateTo="/DigitalTransformation/" title="DT" description="Digital Transformation" img={<DigitalTransformationLogo />} />
-              <ServicesCard navigateTo="/Startups/" title="Startups" description={"Product Development for Startups"} img={<StartupsLogo />} />
-              <ServicesCard navigateTo="/DevOps/" title={"DevOps"} description={"IT Automation and DevOps"} img={<DevOpsLogo />} />
-              <ServicesCard navigateTo="/AppDev/" title={"App Dev"} description={"Customised Application Development"} img={<AppDevLogo />} />
+              <ServicesCard navigateTo="/Services/DigitalTransformation/" title="DT" description="Digital Transformation" img={<DigitalTransformationLogo />} />
+              <ServicesCard navigateTo="/Services/Startups/" title="Startups" description={"Product Development for Startups"} img={<StartupsLogo />} />
+              <ServicesCard navigateTo="/Services/DevOps/" title={"DevOps"} description={"IT Automation and DevOps"} img={<DevOpsLogo />} />
+              <ServicesCard navigateTo="/Services/AppDev/" title={"App Dev"} description={"Customised Application Development"} img={<AppDevLogo />} />
           </section>
           <section className="container-fluid position-sticky py-3">
               <div>

@@ -22,6 +22,14 @@ const Header: React.FC<LocationProps> = ({ location }) => {
               <CaretIcon />
             </div> : null}
       </div>
+      <div className={`col-auto primary-nav-item ${location.pathname === '/Services/DigitalTransformation/' ? 'primary-nav-active' : ''}`}>
+        <Link to={"/Services/DigitalTransformation/"} className="nav-item" activeClassName="nav-item active">Services</Link>
+        {location.pathname === '/Services/DigitalTransformation/' || location.pathname === '/Services/AppDev/' || location.pathname === '/Services/Startups/' || location.pathname === '/Services/DevOps/' ?
+            <div style={{top: '1.65rem', paddingLeft: 14, position: 'absolute', fontSize: '1.2rem', color: location.pathname === '/Services/Startups/' ? '#FFF' : '#FFFF66' }}>
+              <CaretIcon />
+            </div> : null
+        }
+      </div>
 
       <div
         className={`col-auto primary-nav-item ${

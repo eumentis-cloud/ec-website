@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from "../layouts/Layout";
-import SubHeader from "../components/servicesHeader/ServicesSubHeader";
-import DtArtwork from '../images/png/dt.png';
-import ContentSection from "../components/contentSection/ContentSection";
-import {LocationProps} from "../utils/types";
+import Layout from "../../layouts/Layout";
+import SubHeader from "../../components/servicesHeader/ServicesSubHeader";
+import DtArtwork from '../../images/png/dt.png';
+import ContentSection from "../../components/contentSection/ContentSection";
+import {LocationProps} from "../../utils/types";
 
 // FC
 const DigitalTransformation: React.FC<LocationProps> = ({location}) => (
