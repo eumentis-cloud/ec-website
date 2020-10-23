@@ -202,9 +202,17 @@ a {
 }
 
 .ec-quote-text {
-  font-family: $ec-quote-font-family;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.15rem;
+  }
   margin-top: 30px;
   text-align: center;
   color: $ec-quote-color;
+  &::before {
+    content: "“";
+  }
+  &::after {
+    content: "”";
+  }
 }

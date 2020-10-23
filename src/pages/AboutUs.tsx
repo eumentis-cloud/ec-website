@@ -30,10 +30,10 @@ const AboutUs: React.FC<LocationProps> = ({location}): JSX.Element => {
                         <li>intellect</li>
                         <li>reasoning, judgement</li>
                     </ol>
-                    <p className="ec-quote-text">
-                        At Eumentis, we are genuine, of good intellect, have great reasoning and a sound mind; which is
-                        portrayed by our name.
-                    </p>
+                    <blockquote className="ec-quote-text">
+                        {" "} At Eumentis, we are genuine, of good intellect, have great reasoning and a sound mind; which is
+                        portrayed by our name.{" "}
+                    </blockquote>
                 </>
             } />
         </Layout>
