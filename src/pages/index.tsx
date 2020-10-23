@@ -73,7 +73,7 @@ const IndexPage: React.FC<LocationProps> = ({ location }) => {
               <ServicesCard navigateTo="/DevOps/" title={"DevOps"} description={"IT Automation and DevOps"} img={<DevOpsLogo />} />
               <ServicesCard navigateTo="/AppDev/" title={"App Dev"} description={"Customised Application Development"} img={<AppDevLogo />} />
           </section>
-          <section className="container-fluid position-sticky py-4">
+          <section className="container-fluid position-sticky py-3">
               <div>
                   <h4 className="text-center page-title">
                       Top Clients
