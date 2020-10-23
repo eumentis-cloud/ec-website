@@ -13,6 +13,7 @@
     text-transform: uppercase;
   }
 
+
   h5 {
     &.core-team-college {
       color: $college-text-color;
@@ -22,5 +23,6 @@
     margin-top: 0;
     margin-bottom: 3px;
     font-size: 1.2rem;
+    font-weight: 500;
   }
 }

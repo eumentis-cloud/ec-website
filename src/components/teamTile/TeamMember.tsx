@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import './teamMember.scss'
 import GatsbyImage  from 'gatsby-image'
-import {FluidImageType} from "../../utils/types";
+import {FixedImageType, FluidImageType} from "../../utils/types";
 
 // team member component props
 type TeamMemberTileProps = {
@@ -25,19 +25,20 @@ const TeamMember: React.FC<TeamMemberTileProps> = ({
 }) => {
 
   // fetching team profile pic data and converting into JSON data array
-  const imageData: FluidImageType = useStaticQuery(graphql`
+  const imageData: FixedImageType = useStaticQuery(graphql`
     query {
-      allFile(filter: { extension: { regex: "/(jpg)|(png)|(jpeg)/" } }) {
+      allFile(filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, absolutePath: {regex: "/team/"}}) {
         edges {
           node {
             base
             childImageSharp {
-              fluid {
+              fixed(width: 400, height: 400) {
                 aspectRatio
                 base64
-                sizes
                 src
                 srcSet
+                width
+                height
               }
             }
           }
@@ -48,21 +49,19 @@ const TeamMember: React.FC<TeamMemberTileProps> = ({
 
   return (
     <div className="col-12 col-md-6 col-xl-4 team-member">
-      {imageData &&
-        imageData.allFile &&
-        imageData.allFile.edges &&
-        imageData.allFile.edges.length > 0 &&
+      {imageData && imageData.allFile.edges.length > 0 &&
         imageData.allFile.edges
           .filter((entries): boolean => {
-            return entries && entries.node && entries.node.base === profile_pic
+            return entries.node.base === profile_pic
           })
           .map((item): JSX.Element => (
             <GatsbyImage
+              className="mb-2"
               key={item.node.base}
-              fluid={item.node.childImageSharp.fluid}
+              fixed={item.node.childImageSharp.fixed}
               imgStyle={{
-                clipPath: 'circle(7.6rem at center)',
-                padding: '3rem',
+                clipPath: 'circle(40%)',
+                padding: '1.5rem',
               }}
               alt={name}
             />

@@ -1,6 +1,6 @@
 // global type def
 
-import {FluidObject} from "gatsby-image";
+import {FixedObject, FluidObject} from "gatsby-image";
 
 // location props for routing
 export type LocationProps = {
@@ -22,6 +22,26 @@ export type FluidImageType = {
                 childImageSharp: {
                     // responsive image object
                     fluid: FluidObject
+                }
+            }
+        }>
+    }
+}
+
+// fixed imageData query type for fetching img data
+export type FixedImageType = {
+    // fetching team member data
+    allFile: {
+        // image array
+        edges: Array<{
+            // per-image node
+            node: {
+                // profile_pic filename
+                base: string;
+                // fluid image generated using transformer-sharp plugin
+                childImageSharp: {
+                    // responsive image object
+                    fixed: FixedObject;
                 }
             }
         }>
