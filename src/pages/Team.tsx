@@ -60,7 +60,7 @@ const Team: React.FC<TeamDataType & LocationProps> = ({location, data}) => {
                             <h4 className="section-title text-center py-5">
                                 Developers
                             </h4>
-                            <div className="row">
+                            <div className="row justify-content-lg-center">
                                 {data && data.allEcTeamDataCsv && data.allEcTeamDataCsv.edges && Array.isArray(data.allEcTeamDataCsv.edges) && data.allEcTeamDataCsv.edges.filter((items) => {
                                     return items.node && !items.node.academics
                                 }).map((item): JSX.Element => (

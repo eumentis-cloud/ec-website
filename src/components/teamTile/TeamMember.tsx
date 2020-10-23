@@ -32,7 +32,7 @@ const TeamMember: React.FC<TeamMemberTileProps> = ({
           node {
             base
             childImageSharp {
-              fixed(width: 400, height: 400) {
+              fixed(width: 307, height: 307) {
                 aspectRatio
                 base64
                 src
@@ -48,28 +48,28 @@ const TeamMember: React.FC<TeamMemberTileProps> = ({
   `)
 
   return (
-    <div className="col-12 col-md-6 col-xl-4 team-member">
-      {imageData && imageData.allFile.edges.length > 0 &&
-        imageData.allFile.edges
-          .filter((entries): boolean => {
-            return entries.node.base === profile_pic
-          })
-          .map((item): JSX.Element => (
-            <GatsbyImage
-              className="mb-2"
-              key={item.node.base}
-              fixed={item.node.childImageSharp.fixed}
-              imgStyle={{
-                clipPath: 'circle(40%)',
-                padding: '1.5rem',
-              }}
-              alt={name}
-            />
-          ))}
-      <h4>{name}</h4>
-      <h5 className="core-team-college">{academics}</h5>
-      <h5>{role}</h5>
-    </div>
+        <div className="col-12 col-md-6 col-xl-4 team-member">
+            {imageData && imageData.allFile.edges.length > 0 &&
+            imageData.allFile.edges
+                .filter((entries): boolean => {
+                    return entries.node.base === profile_pic
+                })
+                .map((item): JSX.Element => (
+                    <GatsbyImage
+                        className="mb-2"
+                        key={item.node.base}
+                        fixed={item.node.childImageSharp.fixed}
+                        imgStyle={{
+                            clipPath: 'circle(40%)',
+                            padding: '1.5rem',
+                        }}
+                        alt={name}
+                    />
+                ))}
+            <h4>{name}</h4>
+            <h5 className="core-team-college">{academics}</h5>
+            <h5>{role}</h5>
+        </div>
   )
 }
 
