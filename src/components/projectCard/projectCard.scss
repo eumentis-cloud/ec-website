@@ -65,3 +65,9 @@ div.card {
   color: $ec-text-color;
 }
 
+.project-card-img-container {
+  img:hover {
+    animation: pulse .7s;
+  }
+}
+
