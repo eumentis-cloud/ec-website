@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
                     allClientImages.allFile.edges.filter((img) => {
                         return img.node.base === clientLogo;
                     }).map((imgData) => (
-                        <GatsbyImage className="card-img mt-4 project-card-img-container" style={{height: '7rem'}} imgStyle={{height: clientLogo === 'bizminder.png' ? '4.2rem' : '6.2rem', objectFit: 'contain'}} key={imgData.node.base} alt={imgData.node.base.split('.')[0]} fluid={imgData.node.childImageSharp.fluid} />
+                        <GatsbyImage className="card-img mt-4 project-card-img-container" style={{height: '7rem'}} imgStyle={{height: clientLogo === 'bizminder.png' || clientLogo === 'nutritoo.png' ? '4.5rem' : '6.2rem', objectFit: 'contain'}} key={imgData.node.base} alt={imgData.node.base.split('.')[0]} fluid={imgData.node.childImageSharp.fluid} />
                     ))
                 }
                         <div className="card-body">
