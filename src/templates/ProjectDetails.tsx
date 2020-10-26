@@ -1,10 +1,10 @@
 import React from "react";
-import {FluidImageType, LocationProps, SingleAssetFluidType} from "../utils/types";
+import {LocationProps, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
 import {useStaticQuery} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
 
-
+// FC
 const ProjectDetails: React.FC<LocationProps> = ({location}) => {
 
     // fetching background image for project details page
