@@ -36,7 +36,7 @@ const Header: React.FC<LocationProps> = ({ location }) => {
           location.pathname === '/AboutUs/' || location.pathname === '/OurStoryOurMission/' || location.pathname === '/Team/' ? 'primary-nav-active' : ''
         }`}
       >
-          <Link className="nav-item" activeClassName="nav-item active" to={'/AboutUs/'}>About Us</Link>
+          <Link className="nav-item" activeClassName="nav-item active" to={'/AboutUs/aaa/'}>About Us</Link>
         {location.pathname === '/AboutUs/' ?
             <div style={{top: '1.65rem', paddingLeft: 14, position: 'absolute', fontSize: '1.2rem', color: '#FFFF66'}}>
               <CaretIcon />
