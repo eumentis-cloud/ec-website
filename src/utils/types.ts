@@ -48,6 +48,24 @@ export type FixedImageType = {
     }
 }
 
+// single file type to fetch image data (fluid)
+export type SingleAssetFluidType = {
+    file: {
+        childImageSharp: {
+            fluid: FluidObject;
+        }
+    }
+}
+
+// single file type to fetch image data (fixed)
+export type SingleAssetFixedType = {
+    file: {
+        childImageSharp: {
+            fixed: FixedObject;
+        }
+    }
+}
+
 // client's csv data type fetched using graphql query
 export type AllClientsDataType = {
     allClientsDataCsv: {

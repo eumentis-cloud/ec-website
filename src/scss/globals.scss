@@ -216,3 +216,11 @@ a {
 .page-not-found {
   font-family: $ec-links-font-family;
 }
+
+.bg-project-details {
+  width: 100vw;
+  height: 100vh;
+  background-position: bottom center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
