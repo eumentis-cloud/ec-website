@@ -1,5 +1,5 @@
 import React from "react";
-import {FluidImageType, LocationProps, SingleAssetFluidType, SingleFileImageType} from "../utils/types";
+import {FluidImageType, LocationProps, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
 import {useStaticQuery} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
@@ -7,7 +7,8 @@ import BackgroundImage from 'gatsby-background-image';
 
 const ProjectDetails: React.FC<LocationProps> = ({location}) => {
 
-    const bgImageData: SingleAssetFluidType = useStaticQuery(graphql`
+    // fetching background image for project details page
+    const {file}: SingleAssetFluidType = useStaticQuery(graphql`
         query {
             file(relativePath: {eq: "bg-project-details.png"}) {
                 childImageSharp {
@@ -25,7 +26,7 @@ const ProjectDetails: React.FC<LocationProps> = ({location}) => {
     `);
 
     return (
-        <BackgroundImage style={{height: '100vh'}} fluid={bgImageData.file.childImageSharp.fluid}>
+        <BackgroundImage className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
                 <div>
                     sas

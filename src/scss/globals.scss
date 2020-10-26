@@ -218,9 +218,7 @@ a {
 }
 
 .bg-project-details {
-  width: 100vw;
   height: 100vh;
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
 }
