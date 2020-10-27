@@ -218,7 +218,12 @@ a {
 }
 
 .bg-project-details {
-  height: 100vh;
+  height: 100% !important;
+  min-height: 100vh !important;
   background-repeat: repeat;
   background-size: contain;
 }
+
+// project details page
+
+
