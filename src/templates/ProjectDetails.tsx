@@ -6,13 +6,18 @@ import BackgroundImage from 'gatsby-background-image';
 import {PageContext} from "gatsby/internal";
 import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
+import {Link} from 'gatsby';
 
 // component props
 type ProjectDetailsProps = {
     // accessing typescript location object
     location: Location;
     // context of dynamically generated pages
-    pageContext: PageContext;
+    pageContext: {
+        node: {
+            id: string;
+        }
+    };
 }
 
 // FC
@@ -49,16 +54,17 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                     <nav aria-label="breadcrumb" className="d-flex justify-content-between">
                                         <div>
                                             <ol className="breadcrumb d-none d-sm-none d-md-flex bg-transparent">
-                                                <li className="breadcrumb-item"><a href="../work.html">Our Work</a></li>
+                                                <li className="breadcrumb-item">
+                                                    <Link to="/OurWork/">Our Work</Link>
+                                                </li>
                                                 <li className="breadcrumb-item active text-dark"
-                                                    aria-current="page">{location.pathname.split('/')[1]}
+                                                    aria-current="page">{location.pathname.split('/')[1].split('_')[1]}
                                                 </li>
                                             </ol>
                                             <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
                                                 <li className="breadcrumb-mobile">
                                                     <a href="../work.html">
                                                         <i className="fa fa-angle-left pr-1 text-dark" aria-hidden="true"/>
-                                                        {pageContext.node.id}
                                                     </a>
                                                 </li>
                                             </ol>
@@ -69,7 +75,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         </div>
                                     </nav>
                                     <div className="text-center rounded-0 border-0">
-                                        <span className="project-title border-success">Equine Ration Analyzer</span>
+                                        <span className="project-title border-success">{pageContext.node.id}</span>
                                         <h5 className="py-3">Tagline</h5>
                                     </div>
                                     <div
@@ -111,8 +117,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         <div className="col py-5 py-md-0">
                                             <div className="media">
                                                 <div className="media-body">
-                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Demo
-                                                        Videos</h5>
+                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Videos</h5>
                                                     <div
                                                         className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
                                                         <a target="_blank" href="https://youtu.be/V2zvnbs7DUY">

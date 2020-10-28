@@ -1,7 +1,11 @@
+// creating dynamic pages for project details page using gatsby createPages API
 exports.createPages = async ({ actions, graphql, reporter }) => {
+    // using the createPage function to generate dynamic pages during build time
     const { createPage } = actions
-
-    const fetchProjectData = await graphql(`
+    // base route path from OurWork page
+    const baseRoutePath = '/OurWork';
+    // fetching clients data from csv
+    const {data} = await graphql(`
         {
   allClientsDataCsv {
     edges {
@@ -71,17 +75,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 }
     `)
 
-    if(fetchProjectData.errors) {
+    // report errors when graphql query fails
+    if(data.errors) {
         reporter.panicOnBuild(`Error while running GraphQL query`);
         return
     }
 
-    console.log(fetchProjectData);
-
-    fetchProjectData && fetchProjectData.data && fetchProjectData.data.allClientsDataCsv && fetchProjectData.data.allClientsDataCsv.edges && Array.isArray(fetchProjectData.data.allClientsDataCsv.edges) && fetchProjectData.data.allClientsDataCsv.edges.length > 0 && fetchProjectData.data.allClientsDataCsv.edges.forEach(({node}) => {
+    data && data.allClientsDataCsv && data.allClientsDataCsv.edges && Array.isArray(data.allClientsDataCsv.edges) && data.allClientsDataCsv.edges.length > 0 && data.allClientsDataCsv.edges.forEach(({node}) => {
+        // invoking createPage() for each project card to define a unique route and a dynamic page
         createPage({
-            // route path
-            path: `/${node.clientName.split(' ').join('-')}_${node.projectDisplayName.split(' ').join('-')}`,
+            // unique route path
+            path: `${baseRoutePath}/${node.clientName.split(' ').join('-')}_${node.projectDisplayName.split(' ').join('-')}`,
             // component template to be used for all project details routes
             component: require.resolve(`./src/templates/ProjectDetails.tsx`),
             // passing additional data as a prop to the template
