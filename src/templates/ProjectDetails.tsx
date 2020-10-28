@@ -8,6 +8,8 @@ import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
 import {Link} from 'gatsby';
 import ClientLogo from "../components/ClientLogo";
+import GooglePlayBadge from '../images/svgAssets/google-play-badge.svg';
+import AppStoreBadge from '../images/svgAssets/app-store-badge.svg';
 
 // component props
 type ProjectDetailsProps = {
@@ -122,9 +124,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </ol>
                                             <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
                                                 <li className="breadcrumb-mobile">
-                                                    <a href="../work.html">
-                                                        <i className="fa fa-angle-left pr-1 text-dark" aria-hidden="true"/>
-                                                    </a>
+                                                   <Link to={'/OurWork/'}>
+                                                       <i className="fa fa-angle-left pr-1 text-dark" aria-hidden="true"/>
+                                                       Our Work
+                                                   </Link>
                                                 </li>
                                             </ol>
                                         </div>
@@ -160,15 +163,13 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </div>
                                         </div>
                                         <div className="col">
-                                            <div className="row justify-content-center align-items-start">
-                                                <a target="_blank" href="#">
-                                                    <img src="../../img/google-play-badge.svg" className="img-fluid"
-                                                         alt="Google Play Badge" />
-                                                </a>
-                                                <a target="_blank" href="#">
-                                                    <img src="../../img/app-store-badge.svg" className="img-fluid pl-4"
-                                                         alt="App Store Badge" />
-                                                </a>
+                                            <div className="row d-flex justify-content-center align-items-start">
+                                                <div className="col">
+                                                    <GooglePlayBadge alt="Google Play badge" />
+                                                </div>
+                                                <div className="col">
+                                                    <AppStoreBadge alt="App store badge" />
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="col py-5 py-md-0">

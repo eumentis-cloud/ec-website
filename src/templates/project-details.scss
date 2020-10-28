@@ -251,6 +251,10 @@ span.project-title {
 }
 
 .project-details-client-logo {
+  @include media-breakpoint-down(sm) {
+    width: 20rem !important;
+    height: 8rem !important;
+  }
   img {
     @include media-breakpoint-down(sm) {
       height: 8rem !important;
