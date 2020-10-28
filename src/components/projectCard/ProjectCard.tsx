@@ -13,11 +13,11 @@ type ProjectCardProps = {
     city: string;
     state: string;
     countryCode: string;
-    projectCategory: ProjectCateoryType;
+    sector: ProjectCateoryType;
     projectCardDescription: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, projectCategory, projectCardDescription }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
 
     const allClientImages: FluidImageType = useStaticQuery(graphql`
         query {
@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
         <div className="col mb-4">
             <div className="card work-card h-100">
                     <div className="card-header border-0 bg-transparent">
-                        <span className={`project-display-name border-${setProjectCategoryBackgroundClass(projectCategory)}`}>{projectDisplayName}</span>
+                        <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector)}`}>{projectDisplayName}</span>
                     </div>
                 {
                     allClientImages.allFile.edges.filter((img) => {
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
                                 <LocationIcon />
                                 <span className="card-subtitle mb-2 text-muted pl-2">{city}, {state} ({countryCode})</span>
                             </div>
-                            <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(projectCategory)} px-2 py-1 mb-2 text-${setProjectCategoryColorClass(projectCategory)}`}>{projectCategory}</span>
+                            <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector)} px-2 py-1 mb-2 text-${setProjectCategoryColorClass(sector)}`}>{sector}</span>
                             <span className="card-text text-wrap d-block">{projectCardDescription}</span>
                         </div>
             </div>

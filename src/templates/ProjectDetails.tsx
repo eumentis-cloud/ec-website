@@ -7,6 +7,7 @@ import {PageContext} from "gatsby/internal";
 import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
 import {Link} from 'gatsby';
+import ClientLogo from "../components/ClientLogo";
 
 // component props
 type ProjectDetailsProps = {
@@ -14,9 +15,7 @@ type ProjectDetailsProps = {
     location: Location;
     // context of dynamically generated pages
     pageContext: {
-        node: {
-            id: string;
-        }
+        node: Record<string, string>;
     };
 }
 
@@ -24,7 +23,7 @@ type ProjectDetailsProps = {
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) => {
 
     // fetching background image for project details page
-    const {file}: SingleAssetFluidType = useStaticQuery(graphql`
+    const {file} = useStaticQuery(graphql`
         query {
             file(relativePath: {eq: "bg-project-details.png"}) {
                 childImageSharp {
@@ -38,10 +37,69 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                 }
             }
         }
-
     `);
 
-    console.log('context data', pageContext);
+    const {id,
+        projectDisplayName,
+        clientLogo,
+        clientName,
+        city,
+        state,
+        countryCode,
+        tagline,
+        projectCategory,
+        googlePlayLink,
+        appStoreLink,
+        demoVideoLink_1,
+        demoVideoLink_2,
+        demoVideoLink_3,
+        demoVideoLink_4,
+        demoVideoLink_5,
+        problem_1,
+        problem_2,
+        problem_3,
+        problem_4,
+        problem_5,
+        problem_6,
+        problem_7,
+        problem_8,
+        problem_9,
+        problem_10,
+        solution_1,
+        solution_2,
+        solution_3,
+        solution_4,
+        solution_5,
+        solution_6,
+        solution_7,
+        solution_8,
+        solution_9,
+        solution_10,
+        frontendTech_1,
+        frontendTech_2,
+        frontendTech_3,
+        frontendTech_4,
+        frontendTech_5,
+        backendTech_1,
+        backendTech_2,
+        backendTech_3,
+        backendTech_4,
+        backendTech_5,
+        testimonialPersonPhoto_1,
+        testimonialPersonName_1,
+        testimonialPersonDesignation_1,
+        testimonialQuote_1,
+        testimonialPersonPhoto_2,
+        testimonialPersonName_2,
+        testimonialPersonDesignation_2,
+        testimonialQuote_2,
+        testimonialPersonPhoto_3,
+        testimonialPersonName_3,
+        testimonialPersonDesignation_3,
+        testimonialQuote_3,
+        launchWebsite} = pageContext.node;
+
+    console.log('query data', pageContext);
 
     return (
         <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
@@ -52,13 +110,14 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                             <div className="parallax-window shadow-sm">
                                 <div className="container-fluid">
                                     <nav aria-label="breadcrumb" className="d-flex justify-content-between">
-                                        <div>
+                                        <div className="mt-2">
                                             <ol className="breadcrumb d-none d-sm-none d-md-flex bg-transparent">
                                                 <li className="breadcrumb-item">
                                                     <Link to="/OurWork/">Our Work</Link>
                                                 </li>
                                                 <li className="breadcrumb-item active text-dark"
-                                                    aria-current="page">{location.pathname.split('/')[1].split('_')[1]}
+                                                    aria-current="page">
+                                                    {projectDisplayName}
                                                 </li>
                                             </ol>
                                             <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
@@ -71,12 +130,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         </div>
                                         <div className="website-btn">
                                             <a target="_blank" className="btn btn-primary launch-web-btn shadow-hover"
-                                               href="https://www.landolakesinc.com" role="button">Launch Website</a>
+                                               href={launchWebsite} role="button">Launch Website</a>
                                         </div>
                                     </nav>
                                     <div className="text-center rounded-0 border-0">
-                                        <span className="project-title border-success">{pageContext.node.id}</span>
-                                        <h5 className="py-3">Tagline</h5>
+                                        <span className="project-title border-success">{projectDisplayName}</span>
+                                        <h5 className="py-3">{tagline}</h5>
                                     </div>
                                     <div
                                         className="row row-cols-1 row-cols-md-3 justify-content-center align-content-start py-2 py-md-5 mx-md-4">
@@ -84,9 +143,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             <div className="media d-block d-sm-block d-md-flex">
                                                 <div
                                                     className="d-flex justify-content-center align-items-center py-2 py-md-2">
-                                                    <img src="../../img/client-logos/landolakes.png"
-                                                         className="mr-3 img-fluid align-self-center"
-                                                         alt="Land O' Lakes" />
+                                                         <ClientLogo imgAltText={clientName} clientLogo={clientLogo} />
                                                 </div>
                                                 <div
                                                     className="media-body py-4 py-md-0 d-flex align-self-stretch justify-content-between flex-column">

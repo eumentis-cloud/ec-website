@@ -249,3 +249,11 @@ span.project-title {
     margin-top: -7vh;
   }
 }
+
+.project-details-client-logo {
+  img {
+    @include media-breakpoint-down(sm) {
+      height: 8rem !important;
+    }
+  }
+}
