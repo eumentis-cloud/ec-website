@@ -7046,6 +7046,11 @@ font-awesome@^4.7.0:
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
   integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
 
+font-mfizz@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/font-mfizz/-/font-mfizz-2.4.1.tgz#f2921705ab75c0f095df2a088e2d42811d98e49b"
+  integrity sha1-8pIXBat1wPCV3yoIji1CgR2Y5Js=
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
