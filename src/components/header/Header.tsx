@@ -32,6 +32,18 @@ const Header: React.FC<LocationProps> = ({ location }) => {
       </div>
 
       <div
+          className={`col-auto primary-nav-item ${
+              location.pathname === '/OurWork/' ? 'primary-nav-active' : ''
+          }`}
+      >
+        <Link className="nav-item" activeClassName="nav-item active" to={'/OurWork/'}>Our Work</Link>
+        {location.pathname === '/OurWork/' ?
+            <div style={{top: '1.65rem', paddingLeft: 16, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
+              <CaretIcon />
+            </div> : null}
+      </div>
+
+      <div
         className={`col-auto primary-nav-item ${
           location.pathname === '/AboutUs/' || location.pathname === '/OurStoryOurMission/' || location.pathname === '/Team/' ? 'primary-nav-active' : ''
         }`}
@@ -39,17 +51,6 @@ const Header: React.FC<LocationProps> = ({ location }) => {
           <Link className="nav-item" activeClassName="nav-item active" to={'/AboutUs/'}>About Us</Link>
         {location.pathname === '/AboutUs/' ?
             <div style={{top: '1.65rem', paddingLeft: 14, position: 'absolute', fontSize: '1.2rem', color: '#FFFF66'}}>
-              <CaretIcon />
-            </div> : null}
-      </div>
-      <div
-        className={`col-auto primary-nav-item ${
-          location.pathname === '/OurWork/' ? 'primary-nav-active' : ''
-        }`}
-      >
-        <Link className="nav-item" activeClassName="nav-item active" to={'/OurWork/'}>Our Work</Link>
-        {location.pathname === '/OurWork/' ?
-            <div style={{top: '1.65rem', paddingLeft: 16, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
               <CaretIcon />
             </div> : null}
       </div>
