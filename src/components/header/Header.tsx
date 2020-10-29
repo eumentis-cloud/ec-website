@@ -69,4 +69,4 @@ const Header: React.FC<LocationProps> = ({ location }) => {
   )
 }
 
-export default Header
+export default Header;

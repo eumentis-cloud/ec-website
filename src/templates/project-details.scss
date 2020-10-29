@@ -1,4 +1,9 @@
 @import "../scss/variables";
+@import "~font-mfizz/dist/font-mfizz.css";
+
+body {
+  font-family: $ec-headings-font-family;
+}
 
 .breadcrumb {
   li {
@@ -169,11 +174,15 @@ i.play-demo-icon {
 }
 
 .tech-icons {
-  color: #61dbfb;
+  color: $tech-icon-color;
   @include media-breakpoint-up(md) {
-    font-size: 4em;
+    font-size: 3.2em;
   }
   font-size: 2em;
+}
+
+.tech-icon-text {
+  font-weight: 500;
 }
 
 footer#project-details-footer {
@@ -260,4 +269,8 @@ span.project-title {
       height: 8rem !important;
     }
   }
+}
+
+.video-text {
+  font-family: $ec-links-font-family;
 }

@@ -1,15 +1,16 @@
 import React from "react";
-import {LocationProps, SingleAssetFluidType} from "../utils/types";
+import {LocationProps, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
 import {useStaticQuery, graphql} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
-import {PageContext} from "gatsby/internal";
 import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
 import {Link} from 'gatsby';
 import ClientLogo from "../components/ClientLogo";
 import GooglePlayBadge from '../images/svgAssets/google-play-badge.svg';
 import AppStoreBadge from '../images/svgAssets/app-store-badge.svg';
+import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../utils/helpers";
+import {noAppLinksMsg} from "../utils/globals";
 
 // component props
 type ProjectDetailsProps = {
@@ -17,7 +18,7 @@ type ProjectDetailsProps = {
     location: Location;
     // context of dynamically generated pages
     pageContext: {
-        node: Record<string, string>;
+        node: Record<string | ProjectCateoryType, string>;
     };
 }
 
@@ -49,7 +50,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
         state,
         countryCode,
         tagline,
-        projectCategory,
+        sector,
         googlePlayLink,
         appStoreLink,
         demoVideoLink_1,
@@ -103,6 +104,12 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
 
     console.log('query data', pageContext);
 
+    const demoVideoLinksData: Array<string> = [demoVideoLink_1,demoVideoLink_2,demoVideoLink_3,demoVideoLink_4,demoVideoLink_5].filter((link) => link !== '' && link !== null);
+    const problemStatementData: Array<string> = [problem_1, problem_2,problem_3,problem_4,problem_5, problem_6,problem_7,problem_8,problem_9, problem_10].filter((entry) => entry !== '' && entry !== null);
+    const solutionStatementData: Array<string> = [solution_1, solution_2,solution_3,solution_4,solution_5, solution_6,solution_7,solution_8,solution_9, solution_10].filter((entry) => entry !== null && entry !== '');
+    const frontendTechData: Array<string> = [frontendTech_1,frontendTech_2,frontendTech_3,frontendTech_4,frontendTech_5].filter((entry) => entry !== '' && entry !== null);
+    const backendTechData: Array<string> = [backendTech_1,backendTech_2,backendTech_3,backendTech_4,backendTech_5].filter((entry) => entry !== '' && entry !== null);
+
     return (
         <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
@@ -131,13 +138,13 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 </li>
                                             </ol>
                                         </div>
-                                        <div className="website-btn">
+                                        {launchWebsite ? <div className="website-btn">
                                             <a target="_blank" className="btn btn-primary launch-web-btn shadow-hover"
                                                href={launchWebsite} role="button">Launch Website</a>
-                                        </div>
+                                        </div> : null}
                                     </nav>
                                     <div className="text-center rounded-0 border-0">
-                                        <span className="project-title border-success">{projectDisplayName}</span>
+                                        <span className={`project-title border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
                                         <h5 className="py-3">{tagline}</h5>
                                     </div>
                                     <div
@@ -151,52 +158,57 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 <div
                                                     className="media-body py-4 py-md-0 d-flex align-self-stretch justify-content-between flex-column">
                                                     <div>
-                                                        <h5 className="text-center text-sm-center text-md-left">Land O'
-                                                            Lakes Inc.</h5>
+                                                        <h5 className="text-center text-sm-center text-md-left">
+                                                            {clientName}
+                                                        </h5>
                                                     </div>
                                                     <div className="d-flex align-items-baseline justify-content-center justify-content-sm-center justify-content-md-start ml-0">
                                                         <LocationIcon />
-                                                        <span className="card-subtitle mb-2 text-muted pl-2">Arden Hills, Minnesota (US))</span>
+                                                        <span className="card-subtitle mb-2 text-muted pl-2">
+                                                            {city}, {state} ({countryCode})
+                                                        </span>
                                                     </div>
-                                                    <span className="badge rounded-pill bg-success px-2 py-2 mb-2">Food & Agriculture</span>
+                                                    <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)} px-2 py-2 mb-2 text-${setProjectCategoryColorClass(sector as ProjectCateoryType)}`}>{sector}</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="col">
                                             <div className="row d-flex justify-content-center align-items-start">
-                                                <div className="col">
-                                                    <GooglePlayBadge alt="Google Play badge" />
-                                                </div>
-                                                <div className="col">
-                                                    <AppStoreBadge alt="App store badge" />
-                                                </div>
+                                                {googlePlayLink ? <div className="col d-flex justify-content-center">
+                                                    <a href={googlePlayLink} target="_blank">
+                                                        <GooglePlayBadge alt="Google Play badge" />
+                                                    </a>
+                                                </div> : null}
+                                                {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
+                                                    <q className={"text-center"}>
+                                                        <i>{noAppLinksMsg}</i>
+                                                    </q>
+                                                </div> : null}
+                                                {appStoreLink ? <div className="col justify-content-center d-flex">
+                                                    <a href={appStoreLink} target="_blank">
+                                                        <AppStoreBadge alt="App store badge" />
+                                                    </a>
+                                                </div> : null}
                                             </div>
                                         </div>
-                                        <div className="col py-5 py-md-0">
+
+                                        {demoVideoLinksData.length !== 0 ? <div className="col py-5 py-md-0">
                                             <div className="media">
                                                 <div className="media-body">
                                                     <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Videos</h5>
                                                     <div
                                                         className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
-                                                        <a target="_blank" href="https://youtu.be/V2zvnbs7DUY">
-                                                            <i className="fa fa-youtube-play py-2 px-1 play-demo-icon"/>
-                                                            <p className="text-center text-dark font-weight-bold">Video
-                                                                - 1</p>
-                                                        </a>
-                                                        <a target="_blank" href="https://youtu.be/V2zvnbs7DUY">
-                                                            <i className="fa fa-youtube-play py-2 px-1 play-demo-icon" />
-                                                            <p className="text-center text-dark font-weight-bold">Video
-                                                                - 1</p>
-                                                        </a>
-                                                        <a target="_blank" href="https://youtu.be/V2zvnbs7DUY">
-                                                            <i className="fa fa-youtube-play py-2 px-1 play-demo-icon" />
-                                                            <p className="text-center text-dark font-weight-bold">Video
-                                                                - 1</p>
-                                                        </a>
+                                                        {demoVideoLinksData.map((demoLink, index): JSX.Element => (
+                                                            <a key={index} target="_blank" href={demoLink}>
+                                                                <i className="fa fa-youtube-play py-2 px-md-3 px-2 play-demo-icon"/>
+                                                                <p className="text-center text-dark video-text font-weight-bold">Video-{index + 1}</p>
+                                                            </a>
+                                                        ))}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> : null}
+
                                     </div>
                                 </div>
                             </div>
@@ -248,15 +260,17 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </svg>
                                         </div>
                                         <div className="card-body">
-                                            <h4 className="section-title text-center card-title">
+                                            <h4 className="section-title text-center card-title pb-5">
                                                 Problem
                                             </h4>
                                             <ul className="list-group list-group-flush">
-                                                <li className="list-group-item">Cras justo odio</li>
-                                                <li className="list-group-item">Dapibus ac facilisis in</li>
-                                                <li className="list-group-item">Morbi leo risus</li>
-                                                <li className="list-group-item">Porta ac consectetur ac</li>
-                                                <li className="list-group-item">Vestibulum at eros</li>
+                                                {
+                                                    problemStatementData.map((problem, index) => (
+                                                        <li key={index} className="list-group-item">
+                                                            {problem}
+                                                        </li>
+                                                    ))
+                                                }
                                             </ul>
                                         </div>
                                     </div>
@@ -410,21 +424,20 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </svg>
                                         </div>
                                         <div className="card-body">
-                                            <h4 className="section-title text-center card-title">
+                                            <h4 className="section-title text-center card-title pb-5">
                                                 Solution
                                             </h4>
                                             <ul className="list-group list-group-flush">
-                                                <li className="list-group-item">Cras justo odio</li>
-                                                <li className="list-group-item">Dapibus ac facilisis in</li>
-                                                <li className="list-group-item">Morbi leo risus</li>
-                                                <li className="list-group-item">Porta ac consectetur ac</li>
-                                                <li className="list-group-item">Vestibulum at eros</li>
+                                                {solutionStatementData.map((solution, index) => (
+                                                    <li key={index} className="list-group-item">
+                                                        {solution}
+                                                    </li>
+                                                ))}
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </section>
-
 
                             <section className="py-5 container">
                                 <div className="card w-100 h-100 shadow py-4">
@@ -434,34 +447,28 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         </h4>
                                     </div>
                                     <div className="card-body text-center">
-                                        <div className="row row-cols-1 row-cols-md-2">
+                                        <div className="row row-cols-1 row-cols-md-2 mt-4">
                                             <div className="col tech-stack-seperator">
                                                 <h6 className="py-2 stack-title">Frontend</h6>
                                                 <div className="row">
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
+                                                    {frontendTechData.map((iconName, index) => (
+                                                        <div className="col d-inline" key={index}>
+                                                            <i className={`icon-${iconName} tech-icons`} />
+                                                            <div className="text-capitalize tech-icon-text">{iconName}</div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                             <div className="dropdown-divider d-md-none" />
                                             <div className="col">
                                                 <h6 className="py-2 stack-title">Backend</h6>
                                                 <div className="row">
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
-                                                    <div className="col">
-                                                        <i className="icon-reactjs tech-icons" />
-                                                    </div>
+                                                    {backendTechData.map((iconName, index) => (
+                                                        <div className="col d-inline" key={index}>
+                                                            <i className={`icon-${iconName} tech-icons`} />
+                                                            <div className="text-capitalize tech-icon-text">{iconName}</div>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         </div>
