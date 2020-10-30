@@ -1,7 +1,7 @@
 import React from "react";
 import {AllClientsDataType, LocationProps, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
-import {useStaticQuery, graphql} from "gatsby";
+import {useStaticQuery, graphql, navigate} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
 import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
@@ -16,6 +16,7 @@ import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
 // scss dependencies
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
+import ProjectCard from "../components/projectCard/ProjectCard";
 
 // component props
 type ProjectDetailsProps = {
@@ -37,18 +38,18 @@ type TestimonialDataType = {
 SwiperCore.use([Autoplay, Navigation, Pagination])
 
 const defaultSliderConfig = {
-    navigation: true,
     loopPreventsSlide: false,
     preloadImages: true,
     updateOnImagesReady: true,
     centeredSlides: true,
-    spaceBetween: 0,
     loop: true,
     autoplay: {
     delay: 1500, disableOnInteraction: false },
     pagination: {
         clickable: true,
-    }
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
+    },
 }
 
 // FC
@@ -552,7 +553,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         </div>
                                         <div className="card-body">
 
-                                            <Swiper id="testimonial" {...defaultSliderConfig} slidesPerView={1}>
+                                            <Swiper id="testimonial" {...defaultSliderConfig} navigation spaceBetween={0} slidesPerView={1}>
                                                 {
                                                     testimonialData.map(({name, designation, profile_pic, quote}, index) => (
                                                         <SwiperSlide key={index}>
@@ -593,18 +594,43 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                 </div>
                             </section>
 
-                            <section>
+                            <section className="pb-5 pb-md-4">
                                 <div className="container-fluid">
-                                    <h4 className="section-title text-center py-4">
+                                    <h4 className="section-title text-center my-3">
                                         Other Work
                                     </h4>
-                                    <Swiper id="otherWorksSlider" {...defaultSliderConfig} slidesPerView={3}>
+                                    <Swiper id="otherWorksSlider" {...defaultSliderConfig} spaceBetween={20} slidesPerView={3} breakpoints={{
+                                        320:{
+                                            slidesPerView: 1,
+                                            navigation: false,
+                                        },
+                                        480:{
+                                            slidesPerView: 1,
+                                            navigation: false,
+                                        },
+                                        640:{
+                                            slidesPerView: 1,
+                                            navigation: true,
+                                        },
+                                        768:{
+                                            slidesPerView: 3,
+                                            navigation: true,
+                                        },
+                                        1024:{
+                                            slidesPerView: 3,
+                                            navigation: true,
+                                        },
+                                    }}>
                                         {
                                             allClientsDataCsv && Array.isArray(allClientsDataCsv.edges) && allClientsDataCsv.edges.length > 0 && allClientsDataCsv.edges.filter((clientData) => {
                                                 return clientData.node.id !== id;
                                             }).map((filteredData) => (
-                                                <SwiperSlide>
-                                                    {filteredData.node.projectDisplayName}
+                                                <SwiperSlide key={filteredData.node.id}>
+                                                   <button className="border-0 bg-transparent" onClick={(): void => {
+                                                       navigate('/');
+                                                   }}>
+                                                       <ProjectCard parentClassName="h-100 text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
+                                                   </button>
                                                 </SwiperSlide>
                                             ))
                                         }

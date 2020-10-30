@@ -38,7 +38,7 @@ const OurWork: React.FC<LocationProps> = ({location}) => {
                     {
                         allClientsData.allClientsDataCsv.edges.map((data) => (
                             <Link key={data.node.id} to={`${data.node.clientName.split(' ').join('-')}_${data.node.projectDisplayName.split(' ').join('-')}`}>
-                                <ProjectCard parentClassName="col mb-4" projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} sector={data.node.sector as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
+                                <ProjectCard parentClassName="col mb-4 h-100" projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} sector={data.node.sector as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
                             </Link>
                         ))
                     }
