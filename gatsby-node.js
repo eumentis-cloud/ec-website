@@ -81,7 +81,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return
     }
 
-    data && data.allClientsDataCsv && data.allClientsDataCsv.edges && Array.isArray(data.allClientsDataCsv.edges) && data.allClientsDataCsv.edges.length > 0 && data.allClientsDataCsv.edges.forEach(({node}) => {
+    data && data.allClientsDataCsv && data.allClientsDataCsv.edges && Array.isArray(data.allClientsDataCsv.edges) && data.allClientsDataCsv.edges.length > 0 && data.allClientsDataCsv.edges.filter((clientData) => {
+        return clientData.node.clientName !== 'Drona Lectures' && clientData.node.clientName !== 'VendR';
+    }).forEach(({node}) => {
         // invoking createPage() for each project card to define a unique route and a dynamic page
         createPage({
             // unique route path
