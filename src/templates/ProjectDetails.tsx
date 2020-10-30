@@ -1,5 +1,5 @@
 import React from "react";
-import {LocationProps, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
+import {AllClientsDataType, LocationProps, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
 import {useStaticQuery, graphql} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
@@ -11,6 +11,11 @@ import GooglePlayBadge from '../images/svgAssets/google-play-badge.svg';
 import AppStoreBadge from '../images/svgAssets/app-store-badge.svg';
 import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../utils/helpers";
 import {noAppLinksMsg} from "../utils/globals";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
+// scss dependencies
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 // component props
 type ProjectDetailsProps = {
@@ -22,11 +27,35 @@ type ProjectDetailsProps = {
     };
 }
 
+type TestimonialDataType = {
+    profile_pic: string;
+    name: string;
+    designation: string;
+    quote: string;
+}
+
+SwiperCore.use([Autoplay, Navigation, Pagination])
+
+const defaultSliderConfig = {
+    navigation: true,
+    loopPreventsSlide: false,
+    preloadImages: true,
+    updateOnImagesReady: true,
+    centeredSlides: true,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+    delay: 1500, disableOnInteraction: false },
+    pagination: {
+        clickable: true,
+    }
+}
+
 // FC
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) => {
 
     // fetching background image for project details page
-    const {file} = useStaticQuery(graphql`
+    const {file, allClientsDataCsv}: SingleAssetFluidType & AllClientsDataType = useStaticQuery(graphql`
         query {
             file(relativePath: {eq: "bg-project-details.png"}) {
                 childImageSharp {
@@ -36,6 +65,21 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                         sizes
                         src
                         srcSet
+                    }
+                }
+            }
+            allClientsDataCsv {
+                edges {
+                    node {
+                        id
+                        projectDisplayName
+                        clientLogo
+                        clientName
+                        city
+                        state
+                        countryCode
+                        sector
+                        projectCardDescription
                     }
                 }
             }
@@ -109,6 +153,28 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     const solutionStatementData: Array<string> = [solution_1, solution_2,solution_3,solution_4,solution_5, solution_6,solution_7,solution_8,solution_9, solution_10].filter((entry) => entry !== null && entry !== '');
     const frontendTechData: Array<string> = [frontendTech_1,frontendTech_2,frontendTech_3,frontendTech_4,frontendTech_5].filter((entry) => entry !== '' && entry !== null);
     const backendTechData: Array<string> = [backendTech_1,backendTech_2,backendTech_3,backendTech_4,backendTech_5].filter((entry) => entry !== '' && entry !== null);
+    const testimonialData: Array<TestimonialDataType> = [
+        {
+            profile_pic: testimonialPersonPhoto_1,
+            name: testimonialPersonName_1,
+            designation: testimonialPersonDesignation_1,
+            quote: testimonialQuote_1,
+        },
+        {
+            profile_pic:  testimonialPersonPhoto_2,
+            name: testimonialPersonName_2,
+            designation: testimonialPersonDesignation_2,
+            quote: testimonialQuote_2,
+        },
+        {
+            profile_pic:  testimonialPersonPhoto_3,
+            name: testimonialPersonName_3,
+            designation: testimonialPersonDesignation_3,
+            quote: testimonialQuote_3,
+        },
+    ].filter((data) => {
+        return data.quote !== null && data.quote !== '';
+    });
 
     return (
         <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
@@ -479,81 +545,70 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                             <section className="py-4" id="testimonials">
                                 <div className="container">
                                     <div className="card h-100 shadow">
-                                        <div className="card-header bg-transparent border-0">
+                                        <div className="card-header bg-transparent border-0 mb-1">
                                             <h4 className="section-title text-center">
                                                 Testimonials
                                             </h4>
                                         </div>
                                         <div className="card-body">
-                                            <div className="swiper-container" id="testimonialSlider">
-                                                <div className="swiper-wrapper">
-                                                    <div className="swiper-slide">
-                                                        <div className="card h-100 border-0">
-                                                            <div className="row no-gutters">
-                                                                <div
-                                                                    className="text-center col-md-3 flex-column d-flex justify-content-center align-items-center py-2 py-md-2">
-                                                                    <img
-                                                                        className="mr-3 my-2 img-fluid align-self-center"
-                                                                        src='https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Blank&hatColor=Blue03&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=EyeRoll&eyebrowType=RaisedExcitedNatural&mouthType=Sad&skinColor=DarkBrown'
-                                                                    />
-                                                                    <h4>PersonName</h4>
-                                                                    <h6>Designation</h6>
-                                                                </div>
-                                                                <div className="col-md-9">
-                                                                    <div className="card-body">
-                                                                        <h5 className="card-title text-wrap">
-                                                                            <i className="fa fa-quote-left fa-2x quote-icon"
-                                                                               aria-hidden="true" />
-                                                                            <blockquote
-                                                                                className="blockquote py-3 text-center">
-                                                                                <h5 className="mb-0 text-wrap">Lorem
-                                                                                    ipsum dolor sit amet, consectetur
-                                                                                    adipiscing elit. Integer posuere
-                                                                                    erat a ante.</h5>
-                                                                            </blockquote>
-                                                                        </h5>
+
+                                            <Swiper id="testimonial" {...defaultSliderConfig} slidesPerView={1}>
+                                                {
+                                                    testimonialData.map(({name, designation, profile_pic, quote}, index) => (
+                                                        <SwiperSlide key={index}>
+                                                            <div className="card h-100 border-0">
+                                                                <div className="row no-gutters">
+                                                                    <div
+                                                                        className="text-center col-md-3 flex-column d-flex justify-content-center align-items-center py-2 py-md-2">
+                                                                        <img
+                                                                            className="mr-3 my-2 img-fluid align-self-center"
+                                                                            src='https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Blank&hatColor=Blue03&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=EyeRoll&eyebrowType=RaisedExcitedNatural&mouthType=Sad&skinColor=DarkBrown'
+                                                                        />
+                                                                        <h4>{name}</h4>
+                                                                        <h6>{designation}</h6>
+                                                                    </div>
+                                                                    <div className="col-md-9 d-flex justify-content-between align-items-center ">
+                                                                        <div className="card-body">
+                                                                            <h5 className="card-title text-wrap">
+                                                                                <blockquote
+                                                                                    className="blockquote align-items-center text-center">
+                                                                                    <h5 className="mb-0 text-wrap d-flex justify-content-around">
+                                                                                        <i className="fa fa-quote-left fa-2x quote-icon"
+                                                                                           aria-hidden="true" /> {quote}
+                                                                                        <i className="fa fa-quote-right fa-2x quote-icon"
+                                                                                           aria-hidden="true" />
+                                                                                    </h5>
+                                                                                </blockquote>
+                                                                            </h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="swiper-slide">
-                                                        <div className="card h-100 border-0">
-                                                            <div className="row no-gutters">
-                                                                <div
-                                                                    className="text-center col-md-3 flex-column d-flex justify-content-center align-items-center py-2 py-md-2">
-                                                                    <img
-                                                                        className="mr-3 my-2 img-fluid align-self-center"
-                                                                        src='https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Blank&hatColor=Blue03&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=EyeRoll&eyebrowType=RaisedExcitedNatural&mouthType=Sad&skinColor=DarkBrown'
-                                                                    />
-                                                                    <h4>PersonName</h4>
-                                                                    <h6>Designation</h6>
-                                                                </div>
-                                                                <div className="col-md-9">
-                                                                    <div className="card-body">
-                                                                        <h5 className="card-title text-wrap">
-                                                                            <i className="fa fa-quote-left fa-2x"
-                                                                               aria-hidden="true" />
-                                                                            <blockquote
-                                                                                className="blockquote py-3 text-center">
-                                                                                <h5 className="mb-0 text-wrap">Lorem
-                                                                                    ipsum dolor sit amet, consectetur
-                                                                                    adipiscing elit. Integer posuere
-                                                                                    erat a ante.</h5>
-                                                                            </blockquote>
-                                                                        </h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="swiper-button-next text-dark" />
-                                                <div className="swiper-button-prev text-dark" />
-                                                <div className="swiper-pagination" />
-                                            </div>
+                                                        </SwiperSlide>
+                                                    ))
+                                                }
+                                            </Swiper>
                                         </div>
                                     </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div className="container-fluid">
+                                    <h4 className="section-title text-center py-4">
+                                        Other Work
+                                    </h4>
+                                    <Swiper id="otherWorksSlider" {...defaultSliderConfig} slidesPerView={3}>
+                                        {
+                                            allClientsDataCsv && Array.isArray(allClientsDataCsv.edges) && allClientsDataCsv.edges.length > 0 && allClientsDataCsv.edges.filter((clientData) => {
+                                                return clientData.node.id !== id;
+                                            }).map((filteredData) => (
+                                                <SwiperSlide>
+                                                    {filteredData.node.projectDisplayName}
+                                                </SwiperSlide>
+                                            ))
+                                        }
+                                    </Swiper>
                                 </div>
                             </section>
 

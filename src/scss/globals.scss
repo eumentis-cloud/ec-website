@@ -1,5 +1,6 @@
 // global styles
 @import 'variables';
+@import "~swiper/swiper-bundle.css";
 
 body {
   font-family: $ec-base-font-family;
@@ -222,6 +223,10 @@ a {
   min-height: 100vh !important;
   background-repeat: repeat;
   background-size: contain;
+}
+// fixing testimonial slider overflow
+footer {
+  z-index: 9999 !important;
 }
 
 // project details page

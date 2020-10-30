@@ -274,3 +274,22 @@ span.project-title {
 .video-text {
   font-family: $ec-links-font-family;
 }
+
+.swiper-button-next {
+  color: $sec-nav-hover-links-color !important;
+}
+.swiper-button-prev {
+  color: $sec-nav-hover-links-color !important;
+}
+.swiper-pagination-bullet {
+  background-color: $primary-nav-hover-links-color !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: $primary-nav-links-color !important;
+}
+
+.testimonial-quote {
+  font-family: $ec-headings-font-family;
+  font-size: 1.3rem;
+}

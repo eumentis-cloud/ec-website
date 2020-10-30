@@ -15,9 +15,10 @@ type ProjectCardProps = {
     countryCode: string;
     sector: ProjectCateoryType;
     projectCardDescription: string;
+    parentClassName?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription, parentClassName = '' }) => {
 
     const allClientImages: FluidImageType = useStaticQuery(graphql`
         query {
@@ -42,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
     `)
 
     return (
-        <div className="col mb-4">
+        <div className={parentClassName}>
             <div className="card work-card h-100">
                     <div className="card-header border-0 bg-transparent">
                         <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector)}`}>{projectDisplayName}</span>

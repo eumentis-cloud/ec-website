@@ -17,7 +17,6 @@ import 'swiper/swiper-vars.scss';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay} from 'swiper';
 import SocialMediaBar from "../components/SocialMediaBar";
-import 'swiper/swiper-bundle.css';
 
 // using swiper core features to autoplay slider
 SwiperCore.use([Autoplay]);
