@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
 
     return (
         <div className={parentClassName}>
-            <div className="card work-card h-100">
+            <div className={`card work-card h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
                     <div className="card-header border-0 bg-transparent">
                         <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector)}`}>{projectDisplayName}</span>
                     </div>
