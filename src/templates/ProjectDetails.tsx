@@ -184,7 +184,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     return (
         <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
-                <div className="container-fluid">
+                <div>
                     <div className="row">
                         <main role="main" className="col-md-12 ml-sm-auto col-lg-12 col-xl-12 px-0 py-0">
                             <div className="parallax-window shadow-sm">

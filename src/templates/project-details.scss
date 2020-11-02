@@ -194,12 +194,9 @@ nav.project-details-nav {
 }
 
 .parallax-window {
-  &.bizminder-jumbotron {
-    @media (min-width: 1200px) and (max-width: 1366px) {
-      height: 70vh;
-    }
-  }
   min-height: 30vh;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   background: $project-details-bg-color;
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
