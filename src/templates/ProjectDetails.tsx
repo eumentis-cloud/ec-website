@@ -211,10 +211,6 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 </li>
                                             </ol>
                                         </div>
-                                        {launchWebsite ? <div className="website-btn">
-                                            <a target="_blank" className="btn btn-primary launch-web-btn shadow-hover"
-                                               href={launchWebsite} role="button">Launch Website</a>
-                                        </div> : null}
                                     </nav>
                                     <div className="text-center rounded-0 border-0" id="project-main">
                                         <span className={`project-title border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
@@ -225,7 +221,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             <q className="proect-details-desc">{tagline}</q> : null}
                                     </div>
                                     <div
-                                        className="row row-cols-1 row-cols-md-3 justify-content-around align-content-start py-2 py-md-5 mx-md-2">
+                                        className="row row-cols-1 row-cols-md-3 justify-content-around align-content-start align-items-center py-2 py-md-5 mx-md-2">
                                         <div className="col">
                                             <div className="media d-block d-sm-block d-md-flex">
                                                 <div
@@ -303,6 +299,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                     <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Links</h5>
                                                     <div
                                                         className="wrap row d-flex align-items-center justify-content-md-center justify-content-center">
+                                                        {launchWebsite ? <div className="col px-2 d-flex justify-content-center website-btn">
+                                                            <a target="_blank" className="btn btn-primary launch-web-btn shadow-hover"
+                                                               href={launchWebsite} role="button">Launch Website</a>
+                                                        </div> : null}
                                                         {googlePlayLink ? <div className="col px-2 d-flex justify-content-center">
                                                             <a href={googlePlayLink} target="_blank">
                                                                 <GooglePlayBadge alt="Google Play badge" />
@@ -330,7 +330,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                         </div> : null
                                                         }
 
-                                                        {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
+                                                        {!googlePlayLink && !appStoreLink ? <div className="d-flex col-12 mt-2 justify-content-center">
                                                     <span className={"text-center"}>
                                                         <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>
                                                     </span>

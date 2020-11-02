@@ -211,10 +211,10 @@ nav.project-details-nav {
     height: calc(100vh + 12rem);
   }
   @include media-breakpoint-up(md) {
-    height: 72vh;
+    height: 75vh;
   }
   @media (min-width: 1367px) {
-    height: 45vh;
+    height: 50vh;
   }
 }
 
@@ -304,8 +304,8 @@ span.project-title {
 }
 
 .no-apps-msg {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 #project-main {
