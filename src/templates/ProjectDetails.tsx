@@ -10,7 +10,7 @@ import ClientLogo from "../components/ClientLogo";
 import GooglePlayBadge from '../images/svgAssets/google-play-badge.svg';
 import AppStoreBadge from '../images/svgAssets/app-store-badge.svg';
 import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../utils/helpers";
-import {noAppLinksMsg} from "../utils/globals";
+import {halagigMsg, noAppLinksMsg} from "../utils/globals";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, Navigation, Pagination} from "swiper";
 // scss dependencies
@@ -146,7 +146,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
         testimonialPersonName_3,
         testimonialPersonDesignation_3,
         testimonialQuote_3,
-        launchWebsite} = pageContext.node;
+        launchWebsite,
+        googlePlayLink2
+    } = pageContext.node;
 
     console.log('query data', pageContext);
 
@@ -252,18 +254,33 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 {googlePlayLink ? <div className="col d-flex justify-content-center">
                                                     <a href={googlePlayLink} target="_blank">
                                                         <GooglePlayBadge alt="Google Play badge" />
+                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                        <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
+                                                        }
                                                     </a>
                                                 </div> : null}
                                                 {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
                                                     <span className={"text-center"}>
-                                                        <i>{noAppLinksMsg}</i>
+                                                        <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>
                                                     </span>
                                                 </div> : null}
                                                 {appStoreLink ? <div className="col justify-content-center d-flex">
                                                     <a href={appStoreLink} target="_blank">
                                                         <AppStoreBadge alt="App store badge" />
+                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                            <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
+                                                        }
                                                     </a>
                                                 </div> : null}
+                                                {googlePlayLink2 ? <div className="col d-flex py-3 justify-content-center">
+                                                    <a href={googlePlayLink2} target="_blank">
+                                                        <GooglePlayBadge alt="Google Play badge" />
+                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                            <div className="text-center text-dark mt-1">KK Apply Label</div> : null
+                                                        }
+                                                    </a>
+                                                </div> : null
+                                                }
                                             </div>
                                         </div>
 

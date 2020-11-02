@@ -294,5 +294,10 @@ span.project-title {
 .proect-details-desc {
   font-family: $ec-links-font-family;
   //color: $client-country-color;
+  font-size: 1.25rem;
+}
+
+.no-apps-msg {
   font-size: 1.2rem;
+  font-weight: 500;
 }

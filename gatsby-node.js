@@ -70,6 +70,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         testimonialPersonDesignation_3
         testimonialQuote_3
         launchWebsite
+        googlePlayLink2
       }
     }
   }

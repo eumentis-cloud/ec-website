@@ -223,10 +223,7 @@ a {
   min-width: 100% !important;
   min-height: 100vh !important;
   background-repeat: repeat;
-  @include media-breakpoint-down(sm) {
-    background-size: contain !important;
-  }
-  background-size: 22%;
+  background-size: contain;
 }
 // fixing testimonial slider overflow
 footer {
