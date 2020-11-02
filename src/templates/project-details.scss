@@ -40,6 +40,7 @@ section#testimonials {
 }
 
 .media {
+  //width: calc(100% + 5rem);
   @include media-breakpoint-down(sm) {
     img {
       max-width: 100%;
@@ -54,9 +55,13 @@ section#testimonials {
   }
   .media-body {
     text-align: center;
+    h4 {
+      font-family: $ec-headings-font-family;
+      font-size: 2rem;
+    }
     h5 {
       color: $sec-nav-active-links-color;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
       @include media-breakpoint-down(sm) {
         font-size: 1.8rem;
@@ -67,8 +72,9 @@ section#testimonials {
     }
     div span.card-subtitle {
       font-family: $ec-headings-font-family;
+      font-size: 1.1rem !important;
       @media (min-width: 1367px) {
-        font-size: 1.4rem;
+        font-size: 1rem !important;
       }
     }
     span.badge {
@@ -141,7 +147,7 @@ h6.stack-title {
 i.play-demo-icon {
   color: $youtube-play-color;
   @include media-breakpoint-up(md) {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   @include media-breakpoint-down(sm) {
     font-size: 3.5rem;
@@ -202,10 +208,10 @@ nav.project-details-nav {
     height: calc(100vh + 8.5rem);
   }
   @include media-breakpoint-down(sm) {
-    height: calc(100vh + 5.5rem);
+    height: calc(100vh + 12rem);
   }
   @include media-breakpoint-up(md) {
-    height: 65vh;
+    height: 72vh;
   }
   @media (min-width: 1367px) {
     height: 45vh;
@@ -300,4 +306,10 @@ span.project-title {
 .no-apps-msg {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+#project-main {
+  @include media-breakpoint-up(lg) {
+    margin-top: -2.6rem;
+  }
 }

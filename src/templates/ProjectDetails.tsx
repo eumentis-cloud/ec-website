@@ -186,7 +186,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     return (
         <BackgroundImage className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
-                <div>
+                <div className="">
                     <div className="row">
                         <main role="main" className="col-md-12 ml-sm-auto col-lg-12 col-xl-12 px-0 py-0">
                             <div className="parallax-window shadow-sm">
@@ -216,16 +216,16 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                href={launchWebsite} role="button">Launch Website</a>
                                         </div> : null}
                                     </nav>
-                                    <div className="text-center rounded-0 border-0">
+                                    <div className="text-center rounded-0 border-0" id="project-main">
                                         <span className={`project-title border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
-                                        <h5 className="py-2 text-wrap proect-details-desc">
+                                        <h5 className="py-3 text-wrap proect-details-desc">
                                             {projectCardDescription}
                                         </h5>
                                         {tagline ?
                                             <q className="proect-details-desc">{tagline}</q> : null}
                                     </div>
                                     <div
-                                        className="row row-cols-1 row-cols-md-3 justify-content-center align-content-start py-2 py-md-5 mx-md-4">
+                                        className="row row-cols-1 row-cols-md-3 justify-content-around align-content-start py-2 py-md-5 mx-md-2">
                                         <div className="col">
                                             <div className="media d-block d-sm-block d-md-flex">
                                                 <div
@@ -233,13 +233,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                          <ClientLogo imgAltText={clientName} clientLogo={clientLogo} />
                                                 </div>
                                                 <div
-                                                    className="media-body py-4 py-md-0 d-flex align-self-stretch justify-content-between flex-column">
-                                                    <div>
-                                                        <h5 className="text-center text-sm-center text-md-left">
+                                                    className="media-body pt-5 pb-2 py-md-0 d-flex align-self-stretch justify-content-between flex-column">
+                                                        <h4 className="text-center text-sm-center text-md-left">
                                                             {clientName}
-                                                        </h5>
-                                                    </div>
-                                                    <div className="d-flex align-items-baseline justify-content-center justify-content-sm-center justify-content-md-start ml-0">
+                                                        </h4>
+                                                    <div className="d-flex align-items-baseline py-2 py-md-0 justify-content-center justify-content-sm-center justify-content-md-start ml-0">
                                                         <LocationIcon />
                                                         <span className="card-subtitle mb-2 text-muted pl-2">
                                                             {city}, {state} ({countryCode})
@@ -249,57 +247,98 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col">
-                                            <div className="row d-flex justify-content-center align-items-start">
-                                                {googlePlayLink ? <div className="col d-flex justify-content-center">
-                                                    <a href={googlePlayLink} target="_blank">
-                                                        <GooglePlayBadge alt="Google Play badge" />
-                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                        <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
+
+                                        {/*<div className="col">*/}
+                                        {/*    <div className="row d-flex justify-content-center align-items-start">*/}
+                                        {/*        {googlePlayLink ? <div className="col d-flex justify-content-center">*/}
+                                        {/*            <a href={googlePlayLink} target="_blank">*/}
+                                        {/*                <GooglePlayBadge alt="Google Play badge" />*/}
+                                        {/*                {projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                        {/*                <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null*/}
+                                        {/*                }*/}
+                                        {/*            </a>*/}
+                                        {/*        </div> : null}*/}
+                                        {/*        {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">*/}
+                                        {/*            <span className={"text-center"}>*/}
+                                        {/*                <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>*/}
+                                        {/*            </span>*/}
+                                        {/*        </div> : null}*/}
+                                        {/*        {appStoreLink ? <div className="col justify-content-center d-flex">*/}
+                                        {/*            <a href={appStoreLink} target="_blank">*/}
+                                        {/*                <AppStoreBadge alt="App store badge" />*/}
+                                        {/*                {projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                        {/*                    <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null*/}
+                                        {/*                }*/}
+                                        {/*            </a>*/}
+                                        {/*        </div> : null}*/}
+                                        {/*        {googlePlayLink2 ? <div className="col d-flex py-3 justify-content-center">*/}
+                                        {/*            <a href={googlePlayLink2} target="_blank">*/}
+                                        {/*                <GooglePlayBadge alt="Google Play badge" />*/}
+                                        {/*                {projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                        {/*                    <div className="text-center text-dark mt-1">KK Apply Label</div> : null*/}
+                                        {/*                }*/}
+                                        {/*            </a>*/}
+                                        {/*        </div> : null*/}
+                                        {/*        }*/}
+                                        {/*    </div>*/}
+                                        {/*</div>*/}
+
+                                        <div className="col py-md-0">
+                                            <div className="media">
+                                                {demoVideoLinksData.length > 0 ?
+                                                    <div className="media-body">
+                                                        <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Demo Videos</h5>
+                                                        <div
+                                                            className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
+                                                            {demoVideoLinksData.map((demoLink, index): JSX.Element => (
+                                                                <a key={index} target="_blank" href={demoLink}>
+                                                                    <i className="fa fa-youtube-play px-md-3 px-2 play-demo-icon"/>
+                                                                    <p className="text-center text-dark video-text font-weight-bold">Video-{index + 1}</p>
+                                                                </a>
+                                                            ))}
+                                                        </div>
+                                                    </div> : null
+                                                }
+                                                <div className="media-body">
+                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Links</h5>
+                                                    <div
+                                                        className="wrap row d-flex align-items-center justify-content-md-center justify-content-center">
+                                                        {googlePlayLink ? <div className="col px-2 d-flex justify-content-center">
+                                                            <a href={googlePlayLink} target="_blank">
+                                                                <GooglePlayBadge alt="Google Play badge" />
+                                                                {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                                    <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
+                                                                }
+                                                            </a>
+                                                        </div> : null}
+                                                        {appStoreLink ? <div className="col px-2 justify-content-center d-flex">
+                                                            <a href={appStoreLink} target="_blank">
+                                                                <AppStoreBadge alt="App store badge" />
+                                                                {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                                    <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
+                                                                }
+                                                            </a>
+                                                        </div> : null}
+
+                                                        {googlePlayLink2 ? <div className="col px-2 pt-3 d-flex justify-content-center">
+                                                            <a href={googlePlayLink} target="_blank">
+                                                                <GooglePlayBadge alt="Google Play badge" />
+                                                                {projectDisplayName === 'Product Authenticity Verification Platform' ?
+                                                                    <div className="text-center text-dark mt-1">KK Apply Label</div> : null
+                                                                }
+                                                            </a>
+                                                        </div> : null
                                                         }
-                                                    </a>
-                                                </div> : null}
-                                                {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
+
+                                                        {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
                                                     <span className={"text-center"}>
                                                         <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>
                                                     </span>
-                                                </div> : null}
-                                                {appStoreLink ? <div className="col justify-content-center d-flex">
-                                                    <a href={appStoreLink} target="_blank">
-                                                        <AppStoreBadge alt="App store badge" />
-                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                            <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
-                                                        }
-                                                    </a>
-                                                </div> : null}
-                                                {googlePlayLink2 ? <div className="col d-flex py-3 justify-content-center">
-                                                    <a href={googlePlayLink2} target="_blank">
-                                                        <GooglePlayBadge alt="Google Play badge" />
-                                                        {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                            <div className="text-center text-dark mt-1">KK Apply Label</div> : null
-                                                        }
-                                                    </a>
-                                                </div> : null
-                                                }
-                                            </div>
-                                        </div>
-
-                                        {demoVideoLinksData.length !== 0 ? <div className="col py-5 py-md-0">
-                                            <div className="media">
-                                                <div className="media-body">
-                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Demo Videos</h5>
-                                                    <div
-                                                        className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
-                                                        {demoVideoLinksData.map((demoLink, index): JSX.Element => (
-                                                            <a key={index} target="_blank" href={demoLink}>
-                                                                <i className="fa fa-youtube-play py-2 px-md-3 px-2 play-demo-icon"/>
-                                                                <p className="text-center text-dark video-text font-weight-bold">Video-{index + 1}</p>
-                                                            </a>
-                                                        ))}
+                                                        </div> : null}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> : null}
+                                        </div>
 
                                     </div>
                                 </div>
