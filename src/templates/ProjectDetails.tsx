@@ -184,7 +184,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     // });
 
     return (
-        <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
+        <BackgroundImage className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
                 <div>
                     <div className="row">
@@ -287,7 +287,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         {demoVideoLinksData.length !== 0 ? <div className="col py-5 py-md-0">
                                             <div className="media">
                                                 <div className="media-body">
-                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Videos</h5>
+                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Demo Videos</h5>
                                                     <div
                                                         className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
                                                         {demoVideoLinksData.map((demoLink, index): JSX.Element => (
