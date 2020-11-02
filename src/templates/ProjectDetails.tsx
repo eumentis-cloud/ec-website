@@ -96,6 +96,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
         countryCode,
         tagline,
         sector,
+        projectCardDescription,
         googlePlayLink,
         appStoreLink,
         demoVideoLink_1,
@@ -154,28 +155,31 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     const solutionStatementData: Array<string> = [solution_1, solution_2,solution_3,solution_4,solution_5, solution_6,solution_7,solution_8,solution_9, solution_10].filter((entry) => entry !== null && entry !== '');
     const frontendTechData: Array<string> = [frontendTech_1,frontendTech_2,frontendTech_3,frontendTech_4,frontendTech_5].filter((entry) => entry !== '' && entry !== null);
     const backendTechData: Array<string> = [backendTech_1,backendTech_2,backendTech_3,backendTech_4,backendTech_5].filter((entry) => entry !== '' && entry !== null);
-    const testimonialData: Array<TestimonialDataType> = [
-        {
-            profile_pic: testimonialPersonPhoto_1,
-            name: testimonialPersonName_1,
-            designation: testimonialPersonDesignation_1,
-            quote: testimonialQuote_1,
-        },
-        {
-            profile_pic:  testimonialPersonPhoto_2,
-            name: testimonialPersonName_2,
-            designation: testimonialPersonDesignation_2,
-            quote: testimonialQuote_2,
-        },
-        {
-            profile_pic:  testimonialPersonPhoto_3,
-            name: testimonialPersonName_3,
-            designation: testimonialPersonDesignation_3,
-            quote: testimonialQuote_3,
-        },
-    ].filter((data) => {
-        return data.quote !== null && data.quote !== '';
-    });
+
+
+    // testimonial section data
+    // const testimonialData: Array<TestimonialDataType> = [
+    //     {
+    //         profile_pic: testimonialPersonPhoto_1,
+    //         name: testimonialPersonName_1,
+    //         designation: testimonialPersonDesignation_1,
+    //         quote: testimonialQuote_1,
+    //     },
+    //     {
+    //         profile_pic:  testimonialPersonPhoto_2,
+    //         name: testimonialPersonName_2,
+    //         designation: testimonialPersonDesignation_2,
+    //         quote: testimonialQuote_2,
+    //     },
+    //     {
+    //         profile_pic:  testimonialPersonPhoto_3,
+    //         name: testimonialPersonName_3,
+    //         designation: testimonialPersonDesignation_3,
+    //         quote: testimonialQuote_3,
+    //     },
+    // ].filter((data) => {
+    //     return data.quote !== null && data.quote !== '';
+    // });
 
     return (
         <BackgroundImage style={{height: '100%'}} className="bg-project-details" fluid={file.childImageSharp.fluid}>
@@ -212,7 +216,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                     </nav>
                                     <div className="text-center rounded-0 border-0">
                                         <span className={`project-title border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
-                                        <h5 className="py-3">{tagline}</h5>
+                                        <h5 className="py-2 text-wrap proect-details-desc">
+                                            {projectCardDescription}
+                                        </h5>
+                                        {tagline ?
+                                            <q className="proect-details-desc">{tagline}</q> : null}
                                     </div>
                                     <div
                                         className="row row-cols-1 row-cols-md-3 justify-content-center align-content-start py-2 py-md-5 mx-md-4">
@@ -247,9 +255,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                     </a>
                                                 </div> : null}
                                                 {!googlePlayLink && !appStoreLink ? <div className="d-flex col justify-content-center">
-                                                    <q className={"text-center"}>
+                                                    <span className={"text-center"}>
                                                         <i>{noAppLinksMsg}</i>
-                                                    </q>
+                                                    </span>
                                                 </div> : null}
                                                 {appStoreLink ? <div className="col justify-content-center d-flex">
                                                     <a href={appStoreLink} target="_blank">
@@ -543,56 +551,56 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                 </div>
                             </section>
 
-                            <section className="py-4" id="testimonials">
-                                <div className="container">
-                                    <div className="card h-100 shadow">
-                                        <div className="card-header bg-transparent border-0 mb-1">
-                                            <h4 className="section-title text-center">
-                                                Testimonials
-                                            </h4>
-                                        </div>
-                                        <div className="card-body">
+                            {/*<section className="py-4" id="testimonials">*/}
+                            {/*    <div className="container">*/}
+                            {/*        <div className="card h-100 shadow">*/}
+                            {/*            <div className="card-header bg-transparent border-0 mb-1">*/}
+                            {/*                <h4 className="section-title text-center">*/}
+                            {/*                    Testimonials*/}
+                            {/*                </h4>*/}
+                            {/*            </div>*/}
+                            {/*            <div className="card-body">*/}
 
-                                            <Swiper id="testimonial" {...defaultSliderConfig} navigation spaceBetween={0} slidesPerView={1}>
-                                                {
-                                                    testimonialData.map(({name, designation, profile_pic, quote}, index) => (
-                                                        <SwiperSlide key={index}>
-                                                            <div className="card h-100 border-0">
-                                                                <div className="row no-gutters">
-                                                                    <div
-                                                                        className="text-center col-md-3 flex-column d-flex justify-content-center align-items-center py-2 py-md-2">
-                                                                        <img
-                                                                            className="mr-3 my-2 img-fluid align-self-center"
-                                                                            src='https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Blank&hatColor=Blue03&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=EyeRoll&eyebrowType=RaisedExcitedNatural&mouthType=Sad&skinColor=DarkBrown'
-                                                                        />
-                                                                        <h4>{name}</h4>
-                                                                        <h6>{designation}</h6>
-                                                                    </div>
-                                                                    <div className="col-md-9 d-flex justify-content-between align-items-center ">
-                                                                        <div className="card-body">
-                                                                            <h5 className="card-title text-wrap">
-                                                                                <blockquote
-                                                                                    className="blockquote align-items-center text-center">
-                                                                                    <h5 className="mb-0 text-wrap d-flex justify-content-around">
-                                                                                        <i className="fa fa-quote-left fa-2x quote-icon"
-                                                                                           aria-hidden="true" /> {quote}
-                                                                                        <i className="fa fa-quote-right fa-2x quote-icon"
-                                                                                           aria-hidden="true" />
-                                                                                    </h5>
-                                                                                </blockquote>
-                                                                            </h5>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </SwiperSlide>
-                                                    ))
-                                                }
-                                            </Swiper>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            {/*                <Swiper id="testimonial" {...defaultSliderConfig} navigation spaceBetween={0} slidesPerView={1}>*/}
+                            {/*                    {*/}
+                            {/*                        testimonialData.map(({name, designation, profile_pic, quote}, index) => (*/}
+                            {/*                            <SwiperSlide key={index}>*/}
+                            {/*                                <div className="card h-100 border-0">*/}
+                            {/*                                    <div className="row no-gutters">*/}
+                            {/*                                        <div*/}
+                            {/*                                            className="text-center col-md-3 flex-column d-flex justify-content-center align-items-center py-2 py-md-2">*/}
+                            {/*                                            <img*/}
+                            {/*                                                className="mr-3 my-2 img-fluid align-self-center"*/}
+                            {/*                                                src='https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Blank&hatColor=Blue03&facialHairType=MoustacheMagnum&facialHairColor=Black&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=EyeRoll&eyebrowType=RaisedExcitedNatural&mouthType=Sad&skinColor=DarkBrown'*/}
+                            {/*                                            />*/}
+                            {/*                                            <h4>{name}</h4>*/}
+                            {/*                                            <h6>{designation}</h6>*/}
+                            {/*                                        </div>*/}
+                            {/*                                        <div className="col-md-9 d-flex justify-content-between align-items-center ">*/}
+                            {/*                                            <div className="card-body">*/}
+                            {/*                                                <h5 className="card-title text-wrap">*/}
+                            {/*                                                    <blockquote*/}
+                            {/*                                                        className="blockquote align-items-center text-center">*/}
+                            {/*                                                        <h5 className="mb-0 text-wrap d-flex justify-content-around">*/}
+                            {/*                                                            <i className="fa fa-quote-left fa-2x quote-icon"*/}
+                            {/*                                                               aria-hidden="true" /> {quote}*/}
+                            {/*                                                            <i className="fa fa-quote-right fa-2x quote-icon"*/}
+                            {/*                                                               aria-hidden="true" />*/}
+                            {/*                                                        </h5>*/}
+                            {/*                                                    </blockquote>*/}
+                            {/*                                                </h5>*/}
+                            {/*                                            </div>*/}
+                            {/*                                        </div>*/}
+                            {/*                                    </div>*/}
+                            {/*                                </div>*/}
+                            {/*                            </SwiperSlide>*/}
+                            {/*                        ))*/}
+                            {/*                    }*/}
+                            {/*                </Swiper>*/}
+                            {/*            </div>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</section>*/}
 
                             <section className="pb-5 pb-md-4">
                                 <div className="container-fluid">
@@ -627,7 +635,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             }).map((filteredData) => (
                                                 <SwiperSlide key={filteredData.node.id}>
                                                    <button className="border-0 bg-transparent" onClick={(): void => {
-                                                       navigate('/');
+                                                       navigate(`/OurWork/${filteredData.node.clientName.split(' ').join('-')}_${filteredData.node.projectDisplayName.split(' ').join('-')}`);
                                                    }}>
                                                        <ProjectCard parentClassName="h-100 text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
                                                    </button>

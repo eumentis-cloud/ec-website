@@ -19,6 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         countryCode
         tagline
         sector
+        projectCardDescription,
         googlePlayLink
         appStoreLink
         demoVideoLink_1
