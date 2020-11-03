@@ -1,0 +1,137 @@
+@import "variables";
+
+.header {
+  display: flex;
+  padding: 10px 10px 10px 30px;
+}
+.careers-ec-logo {
+  height: 2.5rem;
+}
+.header-text {
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: $raleway-font;
+}
+.career-banner-image{
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100% !important;
+  height: auto;
+  color: white;
+}
+.career-banner-image .image-heading {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: $raleway-font;
+  text-align: center;
+  padding: 70px 10px 10px 10px;
+}
+.career-banner-image .image-text {
+  font-size: 25px;
+  font-weight: 800;
+  font-family: $lato-font;
+  text-align: center;
+  padding-bottom: 83px;
+}
+.career-banner-heading {
+  text-align: center;
+  font-size: 31px;
+  font-weight: 600;
+  padding: 24px 10px;
+  background-color: rgba(240, 240, 240, 1);
+  margin-right: auto;
+  margin-left: auto;
+  /* font-family: "Gentium Basic", serif; */
+  font-family: sans-serif;
+}
+.career-body > * {
+  font-family: 'Crimson Text', serif;
+}
+/* .position-container {
+  margin-top: 30px;
+  margin-left: 175px;
+} */
+.career-container .heading {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 31px;
+}
+.career-container .contents {
+  font-size: 18px;
+}
+
+section .contents h6{
+  margin-left:20px; margin-top: 10px; font-weight: 600;
+}
+.mission > *{
+  font-size: 18px;
+}
+.link-for-position {
+  color: black !important;
+  text-decoration: underline !important;
+}
+.link-for-position:hover {
+  color: grey !important;
+}
+.apply-container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 20px;
+}
+.apply-button {
+  background-color:rgba(0,123,191,1);
+  border: none;
+  color: white;
+  padding:8px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 800;
+  border-radius: 3px;
+}
+
+.footer > *{
+  font-family: $raleway-font;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 80px;
+  margin-top: 20px;
+  color: rgba(33, 33, 33, 1);
+  background-color: #f4f4f4;
+}
+
+.career-home-footer{
+  margin-top: 300px;
+  div.footer-content {
+    font-family: $ec-links-font-family;
+    font-size: 1.2rem;
+  }
+}
+
+.title-under-subheading {
+  font-weight: bold;
+}
+@media only screen and (max-width: 479px) {
+  .image-text {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 90px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  #header-below-img {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .image-heading {
+    font-size: 50px;
+    padding: 43px 16px 16px 16px;
+  }
+}

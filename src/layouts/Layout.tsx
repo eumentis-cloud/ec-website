@@ -8,15 +8,17 @@ import {LocationProps} from "../utils/types";
 // Layout Props
 interface LayoutProps {
     // child JSX elements
-    children?: React.ReactNode
+    children?: React.ReactNode;
+    // other classNames
+    className?: string;
 }
 
 // Functional Component
-const Layout: React.FC<LayoutProps & LocationProps> = ({ children, location }) => {
+const Layout: React.FC<LayoutProps & LocationProps> = ({ children, location, className = 'container-fluid' }) => {
 
     return (
         <>
-            <div id="primary-container" className="container-fluid">
+            <div id="primary-container" className={className}>
                 <Header location={location} />
                 {children}
             </div>

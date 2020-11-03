@@ -4,12 +4,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans+Narrow:400,700|PT+Sans:400,400i,700,700i|PT+Serif+Caption:400,400i|PT+Serif:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Gentium+Basic|Lato|Libre+Baskerville|Raleway&display=swap');
 
 $ec-base-font-family: 'PT Serif', serif;
 $ec-headings-font-family: 'PT Sans', sans-serif;
 $ec-links-font-family: 'PT Sans Narrow', sans-serif;
 $ec-quote-font-family: 'PT Sans Caption', sans-serif;
 $card-title-font-family: 'Bebas Neue', cursive;
+
+$crimson-text-font: 'Crimson Text', serif;
+$gentium-basic-font: 'Gentium Basic' serif;
+$lato-font: 'Lato', sans-serif;
+$libre-font: 'Libre Baskerville', serif;
+$raleway-font: 'Raleway', sans-serif;
 
 $service-box-gradient-low: #FFFF9F;
 $service-box-gradient-high: #FFFF80;

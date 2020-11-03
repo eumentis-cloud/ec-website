@@ -1,8 +1,8 @@
 import React from 'react';
-import {LocationProps} from "../utils/types";
-import Layout from "../layouts/Layout";
-import '../scss/careers.scss';
-import CareersLayout from "../layouts/CareersLayout";
+import {LocationProps} from "../../utils/types";
+import Layout from "../../layouts/Layout";
+import '../../scss/careers.scss';
+import CareersLayout from '../../layouts/CareersLayout';
 
 // FC
 const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
