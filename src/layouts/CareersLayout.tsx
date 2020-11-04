@@ -3,6 +3,7 @@ import EumentisLogo from "../images/svgAssets/eumentis-logo.svg";
 import BackgroundImage from "gatsby-background-image";
 import {graphql, Link, useStaticQuery} from "gatsby";
 import {SingleAssetFluidType} from "../utils/types";
+import '../scss/careers.scss';
 
 // layout component props
 type CareersLayoutProps = {
@@ -10,9 +11,11 @@ type CareersLayoutProps = {
     children?: React.ReactNode;
     // page section title
     sectionTitle: string;
+    // job apply google form link
+    applyLink: string;
 }
 
-const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle}) => {
+const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, applyLink}) => {
 
     const {file}: SingleAssetFluidType = useStaticQuery(graphql`
         {
@@ -48,20 +51,36 @@ const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle}) =
                             Innovate. Automate. Transform.
                         </div>
                     </BackgroundImage>
-                    <div className="career-banner-heading">
+                    <div className="career-banner-heading text-dark">
                         {sectionTitle}
                     </div>
                 </div>
-                <div className="career-body">
+                <div className="career-body px-2">
                     <div className="container career-container">
                         {children}
+                    </div>
+                    <div className="container">
+                        <div className="mission">
+                            <div>Our focus is to guide eager learners so that they can lead teams to execute top to
+                                bottom web application development projects on their own in the future.
+                            </div>
+                            <div>So, if you are looking for a place that pays you to learn, become the best in the
+                                industry and be a master of web development, <a className="link-for-position" href="">apply
+                                    here</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="apply-container">
+                        <a href={applyLink} target="_blank">
+                            <button type="submit" className="apply-button">APPLY</button>
+                        </a>
                     </div>
                 </div>
             </div>
             <div className="footer career-home-footer px-2">
                 <div className="footer-content justify-content-between justify-content-md-center">
                     <div className={"pr-1"}>
-                        <Link to={'/'} className={"text-dark font-weight-bold"}>Eumentis Cloud</Link>
+                        <Link to={'/'} className={"text-dark font-weight-bold"}><u>Eumentis Cloud</u></Link>
                     </div>
                     <div>
                         <b className={"text-dark"}>|</b> Office-310 B, Amenity Building Rose

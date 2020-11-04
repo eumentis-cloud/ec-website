@@ -30,6 +30,11 @@ html, body {
 h1, h2, h3, h4, h5, h6, .heading {
   font-family: $ec-headings-font-family;
   color: $ec-headings-color;
+  font-weight: 400;
+}
+
+.contents {
+  font-family: $crimson-text-font !important;
 }
 
 body * {

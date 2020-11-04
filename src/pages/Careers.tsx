@@ -4,6 +4,9 @@ import Layout from "../layouts/Layout";
 import '../scss/careers.scss';
 import CareersLayout from "../layouts/CareersLayout";
 import {Link} from 'gatsby';
+import ServicesCard from "../components/servicesCard/ServicesCard";
+import Img from '../images/svgAssets/mission.svg';
+import ProjectCard from "../components/projectCard/ProjectCard";
 
 // FC
 const Careers: React.FC<LocationProps> = ({location}) => {
@@ -12,16 +15,15 @@ const Careers: React.FC<LocationProps> = ({location}) => {
         <Layout location={location} className="px-0 mx-0 overflow-hidden">
             <CareersLayout sectionTitle={'Apply for software development positions with Eumentis Informatics Pvt. Ltd.'} children={
                 <section>
-                    <div className="heading">Available positions</div>
+                    <div className="heading text-center pt-2 pb-4 text-dark">Available positions</div>
                     <div className="contents">
-                        <ul>
-                            <li>
-                                <Link className="link-for-position" to={'/Careers/SeniorDeveloper/'}>Senior Software Developer</Link>
-                            </li>
-                            <li>
-                                <Link className="link-for-position" to={'/Careers/JuniorDeveloper/'}>Junior Software Developer</Link>
-                            </li>
-                        </ul>
+                        <div className="row row-cols-1 row-cols-md-3">
+                            <Link to={"/Careers/TechnicalLead/"}>
+                                <ProjectCard parentClassName="col mb-4" clientName={'Technical Lead'} />
+                            </Link>
+                            <Link to="/Careers/SeniorDeveloper/"><ProjectCard parentClassName="col mb-4" clientName={'Senior Developer'} /></Link>
+                            <Link to="/Careers/JuniorDeveloper/"><ProjectCard parentClassName="col mb-4" clientName={'Junior Developer'} /></Link>
+                        </div>
                     </div>
                 </section>
             }  />
