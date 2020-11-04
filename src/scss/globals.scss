@@ -237,6 +237,13 @@ footer {
   z-index: 9999 !important;
 }
 
-// project details page
+.careers-card-subtitle {
+  font-size: 1rem;
+}
 
-
+.careers-card-title {
+  //font-size: 1.4rem !important;
+  //font-family: $card-title-font-family !important;
+  @include card-header();
+  white-space: normal !important;
+}

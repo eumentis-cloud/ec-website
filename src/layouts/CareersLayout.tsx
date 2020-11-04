@@ -12,10 +12,12 @@ type CareersLayoutProps = {
     // page section title
     sectionTitle: string;
     // job apply google form link
-    applyLink: string;
+    applyLink?: string;
+    // whether to render apply section
+    isApplySectionApplicable?: boolean;
 }
 
-const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, applyLink}) => {
+const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, applyLink, isApplySectionApplicable = true}) => {
 
     const {file}: SingleAssetFluidType = useStaticQuery(graphql`
         {
@@ -59,22 +61,25 @@ const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, ap
                     <div className="container career-container">
                         {children}
                     </div>
-                    <div className="container">
-                        <div className="mission">
-                            <div>Our focus is to guide eager learners so that they can lead teams to execute top to
-                                bottom web application development projects on their own in the future.
+                    {isApplySectionApplicable ?
+                        <>
+                            <div className="container">
+                                <div className="mission">
+                                    <div>Our focus is to guide eager learners so that they can lead teams to execute top to
+                                        bottom web application development projects on their own in the future.
+                                    </div>
+                                    <div>So, if you are looking for a place that pays you to learn, become the best in the
+                                        industry and be a master of web development, <a className="link-for-position" href="">apply
+                                            here</a>.
+                                    </div>
+                                </div>
                             </div>
-                            <div>So, if you are looking for a place that pays you to learn, become the best in the
-                                industry and be a master of web development, <a className="link-for-position" href="">apply
-                                    here</a>.
+                            <div className="apply-container">
+                                <a href={applyLink} target="_blank">
+                                    <button type="submit" className="apply-button">APPLY</button>
+                                </a>
                             </div>
-                        </div>
-                    </div>
-                    <div className="apply-container">
-                        <a href={applyLink} target="_blank">
-                            <button type="submit" className="apply-button">APPLY</button>
-                        </a>
-                    </div>
+                        </> : null}
                 </div>
             </div>
             <div className="footer career-home-footer px-2">
