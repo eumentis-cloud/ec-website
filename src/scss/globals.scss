@@ -245,3 +245,9 @@ footer {
   @include card-header();
   white-space: normal !important;
 }
+
+.project-card-link {
+  @include media-breakpoint-up(md) {
+    margin: 16px 50px !important;
+  }
+}

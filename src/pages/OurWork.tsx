@@ -31,14 +31,14 @@ const OurWork: React.FC<LocationProps> = ({location}) => {
 
     return (
         <Layout location={location}>
-            <section className="wrap py-1 container-fluid px-md-5 page-content-container">
+            <section className="wrap py-1 container-fluid page-content-container">
                 <h1 className="page-title">
                     Showcasing our top projects
                 </h1>
-                <div className="row row-cols-1 row-cols-md-3">
+                <div className="row row-cols-1 row-cols-md-4 mr-md-5 mr-lg-5 mr-xl-5 justify-content-center">
                     {
                         allClientsDataCsv.edges.map((data) => (
-                            <Link className="col mb-4" key={data.node.id} to={data.node.clientName === 'Drona Lectures' || data.node.clientName === 'VendR' ? '/OurWork/' : `${data.node.clientName.split(' ').join('-')}_${data.node.projectDisplayName.split(' ').join('-')}`}>
+                            <Link className="col mx-md-2 mx-lg-2 mx-xl-2 mb-4 project-card-link" key={data.node.id} to={data.node.clientName === 'Drona Lectures' || data.node.clientName === 'VendR' ? '/OurWork/' : `${data.node.clientName.split(' ').join('-')}_${data.node.projectDisplayName.split(' ').join('-')}`}>
                                 <ProjectCard projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} sector={data.node.sector as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
                             </Link>
                         ))
