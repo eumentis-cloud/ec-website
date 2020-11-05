@@ -10,7 +10,7 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
 
     return (
         <Layout location={location} className="px-0 mx-0 overflow-hidden">
-            <CareersLayout applyLink="https://forms.gle/g9ytY14HYS8S4pEN9" sectionTitle={'Apply for Senior Software Developer'} children={
+            <CareersLayout jobPosition="Senior Developer" applyLink="https://forms.gle/g9ytY14HYS8S4pEN9" sectionTitle={'Apply for Senior Software Developer'} children={
                 <>
                     <section>
                         <div className="career-section-heading">About company</div>

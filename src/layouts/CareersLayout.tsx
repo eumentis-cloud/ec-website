@@ -15,9 +15,11 @@ type CareersLayoutProps = {
     applyLink?: string;
     // whether to render apply section
     isApplySectionApplicable?: boolean;
+    // job position
+    jobPosition?: string;
 }
 
-const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, applyLink, isApplySectionApplicable = true}) => {
+const CareersLayout: React.FC<CareersLayoutProps> = ({children, jobPosition, sectionTitle, applyLink, isApplySectionApplicable = true}) => {
 
     const {file}: SingleAssetFluidType = useStaticQuery(graphql`
         {
@@ -38,16 +40,30 @@ const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, ap
     return (
         <div>
             <div className="career-body">
-                <div className="header align-content-center">
-                    <Link to={"/Careers/"} className="d-flex" id="careers-home-link">
-                        <EumentisLogo className="careers-ec-logo" />
-                        <div className="text-black font-weight-bold d-none d-sm-block header-text py-2 ec-logo align-items-center align-content-center">
-                            Careers at Eumentis Cloud
-                        </div>
-                    </Link>
-                </div>
                 <div className="career-banner-container">
                     <BackgroundImage fluid={file.childImageSharp.fluid} className="career-banner-image">
+                        {jobPosition ?
+                            <nav aria-label="breadcrumb" className="d-flex justify-content-between">
+                            <div className="mt-2">
+                                <ol className="breadcrumb d-flex bg-transparent">
+                                    <li className="breadcrumb-item">
+                                        <Link to="/Careers/" className="careers-breadcrumb-link">Careers</Link>
+                                    </li>
+                                    <li className="breadcrumb-item active text-dark"
+                                        aria-current="page">
+                                        {jobPosition}
+                                    </li>
+                                </ol>
+                                {/*<ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">*/}
+                                {/*    <li className="breadcrumb-mobile">*/}
+                                {/*        <Link to={'/Careers/'}>*/}
+                                {/*            <i className="fa fa-angle-left pr-1 text-dark" aria-hidden="true"/>*/}
+                                {/*            Careers*/}
+                                {/*        </Link>*/}
+                                {/*    </li>*/}
+                                {/*</ol>*/}
+                            </div>
+                        </nav> : null}
                         <div className="image-heading">Eumentis Cloud</div>
                         <div className="image-text">
                             Innovate. Automate. Transform.
@@ -82,8 +98,8 @@ const CareersLayout: React.FC<CareersLayoutProps> = ({children, sectionTitle, ap
                         </> : null}
                 </div>
             </div>
-            <div className="footer career-home-footer px-2">
-                <div className="footer-content justify-content-between justify-content-md-center">
+            <div className="footer career-home-footer mt-5">
+                <div className="footer-content justify-content-between justify-content-md-center px-3">
                     <div className={"pr-1"}>
                         <Link to={'/'} className={"text-dark font-weight-bold"}><u>Eumentis Cloud</u></Link>
                     </div>

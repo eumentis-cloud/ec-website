@@ -49,6 +49,8 @@ body {
 }
 .career-body > * {
   font-family: $crimson-text-font !important;
+
+
 }
 
 .career-container .career-section-heading {
@@ -108,7 +110,6 @@ section .contents h6{
 }
 
 .career-home-footer{
-  margin-top: 300px;
   div.footer-content {
     font-family: $ec-links-font-family;
     font-size: 1.2rem;
@@ -134,5 +135,12 @@ section .contents h6{
   .image-heading {
     font-size: 50px;
     padding: 43px 16px 16px 16px;
+  }
+}
+.breadcrumb-item {
+  font-size: 1.1rem !important;
+  color: $sec-nav-active-bg-color !important;
+  .careers-breadcrumb-link {
+    color: $primary-nav-links-color;
   }
 }

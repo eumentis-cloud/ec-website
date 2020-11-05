@@ -62,7 +62,7 @@ const Header: React.FC<LocationProps> = ({ location }) => {
       >
         <Link className="nav-item" activeClassName="nav-item active" to={'/Careers/'}>Careers</Link>
         {location.pathname === '/Careers/' ?
-            <div style={{top: '1.65rem', paddingLeft: 14, position: 'absolute', fontSize: '1.2rem', color: '#FFF'}}>
+            <div style={{top: '1.65rem', paddingLeft: 12, position: 'absolute', fontSize: '1.2rem', color: '#FFFF66'}}>
               <CaretIcon />
             </div> : null}
       </div>
