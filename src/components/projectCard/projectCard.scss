@@ -3,8 +3,10 @@
 div.card {
   border-radius: 8px;
   &.work-card {
-    @include media-breakpoint-up(md) {
-      width: calc(100% + 4.5rem) !important;
+    &.our-work-section-card {
+      @include media-breakpoint-up(md) {
+        width: calc(100% + 4.5rem) !important;
+      }
     }
     div.card-body {
       span.badge {

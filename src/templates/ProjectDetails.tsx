@@ -1,11 +1,10 @@
 import React from "react";
 import {AllClientsDataType, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
-import {useStaticQuery, graphql, navigate} from "gatsby";
+import {useStaticQuery, graphql, navigate, Link} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
 import './project-details.scss';
 import LocationIcon from "../images/svgAssets/location.svg";
-import {Link} from 'gatsby';
 import ClientLogo from "../components/ClientLogo";
 import GooglePlayBadge from '../images/svgAssets/google-play-badge.svg';
 import AppStoreBadge from '../images/svgAssets/app-store-badge.svg';
@@ -291,10 +290,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         <div className="col py-md-0">
                                             <div className="media">
                                                 {demoVideoLinksData.length > 0 ?
-                                                    <div className="media-body">
-                                                        <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Demo Videos</h5>
+                                                    <div className="media-body justify-content-md-start justify-content-sm-center">
+                                                        <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Demo Videos</h5>
                                                         <div
-                                                            className="wrap d-flex align-items-baseline justify-content-md-center justify-content-center">
+                                                            className="wrap demo-video-wrapper d-flex align-items-baseline justify-content-md-start justify-content-center">
                                                             {demoVideoLinksData.map((demoLink, index): JSX.Element => (
                                                                 <a key={index} target="_blank" href={demoLink}>
                                                                     <i className="fa fa-youtube-play px-md-3 px-2 play-demo-icon"/>
@@ -304,11 +303,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                         </div>
                                                     </div> : null
                                                 }
-                                                <div className="media-body">
-                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-center">Links</h5>
+                                                <div className="media-body justify-content-md-start justify-content-center">
+                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Links</h5>
                                                     <div
-                                                        className="wrap row d-flex align-items-center justify-content-md-center justify-content-center">
-                                                        {launchWebsite ? <div className="col px-2 d-flex justify-content-center website-btn">
+                                                        className="wrap row d-flex align-items-center justify-content-md-start justify-content-center">
+                                                        {launchWebsite ? <div className="col px-2 d-flex text-nowrap justify-content-center justify-content-md-start website-btn">
                                                             <a target="_blank" className="btn btn-primary launch-web-btn shadow-hover"
                                                                href={launchWebsite} role="button">Launch Website</a>
                                                         </div> : null}
@@ -339,8 +338,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                         </div> : null
                                                         }
 
-                                                        {!googlePlayLink && !appStoreLink ? <div className="d-flex col-12 mt-2 justify-content-center">
-                                                    <span className={"text-center"}>
+                                                        {!googlePlayLink && !appStoreLink && !googlePlayLink2 ? <div className="d-flex col-12 col-sm-12 col-md-auto mt-2 no-app-link-wrapper justify-content-center justify-content-md-start">
+                                                    <span className={"text-left"}>
                                                         <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>
                                                     </span>
                                                         </div> : null}
@@ -699,7 +698,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 return clientData.node.id !== id;
                                             }).map((filteredData) => (
                                                 <SwiperSlide key={filteredData.node.id}>
-                                                   <button className="border-0 bg-transparent" onClick={(): void => {
+                                                   <button className="bg-dark border-0 bg-transparent h-100" onClick={(): void => {
                                                        navigate(`/OurWork/${filteredData.node.clientName.split(' ').join('-')}_${filteredData.node.projectDisplayName.split(' ').join('-')}`);
                                                    }}>
                                                        <ProjectCard parentClassName="h-100 text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />

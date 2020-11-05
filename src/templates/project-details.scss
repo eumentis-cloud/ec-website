@@ -94,13 +94,13 @@ section#testimonials {
 }
 
 .website-btn {
-  padding: .75rem 1rem;
+  padding: .75rem 1.2rem;
   @include media-breakpoint-up(md) {
     padding-right: 12vw;
   }
-  @media (min-width: 1367px) {
-    padding-right: 13.5vw;
-  }
+  //@media (min-width: 1367px) {
+  //  padding-right: 13.5vw;
+  //}
 }
 
 .work-section-next {
@@ -214,7 +214,7 @@ nav.project-details-nav {
     height: 75vh;
   }
   @media (min-width: 1367px) {
-    height: 50vh;
+    height: 52vh;
   }
 }
 
@@ -312,4 +312,19 @@ span.project-title {
   @include media-breakpoint-up(lg) {
     margin-top: -2.6rem;
   }
+}
+
+.demo-video-wrapper {
+  @include media-breakpoint-up(md) {
+    margin-left: -1.1rem;
+  }
+}
+
+.no-app-link-wrapper {
+  @media (min-width: 1367px) {
+    padding-right: 10rem !important;
+  }
+  //@include media-breakpoint-only(md) {
+  //  margin-left: -1.2rem !important;
+  //}
 }
