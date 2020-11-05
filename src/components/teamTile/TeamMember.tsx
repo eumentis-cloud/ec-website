@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import './teamMember.scss'
 import GatsbyImage  from 'gatsby-image'
-import {FixedImageType, FluidImageType} from "../../utils/types";
+import {FixedImageType} from "../../utils/types";
 
 // team member component props
 type TeamMemberTileProps = {

@@ -1,12 +1,16 @@
 import React from "react";
 
 type ContentSectionProps = {
+    // page title
     sectionTitle: string;
+    // content image
     imgSrc: any;
+    // section content
     sectionContent: JSX.Element;
+    // css class
     contentClassName?: string;
 }
-
+// FC
 const ContentSection: React.FC<ContentSectionProps> = ({sectionTitle, sectionContent, imgSrc, contentClassName}) => {
     return (
         <section className="page-content-container">

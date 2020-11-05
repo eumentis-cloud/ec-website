@@ -5,6 +5,7 @@ import FacebookLogo from "../images/png/social_facebook.png";
 import TwitterLogo from "../images/png/social_twitter.png";
 import MediumLogo from '../images/png/social_medium.png';
 
+// FC
 const SocialMediaBar: React.FC = () => {
     return (
             <>

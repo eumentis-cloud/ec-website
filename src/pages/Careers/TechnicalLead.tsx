@@ -19,7 +19,7 @@ const TechnicalLead: React.FC<LocationProps> = ({location}) => {
                         {' '}<Link to={"/"} className="link-for-position">
                         (cloud.eumentis.com)
                             </Link>
-                        we are a team of IIT Delhi graduates with a mission to use technology to solve complex business problems. We
+                        , we are a team of IIT Delhi graduates with a mission to use technology to solve complex business problems. We
                         <ul>
                             <li>
                                 assist businesses in their Digital Transformation journey by building business specific web and mobile applications.

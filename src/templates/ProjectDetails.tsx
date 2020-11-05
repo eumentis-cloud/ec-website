@@ -1,5 +1,5 @@
 import React from "react";
-import {AllClientsDataType, LocationProps, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
+import {AllClientsDataType, ProjectCateoryType, SingleAssetFluidType} from "../utils/types";
 import Layout from "../layouts/Layout";
 import {useStaticQuery, graphql, navigate} from "gatsby";
 import BackgroundImage from 'gatsby-background-image';
@@ -27,16 +27,22 @@ type ProjectDetailsProps = {
         node: Record<string | ProjectCateoryType, string>;
     };
 }
-
+// testimonial type
 type TestimonialDataType = {
+    // profile photo name
     profile_pic: string;
+    // person name
     name: string;
+    // person designation
     designation: string;
+    // testimonial quote
     quote: string;
 }
 
+// using swiper core features
 SwiperCore.use([Autoplay, Navigation, Pagination])
 
+// reusing swiper config
 const defaultSliderConfig = {
     loopPreventsSlide: false,
     preloadImages: true,
@@ -86,7 +92,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
             }
         }
     `);
-
+    // using data passed from gatsby-node to render project details
     const {id,
         projectDisplayName,
         clientLogo,
@@ -150,12 +156,15 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
         googlePlayLink2
     } = pageContext.node;
 
-    console.log('query data', pageContext);
-
+    // demo video links
     const demoVideoLinksData: Array<string> = [demoVideoLink_1,demoVideoLink_2,demoVideoLink_3,demoVideoLink_4,demoVideoLink_5].filter((link) => link !== '' && link !== null);
+    // problem card data
     const problemStatementData: Array<string> = [problem_1, problem_2,problem_3,problem_4,problem_5, problem_6,problem_7,problem_8,problem_9, problem_10].filter((entry) => entry !== '' && entry !== null);
+    // solution card data
     const solutionStatementData: Array<string> = [solution_1, solution_2,solution_3,solution_4,solution_5, solution_6,solution_7,solution_8,solution_9, solution_10].filter((entry) => entry !== null && entry !== '');
+    // frontend tech used
     const frontendTechData: Array<string> = [frontendTech_1,frontendTech_2,frontendTech_3,frontendTech_4,frontendTech_5].filter((entry) => entry !== '' && entry !== null);
+    // backend tech used
     const backendTechData: Array<string> = [backendTech_1,backendTech_2,backendTech_3,backendTech_4,backendTech_5].filter((entry) => entry !== '' && entry !== null);
 
 
@@ -186,7 +195,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     return (
         <BackgroundImage className="bg-project-details" fluid={file.childImageSharp.fluid}>
             <Layout location={location}>
-                <div className="">
+                <div>
                     <div className="row">
                         <main role="main" className="col-md-12 ml-sm-auto col-lg-12 col-xl-12 px-0 py-0">
                             <div className="parallax-window shadow-sm">

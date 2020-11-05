@@ -242,8 +242,6 @@ footer {
 }
 
 .careers-card-title {
-  //font-size: 1.4rem !important;
-  //font-family: $card-title-font-family !important;
   @include card-header();
   white-space: normal !important;
 }

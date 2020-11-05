@@ -4,9 +4,6 @@ import Layout from "../layouts/Layout";
 import '../scss/careers.scss';
 import CareersLayout from "../layouts/CareersLayout";
 import {Link} from 'gatsby';
-import ServicesCard from "../components/servicesCard/ServicesCard";
-import Img from '../images/svgAssets/mission.svg';
-import ProjectCard from "../components/projectCard/ProjectCard";
 import CareersCard from "../components/CareersCard";
 
 // FC

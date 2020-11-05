@@ -74,5 +74,5 @@ export type AllClientsDataType = {
         }>
     };
 }
-
+// project sector type
 export type ProjectCateoryType = "Food & Agriculture" | "Technology Startup" | "Marketing" | "Health" | "Commodities Trading" | "Manufacturing" | "Finance" | "Construction";

@@ -3,18 +3,18 @@ import LocationIcon from "../images/svgAssets/location.svg";
 import TechnologyDeptLogo from '../images/svgAssets/tech_dept.svg';
 
 type CareersCardProps = {
-    altImage: string;
+    // job role name
     positionName: string;
+    // job dept
     department: string;
 }
 
 // Functional Component
-const CareersCard: React.FC<CareersCardProps> = ({altImage, positionName, department}) => {
+const CareersCard: React.FC<CareersCardProps> = ({ positionName, department}) => {
     return (
         <div className="col md-4">
             <div className="card work-card h-100">
                 <TechnologyDeptLogo />
-                {/*<img src={TechnologyDeptLogo} className="card-img card-logo mt-4 career-card-img p-4" alt={altImage} />*/}
                 <div className="card-body ml-1">
                         <h5 className="d-block text-wrap careers-card-title border-0">
                         <span style={{borderBottom: '.35rem solid'}} className="border-warning">

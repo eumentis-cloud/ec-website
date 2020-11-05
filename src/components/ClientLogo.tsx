@@ -3,8 +3,11 @@ import {useStaticQuery, graphql} from 'gatsby';
 import GatsbyImage from "gatsby-image";
 import {FluidImageType} from "../utils/types";
 
+// project details clientLogo props
 type ClientLogoProps = {
+    // logo name
     clientLogo: string;
+    // logo alt text
     imgAltText: string;
 }
 

@@ -7,18 +7,26 @@ import GatsbyImage from "gatsby-image";
 import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../../utils/helpers";
 
 type ProjectCardProps = {
+    // main display name
     projectDisplayName?: string;
+    // logo name
     clientLogo?: string;
+    // client's name
     clientName?: string;
+    // client's city
     city?: string;
+    // client's state
     state?: string;
+    // client's country
     countryCode?: string;
+    // project sector
     sector?: ProjectCateoryType;
+    // project desc
     projectCardDescription?: string;
-    parentClassName?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription, parentClassName = '' }) => {
+// FC
+const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
 
     const allClientImages: FluidImageType = useStaticQuery(graphql`
         query {
@@ -43,7 +51,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
     `)
 
     return (
-        <div className={parentClassName}>
             <div className={`card work-card h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
                     <div className="card-header border-0 bg-transparent m-1">
                         <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
@@ -65,7 +72,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, clientLogo
                             <span className="card-text text-wrap d-block">{projectCardDescription}</span>
                         </div>
             </div>
-        </div>
     )
 }
 

@@ -2,10 +2,15 @@ import React from 'react';
 import {Link} from 'gatsby';
 
 type ServicesCardProps = {
+    // service card title
     title: string;
+    // service card desc
     description?: string;
+    // service card logo
     img: any;
+    // service card link
     navigateTo: string;
+    // parent container css class
     className?: string;
 }
 

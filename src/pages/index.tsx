@@ -40,7 +40,7 @@ const CompanyHeader = (): JSX.Element => (
 const IndexPage: React.FC<LocationProps> = ({ location }) => {
 
     // fetching top client's responsive images using transformer plugin
-    const topClientsImgData: FluidImageType = useStaticQuery(graphql`
+    const {allFile}: FluidImageType = useStaticQuery(graphql`
         query {
             allFile(filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, absolutePath: {regex: "/topClients/"}}) {
                 edges {
@@ -96,7 +96,7 @@ const IndexPage: React.FC<LocationProps> = ({ location }) => {
                   },
               }}>
                   {
-                      topClientsImgData.allFile.edges.map((item): JSX.Element => (
+                      allFile.edges.map((item): JSX.Element => (
                           <SwiperSlide key={item.node.base}>
                                   <GatsbyImage style={{ height: '6rem'}} imgStyle={{ height: item.node.base === 'bizminder.png' ? '4rem' : '5rem', objectFit: 'contain'}} className="top-client-img" fluid={item.node.childImageSharp.fluid} alt={item.node.base.split('.')[0]} />
                               <TopClientsCountrySlider baseImg={item.node.base} />
