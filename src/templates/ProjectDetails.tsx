@@ -701,7 +701,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                    <button className="bg-dark border-0 bg-transparent h-100" onClick={(): void => {
                                                        navigate(`/OurWork/${filteredData.node.clientName.split(' ').join('-')}_${filteredData.node.projectDisplayName.split(' ').join('-')}`);
                                                    }}>
-                                                       <ProjectCard parentClassName="h-100 text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
+                                                       <ProjectCard parentClassName="text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
                                                    </button>
                                                 </SwiperSlide>
                                             ))

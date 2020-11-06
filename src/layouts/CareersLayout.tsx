@@ -46,10 +46,10 @@ const CareersLayout: React.FC<CareersLayoutProps> = ({children, jobPosition, sec
                             <nav aria-label="breadcrumb" className="d-flex justify-content-between">
                             <div className="mt-2">
                                 <ol className="breadcrumb d-flex bg-transparent">
-                                    <li className="breadcrumb-item">
+                                    <li className="breadcrumb-item text-white">
                                         <Link to="/Careers/" className="careers-breadcrumb-link">Careers</Link>
                                     </li>
-                                    <li className="breadcrumb-item active text-dark"
+                                    <li className="breadcrumb-item text-white active text-dark"
                                         aria-current="page">
                                         {jobPosition}
                                     </li>

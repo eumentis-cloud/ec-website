@@ -53,8 +53,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, parentClas
     `)
 
     return (
-        <div className={parentClassName}>
-            <div className={`card work-card ${location.pathname === '/OurWork/' ? 'our-work-section-card' : ''} h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
+
+            <div className={`card work-card ${parentClassName} ${location.pathname === '/OurWork/' ? 'our-work-section-card' : ''} h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
                 <div className="card-header border-0 bg-transparent m-1">
                     <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
                 </div>
@@ -75,7 +75,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, parentClas
                     <span className="card-text text-wrap d-flex">{projectCardDescription}</span>
                 </div>
             </div>
-        </div>
     )
 }
 
