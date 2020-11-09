@@ -40,7 +40,12 @@ section#testimonials {
 }
 
 .media {
-  //width: calc(100% + 5rem);
+  &.client-details-wrapper {
+    @include media-breakpoint-up(md) {
+      width: calc(100% + 10rem) !important;
+      margin-left: -5rem;
+    }
+  }
   @include media-breakpoint-down(sm) {
     img {
       max-width: 100%;
@@ -211,6 +216,8 @@ nav.project-details-nav {
   padding-left: 0 !important;
   padding-right: 0 !important;
   background: $project-details-bg-color;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   @media (min-width: 300px) and (max-width: 380px) {
     height: calc(100vh + 8.5rem);
   }

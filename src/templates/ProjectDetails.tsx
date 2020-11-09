@@ -215,7 +215,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </ol>
                                             <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
                                                 <li className="breadcrumb-mobile">
-                                                   <Link to={'/OurWork/'}>
+                                                   <Link to={'/OurWork/'} className="text-black">
                                                        <i className="fa fa-angle-left pr-1 text-black" aria-hidden="true"/>
                                                        Our Work
                                                    </Link>
@@ -234,7 +234,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                     <div
                                         className="row row-cols-1 row-cols-md-3 justify-content-around align-content-start align-items-center py-2 py-md-5 mx-md-2">
                                         <div className="col">
-                                            <div className="media d-block d-sm-block d-md-flex">
+                                            <div className="media client-details-wrapper d-block d-sm-block d-md-flex">
                                                 <div
                                                     className="d-flex justify-content-center align-items-center py-2 py-md-2">
                                                          <ClientLogo imgAltText={clientName} clientLogo={clientLogo} />

@@ -55,18 +55,19 @@ const TeamMember: React.FC<TeamMemberTileProps> = ({
                     return entries.node.base === profile_pic
                 })
                 .map((item): JSX.Element => (
-                    <GatsbyImage
-                        className="mb-2"
-                        key={item.node.base}
-                        fixed={item.node.childImageSharp.fixed}
-                        imgStyle={{
-                            clipPath: 'circle(40%)',
-                            padding: '1.5rem',
-                        }}
-                        alt={name}
-                    />
+                      <div className="bg-dark overlay-wrapper-inner d-flex justify-content-center">
+                        <GatsbyImage
+                            key={item.node.base}
+                            fixed={item.node.childImageSharp.fixed}
+                            imgStyle={{
+                              clipPath: 'circle(40% at center)',
+                              padding: '1.5rem',
+                            }}
+                            alt={name}
+                        />
+                      </div>
                 ))}
-            <h4>{name}</h4>
+            <h4 className="mt-2">{name}</h4>
             <h5 className="core-team-college">{academics}</h5>
             <h5>{role}</h5>
         </div>

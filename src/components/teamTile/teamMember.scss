@@ -1,6 +1,9 @@
 @import '../../scss/variables';
 
 .team-member {
+  .overlay-wrapper-inner {
+    clip-path: circle(7.8rem at center);
+  }
   font-family: $ec-headings-font-family;
   text-align: center;
 
