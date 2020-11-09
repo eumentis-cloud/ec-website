@@ -206,9 +206,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                         <div className="mt-2">
                                             <ol className="breadcrumb d-none d-sm-none d-md-flex bg-transparent">
                                                 <li className="breadcrumb-item">
-                                                    <Link to="/OurWork/">Our Work</Link>
+                                                    <Link to="/OurWork/" className="text-black">Our Work</Link>
                                                 </li>
-                                                <li className="breadcrumb-item active text-dark"
+                                                <li className="breadcrumb-item active text-black"
                                                     aria-current="page">
                                                     {projectDisplayName}
                                                 </li>
@@ -216,7 +216,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
                                                 <li className="breadcrumb-mobile">
                                                    <Link to={'/OurWork/'}>
-                                                       <i className="fa fa-angle-left pr-1 text-dark" aria-hidden="true"/>
+                                                       <i className="fa fa-angle-left pr-1 text-black" aria-hidden="true"/>
                                                        Our Work
                                                    </Link>
                                                 </li>
@@ -250,7 +250,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                             {city}, {state} ({countryCode})
                                                         </span>
                                                     </div>
-                                                    <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)} px-2 py-2 mb-2 text-${setProjectCategoryColorClass(sector as ProjectCateoryType)}`}>{sector}</span>
+                                                    <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)} px-3 py-2 mb-2 text-${setProjectCategoryColorClass(sector as ProjectCateoryType)}`}>{sector}</span>
                                                 </div>
                                             </div>
                                         </div>
