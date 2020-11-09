@@ -23,7 +23,7 @@ const CareersCard: React.FC<CareersCardProps> = ({ positionName, department}) =>
                         </h5>
                     <div className="d-flex align-items-baseline pt-3 pb-2">
                         <LocationIcon />
-                        <span className="card-subtitle careers-card-subtitle mb-2 text-muted pl-2"><b>WFH</b> (Temporarily) | <b>Pune</b> (Permanent)</span>
+                        <span className="card-subtitle careers-card-subtitle mb-2 text-muted pl-2"><b className="text-black">WFH</b> (Temporarily) | <b className="text-black">Pune</b> (Permanent)</span>
                     </div>
                     <span className={`badge rounded-pill bg-warning py-2 px-4 mb-2 text-black text-black`}>{department}</span>
                 </div>

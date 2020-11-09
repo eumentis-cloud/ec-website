@@ -54,14 +54,21 @@ section#testimonials {
     }
   }
   .media-body {
+    &.video-wrapper {
     text-align: center;
+    }
+    &.links-section {
+     @include media-breakpoint-up(md) {
+       width: calc(100% + 2rem);
+     }
+    }
     h4 {
       font-family: $ec-headings-font-family;
       font-size: 2rem;
     }
     h5 {
       color: $sec-nav-active-links-color;
-      font-size: 1.2rem;
+      font-size: 1.14rem;
       font-weight: 700;
       @include media-breakpoint-down(sm) {
         font-size: 1.8rem;
@@ -298,13 +305,13 @@ span.project-title {
 }
 
 .proect-details-desc {
-  font-family: $ec-links-font-family;
+  font-family: $ec-headings-font-family;
   //color: $client-country-color;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 .no-apps-msg {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -317,6 +324,18 @@ span.project-title {
 .demo-video-wrapper {
   @include media-breakpoint-up(md) {
     margin-left: -1.1rem;
+  }
+}
+
+.badge-wrapper {
+  @include media-breakpoint-up(md) {
+    margin-left: -.8rem !important;
+  }
+}
+
+.launch-website-badge-wrapper {
+  @include media-breakpoint-up(md) {
+    margin-left: -.2rem !important;
   }
 }
 

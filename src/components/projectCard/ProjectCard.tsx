@@ -6,6 +6,7 @@ import { FluidImageType, ProjectCateoryType} from "../../utils/types";
 import GatsbyImage from "gatsby-image";
 import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../../utils/helpers";
 
+// Project card type
 type ProjectCardProps = {
     // main display name
     projectDisplayName?: string;
@@ -30,6 +31,7 @@ type ProjectCardProps = {
 // FC
 const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, parentClassName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
 
+    // fetching client logos
     const allClientImages: FluidImageType = useStaticQuery(graphql`
         query {
             allFile(filter: {extension: {regex: "/(jpg)|(png)|(jpeg)/"}, absolutePath: {regex: "/clients/"}}) {
