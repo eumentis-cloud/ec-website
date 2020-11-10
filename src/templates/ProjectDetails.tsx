@@ -463,7 +463,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                     <h4 className="section-title text-center my-3">
                                         Other Work
                                     </h4>
-                                    <Swiper id="otherWorksSlider" {...defaultSliderConfig} spaceBetween={20} slidesPerView={3} breakpoints={{
+                                    <Swiper className="h-100" id="otherWorksSlider" {...defaultSliderConfig} spaceBetween={20} slidesPerView={3} breakpoints={{
                                         320:{
                                             slidesPerView: 1,
                                             navigation: false,
@@ -489,12 +489,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             allClientsDataCsv && Array.isArray(allClientsDataCsv.edges) && allClientsDataCsv.edges.length > 0 && allClientsDataCsv.edges.filter((clientData) => {
                                                 return clientData.node.id !== id;
                                             }).map((filteredData) => (
-                                                <SwiperSlide key={filteredData.node.id}>
-                                                   <button className="bg-dark border-0 bg-transparent h-100" onClick={(): void => {
-                                                       navigate(`/OurWork/${filteredData.node.clientName.split(' ').join('-')}_${filteredData.node.projectDisplayName.split(' ').join('-')}`);
-                                                   }}>
-                                                       <ProjectCard parentClassName="text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
-                                                   </button>
+                                                <SwiperSlide id="other-work-slide" key={filteredData.node.id}>
+                                                        <ProjectCard parentClassName="text-left" projectDisplayName={filteredData.node.projectDisplayName} clientLogo={filteredData.node.clientLogo} clientName={filteredData.node.clientName} city={filteredData.node.city} state={filteredData.node.state} countryCode={filteredData.node.countryCode} sector={filteredData.node.sector as ProjectCateoryType} projectCardDescription={filteredData.node.projectCardDescription} />
                                                 </SwiperSlide>
                                             ))
                                         }
