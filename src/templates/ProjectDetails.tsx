@@ -499,6 +499,13 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                     </Swiper>
                                 </div>
                             </section>
+                            <section>
+                                <div className="footer attr-footer career-home-footer">
+                                    <div className="footer-content justify-content-center justify-content-md-end px-3">
+                                        <a href="https://www.freepik.com/vectors/infographic" className="text-dark">* Infographic vector created by stories - www.freepik.com</a>
+                                    </div>
+                                </div>
+                            </section>
                         </main>
                     </div>
                 </div>
