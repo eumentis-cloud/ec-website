@@ -336,7 +336,13 @@ span.project-title {
 
 .badge-wrapper {
   @include media-breakpoint-up(md) {
-    margin-left: -.8rem !important;
+    margin-left: -.6rem !important;
+  }
+}
+
+.badge-wrapper-2 {
+  @include media-breakpoint-up(md) {
+    margin-left: -1.2rem !important;
   }
 }
 
@@ -361,3 +367,5 @@ span.project-title {
   }
   height: 50vh !important;
 }
+
+

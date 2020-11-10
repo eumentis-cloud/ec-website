@@ -250,7 +250,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                             {city}, {state} ({countryCode})
                                                         </span>
                                                     </div>
-                                                    <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)} px-3 py-2 mb-2 text-${setProjectCategoryColorClass(sector as ProjectCateoryType)}`}>{sector}</span>
+                                                    <span className={`badge rounded-pill bg-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)} px-2 py-2 mb-2 text-${setProjectCategoryColorClass(sector as ProjectCateoryType)}`}>{sector}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -280,34 +280,36 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                                 <a target="_blank" className="ml-md-1 py-2 px-3 btn btn-primary launch-web-btn shadow-hover"
                                                                    href={launchWebsite} role="button">Launch Website</a>
                                                             </div>
-                                                            : null}
+                                                            : null
+                                                        }
                                                         {googlePlayLink ?
-                                                            <div className="col d-flex justify-content-center justify-content-md-start justify-content-xxl-start badge-wrapper ">
+                                                            <div className="text-center col d-flex justify-content-center justify-content-md-start justify-content-xxl-start">
                                                                 <a href={googlePlayLink} target="_blank">
                                                                     <GooglePlayBadge alt="Google Play badge" />
-                                                                    {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                                        <div className="text-center text-dark">Keshar Kali Rice</div> : null
-                                                                    }
                                                                 </a>
+                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
+                                                                {/*}*/}
                                                             </div>
                                                          : null}
                                                         {appStoreLink ?
-                                                            <div className={`col justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
+                                                            <div className={`badge-wrapper col justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
                                                             <a href={appStoreLink} target="_blank">
                                                                 <AppStoreBadge alt="App store badge" />
-                                                                {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                                    <div className="text-center text-dark mt-1">Keshar Kali Rice</div> : null
-                                                                }
                                                             </a>
+                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
+                                                                {/*}*/}
                                                         </div> : null}
 
-                                                        {googlePlayLink2 ? <div className="col mt-2 d-flex justify-content-center justify-content-md-start">
-                                                            <a href={googlePlayLink} target="_blank">
+                                                        {googlePlayLink2 ?
+                                                            <div className={`col ml-md-2 justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
+                                                            <a href={googlePlayLink2} target="_blank">
                                                                 <GooglePlayBadge alt="Google Play badge" />
-                                                                {projectDisplayName === 'Product Authenticity Verification Platform' ?
-                                                                    <div className="text-center text-dark mt-1">KK Apply Label</div> : null
-                                                                }
                                                             </a>
+                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">KK Label Apply</div> : null*/}
+                                                                {/*}*/}
                                                         </div> : null
                                                         }
 
