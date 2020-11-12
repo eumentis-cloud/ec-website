@@ -196,7 +196,10 @@ i.play-demo-icon {
   @include media-breakpoint-up(md) {
     font-size: 3.2em;
   }
-  font-size: 2em;
+  //font-size: 2em;
+  //img {
+  //  height: 70px !important;
+  //}
 }
 
 .tech-icon-text {
@@ -374,5 +377,3 @@ span.project-title {
     height: 40vh !important;
   }
 }
-
-

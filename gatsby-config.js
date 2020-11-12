@@ -35,6 +35,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `techIcons`,
+        path: `${__dirname}/src/images/tech`,
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/src/data/team/`,
         name: `teamData`,
       },

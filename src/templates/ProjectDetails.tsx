@@ -19,6 +19,7 @@ import ProjectCard from "../components/projectCard/ProjectCard";
 // problem and solution assets
 import ProblemLogo from '../images/png/problem.png';
 import SolutionLogo from '../images/png/solution.png';
+import TechStackLogo from "../components/TechStackLogo";
 
 // component props
 type ProjectDetailsProps = {
@@ -386,8 +387,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 <div className="row">
                                                     {frontendTechData.map((iconName, index) => (
                                                         <div className="col d-inline" key={index}>
-                                                            <i className={`icon-${iconName} tech-icons`} />
-                                                            <div className="text-capitalize tech-icon-text">{iconName}</div>
+                                                            <TechStackLogo techLogo={iconName} />
+                                                            <span className="text-capitalize text-center mt-2 tech-icon-text">{iconName.split('.')[0]}</span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -398,8 +399,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                 <div className="row">
                                                     {backendTechData.map((iconName, index) => (
                                                         <div className="col d-inline" key={index}>
-                                                            <i className={`icon-${iconName} tech-icons`} />
-                                                            <div className="text-capitalize tech-icon-text">{iconName}</div>
+                                                            <TechStackLogo techLogo={iconName} />
+                                                            <span className="text-capitalize tech-icon-text mt-1">{iconName.split('.')[0]}</span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -500,8 +501,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                 </div>
                             </section>
                             <section>
-                                <div className="footer attr-footer career-home-footer">
-                                    <div className="footer-content justify-content-center justify-content-md-end px-3">
+                                <div className="footer career-home-footer bg-transparent">
+                                    <div className="footer-content bg-transparent justify-content-center justify-content-md-end px-3">
                                         <a href="https://www.freepik.com/vectors/infographic" className="text-dark">* Infographic vector created by stories - www.freepik.com</a>
                                     </div>
                                 </div>
