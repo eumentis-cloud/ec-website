@@ -334,7 +334,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                 <div className="col mb-4">
                                     <div className="card work-card h-100 mx-md-5 shadow">
                                         <div className="d-flex justify-content-center mt-3">
-                                            <img width="250" height="250" alt="problem solving" src={ProblemLogo} />
+                                            <img width="200" height="200" alt="problem solving" src={ProblemLogo} />
                                         </div>
                                         <div className="card-body">
                                             <h4 className="section-title text-center card-title pb-5">
@@ -355,7 +355,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                 <div className="col mb-4">
                                     <div className="card work-card h-100 mx-md-5 shadow">
                                         <div className="d-flex justify-content-center mt-3">
-                                            <img width="250" height="250" alt="problem solving" src={SolutionLogo} />
+                                            <img width="200" height="200" alt="problem solving" src={SolutionLogo} />
                                         </div>
                                         <div className="card-body">
                                             <h4 className="section-title text-center card-title pb-5">
