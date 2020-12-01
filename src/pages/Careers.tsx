@@ -19,9 +19,9 @@ const Careers: React.FC<LocationProps> = ({location}) => {
                             <Link to={"/Careers/TechnicalLead/"}>
                                 <CareersCard positionName="Technical Lead" department="Technology" />
                             </Link>
-                            <Link to="/Careers/SeniorDeveloper/" className="py-4 py-md-0">
+                            {/* <Link to="/Careers/SeniorDeveloper/" className="py-4 py-md-0">
                                 <CareersCard positionName="Senior Developer" department="Technology" />
-                            </Link>
+                            </Link> */}
                             <Link to="/Careers/JuniorDeveloper/">
                                 <CareersCard positionName="Junior Developer" department="Technology" />
                             </Link>
