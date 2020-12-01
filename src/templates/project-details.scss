@@ -378,3 +378,22 @@ span.project-title {
     height: 40vh !important;
   }
 }
+
+.list-group-item {
+  border: solid #FFF6A8 !important;
+  border-radius: 10px !important;
+  padding: 0.1rem 1.2rem !important;
+  margin: 0.5rem !important;
+  background-color: #fffcf170 !important;
+}
+
+.list-group-flush > .list-group-item {
+  border-left-width: 15px !important;
+  border-top-width: 1px !important;
+  border-right-width: 1px !important;
+  border-bottom-width: 1px !important;
+
+
+}
+
+
