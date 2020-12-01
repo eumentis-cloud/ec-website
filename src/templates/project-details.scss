@@ -92,14 +92,14 @@ section#testimonials {
     span.badge {
       @include badge_style();
       @include media-breakpoint-up(md) {
-        margin-right: 5rem;
+        margin-right: 15rem;
       }
       @include media-breakpoint-down(sm) {
         margin: 0 5rem;
         font-size: 1.3rem;
       }
       @media (min-width: 1367px) {
-        margin-right: 16rem;
+        margin-right: 20rem;
       }
     }
   }
