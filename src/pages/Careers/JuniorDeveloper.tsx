@@ -10,7 +10,7 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
 
     return (
         <Layout location={location} className="px-0 mx-0 overflow-hidden">
-            <CareersLayout jobPosition="Junior Developer" applyLink="https://forms.gle/xgsub4f96Cps7VuM8" sectionTitle={'Apply for Junior Software Developer'} children={
+            <CareersLayout jobPosition="Junior Developer" applyLink="https://forms.gle/xdF2otHGBgZ38v858" sectionTitle={'Apply for Junior Developer'} children={
                 <>
                     <section>
                         <div className="career-section-heading">About company</div>
@@ -44,16 +44,10 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
                         <div className="career-section-heading">Job responsibilities</div>
                         <div className="contents">
                             <ul>
-                                <li>Develop and maintain multiple single page applications and mobile applications
-                                    (Android & iOS) in coordination with other developers
-                                </li>
+                                <li>Develop multiple single page applications and websites under supervision of technical lead</li>
                                 <li>Build reusable components and front-end libraries for future use</li>
                                 <li>Translate designs and wireframes into high-quality code</li>
                                 <li>Identify problems documented by customer feedback, test and correct theme</li>
-                                <li>Create and maintain software and technical documentation</li>
-                                <li>Stay up-to-date with all the emerging technologies/industry trends that can be
-                                    integrated into the company’s development pipeline
-                                </li>
                                 <li>Fix front-end related bugs, performance issues, etc as and when they arise</li>
                                 <li>Write well designed, testable, efficient code by using best software development
                                     practices
@@ -65,7 +59,7 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
                     <section>
                         <div className="career-section-heading">Candidate requirements</div>
                         <div className="contents">
-                            <h6>Must have:</h6>
+                            <h5>Primary</h5>
                             <ul>
                                 <li>A Bachelor’s degree with some background in coding, and understanding of data
                                     structures and algorithms
@@ -73,11 +67,8 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
                                 <li>Excellent problem solving and analytical skills</li>
                                 <li>Good written and oral communication skills - English</li>
                                 <li>Eagerness for continuous learning and improvement</li>
-                                <li>Ability to understand and learn new libraries/tools/technologies from their official
-                                    website and documentation
-                                </li>
                             </ul>
-                            <h6>Have Some knowledge of:</h6>
+                            <h5>Secondary</h5>
                             <ul>
                                 <li>HTML5 & CSS3</li>
                                 <li>JavaScript</li>
@@ -90,22 +81,27 @@ const JuniorDeveloper: React.FC<LocationProps> = ({location}) => {
                         <div className="career-section-heading">Job benefits</div>
                         <div className="contents">
                             <ul>
-                                <li>Salary in the range of <b> 1.5-3.5 Lac per annum</b></li>
-                                <li>Job location - <b>Pune</b></li>
-                                <li>Work on cool startup ideas</li>
-                                <li>Fast career growth with unlimited skill development</li>
-                                <li>Learn and work on the cutting edge technologies in front-end development such as <b>ReactJS
-                                    & React Native</b></li>
-                                <li>Tremendous scope to use expertise to solve interesting and wide range of technical
-                                    problems
+                                <li>Salary range: <b> 1.5-3.5 Lac per annum</b> (depending on skills)</li>
+                                <li>Job location - Work from home (temporary); <b>Pune</b> (permanent)</li>
+                                <li>Building cool web and mobile applications usi	ng cutting edge technologies such as React Native and ReactJS
                                 </li>
-                                <li>Work with and get mentored by a group of highly motivated and experienced
-                                    individuals
-                                </li>
-                                <li>Guaranteed rapid growth in terms of knowledge and technical application.</li>
-                                <li>Expand technical knowledge by engaging in online courses, seminars & meetups.</li>
+                                <li>Being a part of a rapid growth organization expanding into Machine Learning and AI</li>
+                                <li>Using your training experience to solve an interesting and wide range of technical problems</li>
+                                <li>Working with a group of highly motivated and experienced individuals</li>
+                                <li>Working on unicorn worthy startup ideas</li>
+                                <li>Engaging in top online courses, seminars & meetups</li>
                             </ul>
                         </div>
+                            <div className="container">
+                                <div className="mission">
+                                    <div>Our focus is to guide eager learners so that they can lead teams to execute top to
+                                        bottom web application development projects on their own in the future.
+                                    </div>
+                                    <div>So, if you are looking for a place that pays you to learn, become the best in the
+                                        industry and be a master of web development, come join us.
+                                    </div>
+                                </div>
+                            </div>
                     </section>
                 </>
             }  />
