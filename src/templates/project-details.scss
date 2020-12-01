@@ -236,7 +236,7 @@ nav.project-details-nav {
     height: 75vh;
   }
   @media (min-width: 1367px) {
-    height: 52vh;
+    height: 56vh;
   }
 }
 
@@ -344,6 +344,12 @@ span.project-title {
 
 .badge-wrapper {
   @include media-breakpoint-up(md) {
+    margin-left: -.6rem !important;
+  }
+}
+
+.badge-wrapper-xxl {
+  @media (min-width: 1367px) {
     margin-left: -.6rem !important;
   }
 }

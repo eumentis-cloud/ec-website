@@ -292,7 +292,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                                 !launchWebsite && !googlePlayLink && !googlePlayLink2 && !appStoreLink && noAppsMessage === 'no' ? null : <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Links</h5>
                                                             }
                                                             <div
-                                                                className="row d-flex align-items-start justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start justify-content-center">
+                                                                className="row d-flex align-items-start justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start align-items-baseline justify-content-center">
                                                                 {launchWebsite ?
                                                                     <div className="launch-website-badge-wrapper col d-flex justify-content-center justify-content-md-start">
                                                                         <a target="_blank" className="ml-md-1 py-2 px-3 btn btn-primary launch-web-btn shadow-hover"
@@ -321,7 +321,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                                                     </div> : null}
 
                                                                 {googlePlayLink2 ?
-                                                                    <div className={`col ml-md-2 justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
+                                                                    <div className={`badge-wrapper-xxl col justify-content-xxl-start justify-content-xl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
                                                                         <a href={googlePlayLink2} target="_blank">
                                                                             <GooglePlayBadge alt="Google Play badge" />
                                                                         </a>
