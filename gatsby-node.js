@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       node {
         id
         projectDisplayName
+        noAppsMessage
         clientLogo
         clientName
         city
