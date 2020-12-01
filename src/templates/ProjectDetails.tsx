@@ -98,6 +98,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     // using data passed from gatsby-node (per-page data) to render project details
     const {id,
         projectDisplayName,
+        noAppsMessage,
         clientLogo,
         clientName,
         city,
@@ -159,6 +160,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
         googlePlayLink2
     } = pageContext.node;
 
+    console.log('no apps msg', noAppsMessage);
+
     // demo video links
     const demoVideoLinksData: Array<string> = [demoVideoLink_1,demoVideoLink_2,demoVideoLink_3,demoVideoLink_4,demoVideoLink_5].filter((link) => link !== '' && link !== null);
     // problem card data
@@ -194,6 +197,16 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
     // ].filter((data) => {
     //     return data.quote !== null && data.quote !== '';
     // });
+
+    const setAppsMsg = () => {
+        if(projectDisplayName === 'Customer Experience Apps Suite' && noAppsMessage === 'yes' ) {
+            return halagigMsg;
+        }
+        if(noAppsMessage === 'yes') {
+            return noAppLinksMsg;
+        }
+        return null;
+    }
 
     return (
         <BackgroundImage className="bg-project-details" fluid={file.childImageSharp.fluid}>
@@ -233,7 +246,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             <q className="proect-details-desc">{tagline}</q> : null}
                                     </div>
                                     <div
-                                        className="row row-cols-1 row-cols-md-3 justify-content-around align-content-start align-items-center py-2 py-md-5 mx-md-2">
+                                        className={`row row-cols-1 row-cols-md-3 ${demoVideoLinksData.length > 0 || googlePlayLink || googlePlayLink2 || appStoreLink || launchWebsite ? 'justify-content-around' : 'justify-content-center' } align-content-start align-items-center py-2 py-md-5 mx-md-2`}>
                                         <div className="col">
                                             <div className="media client-details-wrapper d-block d-sm-block d-md-flex">
                                                 <div
@@ -256,74 +269,79 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({location, pageContext}) 
                                             </div>
                                         </div>
 
-                                        <div className="col py-md-0">
-                                            <div className="media">
-                                                {demoVideoLinksData.length > 0 ?
-                                                    <div className="media-body video-wrapper justify-content-md-start justify-content-sm-center">
-                                                        <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Demo Videos</h5>
-                                                        <div
-                                                            className="wrap demo-video-wrapper d-flex align-items-baseline justify-content-md-start justify-content-center">
-                                                            {demoVideoLinksData.map((demoLink, index): JSX.Element => (
-                                                                <a key={index} target="_blank" href={demoLink}>
-                                                                    <i className="fa fa-youtube-play px-md-3 px-2 play-demo-icon"/>
-                                                                    <p className="text-center text-dark video-text font-weight-bold">Video-{index + 1}</p>
-                                                                </a>
-                                                            ))}
-                                                        </div>
-                                                    </div> : null
-                                                }
-                                                <div className="media-body justify-content-center justify-content-md-start links-section">
-                                                    <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Links</h5>
-                                                    <div
-                                                        className="row d-flex align-items-start justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start justify-content-center">
-                                                        {launchWebsite ?
-                                                            <div className="launch-website-badge-wrapper col d-flex justify-content-center justify-content-md-start">
-                                                                <a target="_blank" className="ml-md-1 py-2 px-3 btn btn-primary launch-web-btn shadow-hover"
-                                                                   href={launchWebsite} role="button">Launch Website</a>
-                                                            </div>
-                                                            : null
+                                        {
+                                            demoVideoLinksData.length > 0 || googlePlayLink2 || googlePlayLink || appStoreLink || launchWebsite ?
+                                                <div className="col py-md-0">
+                                                    <div className="media">
+                                                        {demoVideoLinksData.length > 0 ?
+                                                            <div className="media-body video-wrapper justify-content-md-start justify-content-sm-center">
+                                                                <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Demo Videos</h5>
+                                                                <div
+                                                                    className="wrap demo-video-wrapper d-flex align-items-baseline justify-content-md-start justify-content-center">
+                                                                    {demoVideoLinksData.map((demoLink, index): JSX.Element => (
+                                                                        <a key={index} target="_blank" href={demoLink}>
+                                                                            <i className="fa fa-youtube-play px-md-3 px-2 play-demo-icon"/>
+                                                                            <p className="text-center text-dark video-text font-weight-bold">Video-{index + 1}</p>
+                                                                        </a>
+                                                                    ))}
+                                                                </div>
+                                                            </div> : null
                                                         }
-                                                        {googlePlayLink ?
-                                                            <div className="text-center col d-flex justify-content-center justify-content-md-start justify-content-xxl-start">
-                                                                <a href={googlePlayLink} target="_blank">
-                                                                    <GooglePlayBadge alt="Google Play badge" />
-                                                                </a>
-                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
-                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
-                                                                {/*}*/}
-                                                            </div>
-                                                         : null}
-                                                        {appStoreLink ?
-                                                            <div className={`badge-wrapper col justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
-                                                            <a href={appStoreLink} target="_blank">
-                                                                <AppStoreBadge alt="App store badge" />
-                                                            </a>
-                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
-                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
-                                                                {/*}*/}
-                                                        </div> : null}
+                                                        <div className="media-body justify-content-center justify-content-md-start links-section">
+                                                            {
+                                                                !launchWebsite && !googlePlayLink && !googlePlayLink2 && !appStoreLink && noAppsMessage === 'no' ? null : <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">Links</h5>
+                                                            }
+                                                            <div
+                                                                className="row d-flex align-items-start justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start justify-content-center">
+                                                                {launchWebsite ?
+                                                                    <div className="launch-website-badge-wrapper col d-flex justify-content-center justify-content-md-start">
+                                                                        <a target="_blank" className="ml-md-1 py-2 px-3 btn btn-primary launch-web-btn shadow-hover"
+                                                                           href={launchWebsite} role="button">Launch Website</a>
+                                                                    </div>
+                                                                    : null
+                                                                }
+                                                                {googlePlayLink ?
+                                                                    <div className="text-center col d-flex justify-content-center justify-content-md-start justify-content-xxl-start">
+                                                                        <a href={googlePlayLink} target="_blank">
+                                                                            <GooglePlayBadge alt="Google Play badge" />
+                                                                        </a>
+                                                                        {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                        {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
+                                                                        {/*}*/}
+                                                                    </div>
+                                                                    : null}
+                                                                {appStoreLink ?
+                                                                    <div className={`badge-wrapper col justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
+                                                                        <a href={appStoreLink} target="_blank">
+                                                                            <AppStoreBadge alt="App store badge" />
+                                                                        </a>
+                                                                        {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                        {/*    <div className="text-nowrap align-self-baseline mt-md-2">Keshar Kali Rice</div> : null*/}
+                                                                        {/*}*/}
+                                                                    </div> : null}
 
-                                                        {googlePlayLink2 ?
-                                                            <div className={`col ml-md-2 justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
-                                                            <a href={googlePlayLink2} target="_blank">
-                                                                <GooglePlayBadge alt="Google Play badge" />
-                                                            </a>
-                                                                {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
-                                                                {/*    <div className="text-nowrap align-self-baseline mt-md-2">KK Label Apply</div> : null*/}
-                                                                {/*}*/}
-                                                        </div> : null
-                                                        }
+                                                                {googlePlayLink2 ?
+                                                                    <div className={`col ml-md-2 justify-content-xxl-start d-flex ${location.pathname === '/OurWork/Bhagwati-Rice-&-Agro-Industries_Product-Authenticity-Verification-Platform' ? 'mt-2': ''} justify-content-center justify-content-md-start`}>
+                                                                        <a href={googlePlayLink2} target="_blank">
+                                                                            <GooglePlayBadge alt="Google Play badge" />
+                                                                        </a>
+                                                                        {/*{projectDisplayName === 'Product Authenticity Verification Platform' ?*/}
+                                                                        {/*    <div className="text-nowrap align-self-baseline mt-md-2">KK Label Apply</div> : null*/}
+                                                                        {/*}*/}
+                                                                    </div> : null
+                                                                }
 
-                                                        {!googlePlayLink && !appStoreLink && !googlePlayLink2 ?
-                                                        <div className="text-center text-md-left col-12 d-flex col-sm-12 col-md-auto mt-2 no-app-link-wrapper justify-content-center justify-content-md-start">
+                                                                {!googlePlayLink && !appStoreLink && !googlePlayLink2 ?
+                                                                    <div className="text-center text-md-left col-12 d-flex col-sm-12 col-md-auto mt-2 no-app-link-wrapper justify-content-center justify-content-md-start">
                                                         <span>
-                                                        <i className="no-apps-msg">{projectDisplayName === 'Customer Experience Apps Suite' ? halagigMsg : noAppLinksMsg }</i>
+                                                        <i className="no-apps-msg">{setAppsMsg()}</i>
                                                          </span>
-                                                        </div> : null}
+                                                                    </div> : null}
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                </div> : null
+                                        }
 
                                     </div>
                                 </div>
