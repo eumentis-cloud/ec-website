@@ -99,3 +99,42 @@ footer {
     }
   }
 }
+
+.writeToUsModal {
+  //position: fixed;
+  //top: 50%;
+  //left: 50%;
+  //width: 500px !important;
+  //height: 400px !important;
+}
+
+div.ReactModal__Content.ReactModal__Content--after-open {
+  //margin: 50% 50% !important;
+  max-height: 600px !important;
+  @include media-breakpoint-up(md) {
+    margin-left: 34% !important;
+    margin-right: 34% !important;
+  }
+  background-color: #F0F0F0 !important;
+  @media (min-width: 1367px) {
+    margin-left: 39% !important;
+    margin-right: 39% !important;
+  }
+}
+
+.contact-form-input {
+  width: 300px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 5px 2px 5px 2px !important;
+  margin: 5px 0 5px 0 !important;
+}
+
+.contact-form-btn-container {
+  display: flex !important;
+  margin-top: 20px;
+  @include media-breakpoint-up(md) {
+    justify-content: center !important;
+  }
+  justify-content: flex-end !important;
+}
