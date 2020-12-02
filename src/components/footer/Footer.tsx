@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
           </div>
         </footer>
         <Modal closeTimeoutMS={500} isOpen={isModalOpen} onRequestClose={toggleModal}>
-          <div>Write to us, if you like to avail our services.</div>
+          <div>Write to us, if you would like to avail our services.</div>
           <form onSubmit={methods.handleSubmit((data) => {
             console.log('formData', data);
           }, (errors) => {
