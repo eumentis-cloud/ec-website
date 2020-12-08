@@ -167,9 +167,9 @@ $service-box-border-color: #F9F900;
 }
 
 @mixin card_header() {
-  font-family: $card-title-font-family;
+  font-family: $ec-headings-font-family;
+  font-weight: 700;
   @include heading-text();
-  letter-spacing: .1rem;
   @include media-breakpoint-up(lg) {
     font-size: 1.20rem;
     line-height: 1.6;
@@ -185,7 +185,7 @@ $service-box-border-color: #F9F900;
 }
 
 @mixin heading_text() {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: $service-box-header-color;
 }
 
