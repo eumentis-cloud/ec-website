@@ -21,7 +21,7 @@
   }
   .primary-nav-item:not(.primary-nav-active):hover {
     background-color: $ec-bg-color;
-    a {
+    span {
       color: $primary-nav-hover-links-color;
     }
   }
