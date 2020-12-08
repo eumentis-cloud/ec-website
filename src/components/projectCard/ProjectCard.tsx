@@ -2,7 +2,7 @@ import React from "react";
 import './projectCard.scss';
 import LocationIcon from '../../images/svgAssets/location.svg';
 import {graphql, useStaticQuery} from "gatsby";
-import { FluidImageType, ProjectCateoryType} from "../../utils/types";
+import {FluidImageType, LocationProps, ProjectCateoryType} from "../../utils/types";
 import GatsbyImage from "gatsby-image";
 import {setProjectCategoryBackgroundClass, setProjectCategoryColorClass} from "../../utils/helpers";
 
@@ -29,7 +29,7 @@ type ProjectCardProps = {
 }
 
 // FC
-const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, parentClassName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
+const ProjectCard: React.FC<ProjectCardProps & LocationProps> = ({projectDisplayName, location, parentClassName, clientLogo, clientName, city, state, countryCode, sector, projectCardDescription }) => {
 
     // fetching client logos
     const allClientImages: FluidImageType = useStaticQuery(graphql`
@@ -56,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({projectDisplayName, parentClas
 
     return (
 
-            <div className={`card work-card ${parentClassName} ${location.pathname === '/OurWork/' ? 'our-work-section-card' : ''} h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
+            <div className={`card work-card ${parentClassName} ${location && location.pathname === '/OurWork/' ? 'our-work-section-card' : ''} h-100 ${clientName === 'Drona Lectures' || clientName === 'VendR' ? 'card-no-hover' : ''}`}>
                 <div className="card-header border-0 bg-transparent m-1">
                     <span className={`project-display-name border-${setProjectCategoryBackgroundClass(sector as ProjectCateoryType)}`}>{projectDisplayName}</span>
                 </div>
