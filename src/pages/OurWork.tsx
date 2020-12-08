@@ -39,7 +39,7 @@ const OurWork: React.FC<LocationProps> = ({location}) => {
                     {
                         allClientsDataCsv.edges.map((data) => (
                             <Link className="col mx-md-2 mx-lg-2 mx-xl-2 mb-4 project-card-link" key={data.node.id} to={data.node.clientName === 'Drona Lectures' || data.node.clientName === 'VendR' ? '/OurWork/' : `${data.node.clientName.split(' ').join('-')}_${data.node.projectDisplayName.split(' ').join('-')}`}>
-                                <ProjectCard projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} sector={data.node.sector as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
+                                <ProjectCard location={location} projectDisplayName={data.node.projectDisplayName} clientLogo={data.node.clientLogo} clientName={data.node.clientName} city={data.node.city} state={data.node.state} countryCode={data.node.countryCode} sector={data.node.sector as ProjectCateoryType} projectCardDescription={data.node.projectCardDescription} />
                             </Link>
                         ))
                     }

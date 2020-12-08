@@ -620,6 +620,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                               countryCode={filteredData.node.countryCode}
                               sector={filteredData.node.sector as ProjectCateoryType}
                               projectCardDescription={filteredData.node.projectCardDescription}
+                              location={location}
                             />
                           </SwiperSlide>
                         ))}
