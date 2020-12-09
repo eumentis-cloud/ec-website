@@ -49,11 +49,7 @@ const IndexPage: React.FC<LocationProps> = ({ location }) => {
                         base
                         childImageSharp {
                             fluid {
-                                aspectRatio
-                                base64
-                                sizes
-                                src
-                                srcSet
+                                ...GatsbyImageSharpFluid_noBase64
                             }
                         }
                     }
