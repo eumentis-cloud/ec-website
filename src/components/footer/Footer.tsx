@@ -1,8 +1,7 @@
 import { Link } from 'gatsby'
-import Modal from 'react-modal';
 import React, {useState} from 'react'
 import './footer.scss'
-import {useForm} from "react-hook-form";
+import LinkedInLogo from '../../images/svgAssets/linkedin.svg';
 
 type ContactFormType = {
   fullName: string | null;
@@ -13,21 +12,6 @@ type ContactFormType = {
 
 // Functional Component
 const Footer: React.FC = () => {
-  // toggling write to us modal
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const methods = useForm<ContactFormType>({
-    defaultValues: {
-      fullName: null,
-      emailAddress: null,
-      mobileNo: null,
-      message: null,
-    }
-  });
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-    methods.reset();
-  }
 
   return (
       <>
@@ -36,28 +20,11 @@ const Footer: React.FC = () => {
             <div className="col footer-contact black-bg">
               <div className="row no-gutters">
                 <div className="col col-md-5 col-lg-6">
-                  <a className="hoverable" onClick={() => {
-                    toggleModal()
-                  }}>
-                    <svg
-                        className="ec-theme-color"
-                        x="0px"
-                        y="0px"
-                        viewBox="0 0 550.8 550.8"
-                        xmlSpace="preserve"
-                    >
-                      <path
-                          className="st0"
-                          d="M501.6 491.8c12.4 0 23.1-4.1 32.2-12.2l-156-156.1c-3.7 2.7-7.4 5.3-10.8 7.8-11.7 8.6-21.2 15.3-28.4 20.1-7.3 4.8-17 9.7-29 14.8-12.1 5-23.4 7.5-33.8 7.5h-.6c-10.5 0-21.7-2.5-33.8-7.5-12.1-5-21.8-9.9-29-14.8-7.3-4.8-16.8-11.5-28.4-20.1-3.3-2.4-6.9-5-10.8-7.8L16.9 479.6c9.1 8.1 19.9 12.2 32.2 12.2h452.5zM31 225.3c-11.7-7.8-22-16.7-31-26.7V436l137.5-137.5C110 279.2 74.6 254.9 31 225.3zM520.1 225.3c-41.9 28.3-77.4 52.7-106.8 73.2L550.8 436V198.6c-8.8 9.8-19.1 18.7-30.7 26.7z"
-                      />
-                      <path
-                          className="st0"
-                          d="M501.6 59H49.2c-15.8 0-27.9 5.3-36.4 16C4.3 85.6 0 99 0 114.9c0 12.9 5.6 26.9 16.9 42 11.3 15.1 23.3 26.9 36 35.5 7 4.9 28 19.5 63 43.8 18.9 13.1 35.4 24.5 49.5 34.4 12.1 8.4 22.4 15.7 31 21.7 1 .7 2.5 1.8 4.6 3.3 2.2 1.6 5 3.6 8.5 6.1 6.7 4.8 12.2 8.7 16.6 11.7 4.4 3 9.7 6.3 16 10 6.2 3.7 12.1 6.5 17.7 8.3 5.5 1.8 10.7 2.8 15.4 2.8h.6c4.7 0 9.8-.9 15.4-2.8 5.5-1.8 11.4-4.6 17.7-8.3 6.2-3.7 11.6-7 16-10s9.9-6.9 16.6-11.7c3.5-2.5 6.3-4.5 8.5-6.1 2.1-1.5 3.6-2.6 4.6-3.3 6.7-4.7 17.1-11.9 31.1-21.6 25.5-17.7 63-43.8 112.7-78.3 15-10.4 27.5-23.1 37.5-37.8 10-14.7 15.1-30.2 15.1-46.4 0-13.5-4.9-25.1-14.6-34.7-9.9-9.7-21.5-14.5-34.8-14.5z"
-                      />
-                    </svg>
+                  <a target="_blank" href="https://www.linkedin.com/company/eumentis-cloud/" className="d-flex align-content-center justify-content-center hoverable">
+                    <LinkedInLogo style={{padding: 2}} />
                     <span className="d-none d-sm-none d-md-none d-lg-inline-block d-xl-inline-block">
-                Write to us
-              </span>
+                Connect on LinkedIn
+                    </span>
                   </a>
                 </div>
                 <div className="col col-md-7 col-lg-6">
@@ -188,38 +155,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </footer>
-        <Modal closeTimeoutMS={500} isOpen={isModalOpen} onRequestClose={toggleModal}>
-          <div>Write to us, if you would like to avail our services.</div>
-          <form onSubmit={methods.handleSubmit((data) => {
-            console.log('formData', data);
-          }, (errors) => {
-            console.log('form errors', errors);
-          })}>
-            <div>
-              <input className="contact-form-input" ref={methods.register({required: 'Please enter full name and try again'})} name="fullName" placeholder="Full Name" />
-              {methods.errors.fullName ? <span style={{color: 'red'}}>{methods.errors.fullName.message}</span> : null}
-            </div>
-            <div>
-              <input className="contact-form-input" ref={methods.register({required: 'Please enter email address and try again'})} name="emailAddress" placeholder="Email Address" />
-              {methods.errors.emailAddress ? <span style={{color: 'red'}}>{methods.errors.emailAddress.message}</span> : null}
-            </div>
-            <div>
-              <input className="contact-form-input" ref={methods.register({required: 'Please enter mobile number and try again', pattern: {
-                value: /^[6-9]\d{9}$/,
-                  message: 'Please enter valid mobile number and try again',
-                }})} name="mobileNo" placeholder="Mobile no. (India only)" />
-              {methods.errors.mobileNo ? <span style={{color: 'red'}}>{methods.errors.mobileNo.message}</span> : null}
-            </div>
-            <div>
-              <input className="contact-form-input" ref={methods.register({required: 'Please enter message and try again'})} name="message" placeholder="Message" />
-              {methods.errors.message ? <span style={{color: 'red'}}>{methods.errors.message.message}</span> : null}
-            </div>
-            <div className="contact-form-btn-container">
-              <button className="mx-2 bg-secondary text-white px-3 py-1 rounded-lg border-0" onClick={toggleModal}>BACK</button>
-              <button className="mx-2 bg-primary text-white px-3 py-1 rounded-lg border-0" onClick={toggleModal} type="submit">SUBMIT</button>
-            </div>
-          </form>
-        </Modal>
       </>
   );
 }

@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
-    "@types/react-modal": "^3.10.6",
     "animate.css": "^4.1.1",
     "font-awesome": "^4.7.0",
     "font-mfizz": "^2.4.1",
@@ -42,8 +41,6 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
-    "react-hook-form": "^6.12.1",
-    "react-modal": "^3.12.1",
     "swiper": "^6.3.3",
     "webpack": "^4.36.1"
   },
