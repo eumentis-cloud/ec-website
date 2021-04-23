@@ -10,6 +10,16 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // google analytics tracking code
+        trackingIds: [
+            'UA-109848057-2'
+        ]
+      }
+
+    },
     `gatsby-transformer-csv`,
     {
       resolve: `gatsby-source-filesystem`,
