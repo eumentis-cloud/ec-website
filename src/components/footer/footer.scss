@@ -1,0 +1,140 @@
+@import "../../scss/variables";
+@import "../../scss/globals";
+
+/*
+    Footer
+ */
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-family: $ec-links-font-family;
+
+  .black-bg {
+    background-color: $footer-bg-color;
+  }
+
+  .footer-contact {
+    height: $footer-contact-height;
+    text-align: center;
+  }
+
+  // The footer contact text
+  span {
+    color: $footer-content-color;
+    margin-left: 10px;
+    vertical-align: top;
+  }
+
+  a {
+    display: block;
+    height: $footer-contact-height;
+    padding: ($footer-contact-height - $footer-contact-icons-height)/2 0;
+  }
+  a.hoverable:hover {
+    span {
+      color: $footer-content-hover-color;
+    }
+    svg * {
+      fill: $footer-content-hover-color;
+    }
+  }
+
+  // The call us button is only for mobiles
+  @include media-breakpoint-up(md) {
+    .contact-call-container {
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+
+  svg {
+    height: $footer-contact-icons-height;
+  }
+
+  .ec-theme-color {
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill: $footer-content-color;
+  }
+}
+
+// Company logo and name in the middle of the footer
+
+#footer-company-details-container {
+  height: $footer-contact-height;
+  padding: 0 1px;
+
+  #footer-company-details {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $footer-company-details-bg-color;
+    height: $footer-company-details-height;
+    min-width: $footer-company-details-height;
+
+    margin: -15px 0 0;
+    border-radius: 50%;
+    @include media-breakpoint-up(md) {
+      padding: 0 10px;
+      border-radius: 30px;
+      margin: -18px 0 0;
+    }
+
+    box-shadow: inset 1px 1px 6px 2px rgba(0,0,0,0.16);
+    border: $footer-company-details-border-width solid $footer-bg-color;
+
+    #footer-company-logo {
+      height: $footer-company-logo-height;
+    }
+
+    #footer-company-name {
+      margin: 0 0 0 10px;
+      font-size: 1.2rem;
+      font-family: $ec-headings-font-family;
+    }
+  }
+}
+
+.writeToUsModal {
+  //position: fixed;
+  //top: 50%;
+  //left: 50%;
+  //width: 500px !important;
+  //height: 400px !important;
+}
+
+div.ReactModal__Content.ReactModal__Content--after-open {
+  //margin: 50% 50% !important;
+  max-height: 600px !important;
+  @include media-breakpoint-up(md) {
+    margin-left: 34% !important;
+    margin-right: 34% !important;
+  }
+  background-color: #F0F0F0 !important;
+  @media (min-width: 1367px) {
+    margin-left: 39% !important;
+    margin-right: 39% !important;
+  }
+}
+
+.contact-form-input {
+  width: 300px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 5px 2px 5px 2px !important;
+  margin: 5px 0 5px 0 !important;
+}
+
+.contact-form-btn-container {
+  display: flex !important;
+  margin-top: 20px;
+  @include media-breakpoint-up(md) {
+    justify-content: center !important;
+  }
+  justify-content: flex-end !important;
+}

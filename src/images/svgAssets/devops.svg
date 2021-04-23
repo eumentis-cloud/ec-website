@@ -1,0 +1,48 @@
+<svg className="service-img" x="0px" y="0px" viewBox="0 0 108.3 125" xmlSpace="preserve">
+<path
+className="st0"
+d="M103.2 29.9h-98c-2 0-3.7-1.6-3.7-3.7v-21c0-2 1.6-3.7 3.7-3.7h98c2 0 3.7 1.6 3.7 3.7v21c-.1 2-1.7 3.7-3.7 3.7z"
+/>
+<path className="st1" d="M28.8 11.1L26.5 11.1" />
+<path className="st1" d="M28.8 20.3L26.5 20.3" />
+<path className="st1" d="M34.3 15.7L32.1 15.7" />
+<path className="st1" d="M37.7 11.1L39.9 11.1" />
+<path className="st1" d="M37.7 20.3L39.9 20.3" />
+<path className="st1" d="M45.5 15.7L43.3 15.7" />
+<path className="st1" d="M48.8 11.1L51.1 11.1" />
+<path className="st1" d="M48.8 20.3L51.1 20.3" />
+<path className="st1" d="M62.8 15.7L87.2 15.7" />
+<circle className="st1" cx="96.3" cy="15.7" r="1.5" />
+<path
+className="st0"
+d="M103.2 66.8h-98c-2 0-3.7-1.6-3.7-3.7v-21c0-2 1.6-3.7 3.7-3.7h98c2 0 3.7 1.6 3.7 3.7v21c-.1 2-1.7 3.7-3.7 3.7z"
+/>
+<path className="st1" d="M28.8 48L26.5 48" />
+<path className="st1" d="M28.8 57.2L26.5 57.2" />
+<path className="st1" d="M34.3 52.6L32.1 52.6" />
+<path className="st1" d="M37.7 48L39.9 48" />
+<path className="st1" d="M37.7 57.2L39.9 57.2" />
+<path className="st1" d="M45.5 52.6L43.3 52.6" />
+<path className="st1" d="M48.8 48L51.1 48" />
+<path className="st1" d="M48.8 57.2L51.1 57.2" />
+<path className="st1" d="M62.8 52.6L87.2 52.6" />
+<circle className="st1" cx="96.3" cy="52.6" r="1.5" />
+<path
+className="st0"
+d="M103.2 103.7h-98c-2 0-3.7-1.6-3.7-3.7V79c0-2 1.6-3.7 3.7-3.7h98c2 0 3.7 1.6 3.7 3.7v21c-.1 2-1.7 3.7-3.7 3.7z"
+/>
+<path className="st1" d="M28.8 84.9L26.5 84.9" />
+<path className="st1" d="M28.8 94.1L26.5 94.1" />
+<path className="st1" d="M34.3 89.5L32.1 89.5" />
+<path className="st1" d="M37.7 84.9L39.9 84.9" />
+<path className="st1" d="M37.7 94.1L39.9 94.1" />
+<path className="st1" d="M45.5 89.5L43.3 89.5" />
+<path className="st1" d="M48.8 84.9L51.1 84.9" />
+<path className="st1" d="M48.8 94.1L51.1 94.1" />
+<path className="st1" d="M62.8 89.5L87.2 89.5" />
+<circle className="st1" cx="96.3" cy="89.5" r="1.5" />
+<path className="st0" d="M54.2 103.7L54.2 112.5" />
+<path className="st0" d="M48.7 112.5H59.7V123.5H48.7z" />
+<path className="st1" d="M48.7 118L10.9 118" />
+<path className="st1" d="M97.4 118L59.7 118" />
+        </svg>

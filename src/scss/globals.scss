@@ -1,0 +1,253 @@
+// global styles
+@import 'variables';
+@import "~swiper/swiper-bundle.css";
+
+body {
+  font-family: $ec-base-font-family;
+  color: $ec-text-color;
+  background-color: $body-background-color;
+  background-repeat: repeat;
+  font-size: 1rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 46px !important;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 20px;
+  }
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  padding-left: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: $ec-headings-font-family;
+  color: $ec-headings-color;
+  font-weight: 400;
+}
+
+.contents {
+  font-family: $crimson-text-font !important;
+}
+
+body * {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+img {
+  margin-bottom: 15px;
+  max-width: 100%;
+}
+
+#primary-container {
+  display: flex;
+  flex-direction: column;
+  @include media-breakpoint-up(lg) {
+    min-height: calc(100vh - 65px);
+  }
+}
+
+.link {
+  color: $sec-nav-active-links-color;
+  font-weight: 700;
+  &:hover {
+    color: $sec-nav-active-links-color;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/*
+    Secondary nav bar
+ */
+.secondary-nav {
+  text-align: center;
+  background-color: $sec-nav-bg-color;
+  box-shadow: inset 0 -10px 10px -10px rgba(150,150,0,0.24);
+
+  svg {
+    height: $sec-nav-icons-height;
+  }
+
+  svg * {
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke: $sec-nav-links-color;
+    stroke-width: 3;
+    @include media-breakpoint-up(lg) {
+      stroke-width: 4;
+    }
+  }
+  svg#online-icon {
+    .st2 {
+      fill: $sec-nav-links-color;
+      stroke: none;
+    }
+  }
+
+  .secondary-nav-item:first-of-type {
+    border-left: 1px solid $sec-nav-items-border-color;
+  }
+
+  .secondary-nav-item {
+    cursor: pointer;
+    padding: 10px 5px;
+    border-right: 1px solid $sec-nav-items-border-color;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+      padding: 12px 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .secondary-nav-item-title {
+      margin: 0;
+      padding: 0;
+      font-family: $ec-headings-font-family;
+      font-size: 0.75rem;
+      color: $sec-nav-links-color;
+
+      @include media-breakpoint-up(lg) {
+        margin-left: 15px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .secondary-nav-item:not(.secondary-nav-item-active):hover {
+    h4 {
+      color: $sec-nav-hover-links-color;
+    }
+    .tab-logo * {
+      stroke: $sec-nav-hover-links-color;
+    }
+    svg#online-icon {
+      .st2 {
+        fill: $sec-nav-hover-links-color;
+      }
+    }
+  }
+
+  .secondary-nav-item-active {
+    cursor: default;
+    background-color: $sec-nav-active-bg-color;
+    box-shadow: 4px -5px 8px rgba(150,150,0,0.12), -4px -5px 8px rgba(150,150,0,0.12);
+
+    .secondary-nav-item-title {
+      color: $sec-nav-active-links-color;
+    }
+
+    svg * {
+      stroke: $sec-nav-active-links-color;
+    }
+    svg#online-icon {
+      .st2 {
+        fill: $sec-nav-active-links-color;
+      }
+    }
+  }
+}
+
+.page-title {
+  margin: 20px 0;
+  @include page-title-mixin();
+}
+
+.page-image-container {
+  text-align: center;
+
+  .page-image {
+    width: 80%;
+    @include media-breakpoint-down(md) {
+      width: 75%;
+      max-width: 350px;
+    }
+    @include media-breakpoint-up(lg) {
+      max-width: 450px;
+    }
+  }
+}
+
+.contact-social-media {
+  text-align: center;
+  img {
+    @include media-breakpoint-only(xs) {
+      height: 25px;
+    }
+    height: 35px;
+  }
+
+  & > div {
+    @include media-breakpoint-only(xs) {
+      margin-right: 0;
+    }
+    margin-right: 10px;
+  }
+}
+
+.ec-quote-text {
+  font-size: 1.2rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.15rem;
+  }
+  margin-top: 30px;
+  text-align: center;
+  color: $ec-quote-color;
+  &::before {
+    content: "“";
+  }
+  &::after {
+    content: "”";
+  }
+}
+
+.page-not-found {
+  font-family: $ec-links-font-family;
+}
+
+.bg-project-details {
+  height: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  min-height: 100vh !important;
+  background-repeat: repeat;
+  background-size: 35% !important;
+}
+
+// fixing testimonial slider overflow
+footer {
+  z-index: 9999 !important;
+}
+
+.careers-card-subtitle {
+  font-size: 1rem;
+}
+
+.careers-card-title {
+  @include card-header();
+  white-space: normal !important;
+}
+
+.project-card-link {
+  @include media-breakpoint-up(md) {
+    margin: 16px 50px !important;
+  }
+}

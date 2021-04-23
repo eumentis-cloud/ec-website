@@ -1,19 +1,11 @@
-# Eumentis Cloud website v2 in HTML and SCSS
+# Gatsby Starter: Typescript + SASS
+Starter with the essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site. This setup includes:
 
-This code is writted purely in HTML and SCSS without any templating engine used.
+- Typescript
+- Typescript linting
+- SASS support
 
-For development run the following commands:
+Install this starter by running this from your [Gatsby CLI](https://next.gatsbyjs.org/tutorial/part-zero/#install-the-gatsby-cli):
 ```
-npm run watch
-npm run bs
-```
-
-Production
-```
-npm run build
-```
-For deployment, run the following commands (first switch to the branch that you want to deploy):
-```
-yarn run build
-firebase deploy
+gatsby new gatsby-site https://github.com/tdharmon/gatsby-starter-typescript-sass
 ```

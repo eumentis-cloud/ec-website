@@ -1,59 +1,27 @@
 @import "variables";
 
-@import "node_modules/bootstrap/scss/bootstrap-grid";
-
-$service-box-gradient-low: #FFFF9F;
-$service-box-gradient-high: #FFFF80;
-$service-box-background-color: $service-box-gradient-high;
-$service-box-border-color: #F9F900;
-
-$service-icon-width: 3;
-$service-icon-height: (
-  xs: 35px,
-  sm: 50px,
-  md: 60px,
-  lg: 70px,
-);
-
-$service-icon-color: #333300;
-$service-box-text-color: #333300;
-
-body {
-  padding-bottom: 46px !important;
-}
-
-// rendering a cursor to any link when hoverswiper-containered
-a:-webkit-any-link {
-  cursor: pointer;
-}
-a:any-link {
-  cursor: pointer;
-}
-a:-moz-any-link {
-  cursor: pointer;
-}
-
-#index-main-content {
+.index-main-content {
   padding-right: 0;
   padding-left: 0;
 }
 
-#company-details {
+.company-details {
   text-align: center;
-  padding: 12px 0 18px;
+  padding: 20px 0 18px;
   @include media-breakpoint-up(lg) {
-    padding: 40px 0;
+    padding: 24px 0;
   }
 
-  img {
+  .eumentis-cloud-logo {
     height: 60px;
     @include media-breakpoint-up(lg) {
       height: 80px;
     }
   }
 
-  #company-name {
+  .company-name {
     font-weight: 700;
+    font-family: $ec-headings-font-family;
     font-size: 2rem;
     @include media-breakpoint-up(lg) {
       font-size: 2.3rem;
@@ -62,7 +30,8 @@ a:-moz-any-link {
     padding: 0;
   }
 }
-#social-media-icons {
+
+.social-media-icons {
   padding: 5px 10px 0;
   @include media-breakpoint-up(lg) {
     padding: 8px 10px 0;
@@ -90,7 +59,7 @@ a:-moz-any-link {
     padding: 10px !important;
   }
   @include media-breakpoint-up(lg) {
-    padding: 15px !important;
+    padding: 8px !important;
   }
 
   .service-box-container {
@@ -105,12 +74,9 @@ a:-moz-any-link {
       border-radius: 6px;
       padding: 30px 15px;
     }
-
     background: $service-box-background-color;
     background: radial-gradient(ellipse at center,  $service-box-gradient-low 0%, $service-box-gradient-high 100%);
-
     border: 1px solid $service-box-border-color;
-
     box-shadow: 0 1px 3px rgba(200,200,0,0.12), 0 1px 2px rgba(200,200,0,0.24);
   }
 
@@ -122,12 +88,12 @@ a:-moz-any-link {
     font-family: $ec-headings-font-family;
     font-size: 1.4rem;
     font-weight: 700;
-    margin: 8px 0 5px;
+    margin: 8px 0 4px;
     color: $service-box-header-color;
 
     @include media-breakpoint-up(lg) {
       font-size: 1.8rem;
-      margin: 15px 0;
+      margin: 10px 0;
     }
   }
 
@@ -153,7 +119,7 @@ a:-moz-any-link {
   }
 }
 
-svg * {
+.service-img {
   stroke-miterlimit: 10;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -161,56 +127,56 @@ svg * {
   stroke: $service-icon-color;
   stroke-width: $service-icon-width;
 }
-svg#online-icon {
-  .st2 {
-    fill: $service-icon-color;
-    stroke: none;
-  }
+
+// swiper carousel
+
+@mixin swiper-container() {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#index-footer {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: $footer-bg-color;
+@mixin swiper-slide() {
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-
- // swiper carosuel for showcasing clients
 
 .swiper-container {
   @include swiper-container();
 }
 
-.swiper-container-navigation {
-  @include swiper-container();
-}
-
 .swiper-slide {
+  margin-bottom: 2rem;
   img.vertical-img {
     max-height: 10px;
     max-width: 100%;
   }
   @include swiper-slide();
-  img {
-    object-fit: contain;
-    max-width: 100%;
-    @include media-breakpoint-up(xs) {
-      max-height: 100px;
-    }
-    @include media-breakpoint-up(md) {
-      height: 60px;
+  .top-client-img {
+    img {
+      object-fit: contain;
+      max-width: 100%;
+      @include media-breakpoint-up(xs) {
+        max-height: 100px;
+      }
+      @include media-breakpoint-up(md) {
+        height: 2rem;
+      }
     }
   }
   h4 {
     font-family: $ec-headings-font-family;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: $client-country-color;
   }
 }
-
-span.flag-icon {
-  line-height: 1.6em;
-  width: 3rem;
-}
-
 

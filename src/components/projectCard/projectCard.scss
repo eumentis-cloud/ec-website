@@ -1,0 +1,91 @@
+@import "../../scss/variables";
+
+div.card {
+  border-radius: 8px;
+  &.work-card {
+    &.our-work-section-card {
+      @include media-breakpoint-up(md) {
+        width: calc(100% + 4.5rem) !important;
+      }
+    }
+    div.card-body {
+      span.badge {
+        @include badge_style();
+      }
+      div span.card-subtitle {
+        font-family: $ec-headings-font-family;
+      }
+      span.card-text {
+        font-family: $ec-headings-font-family;
+        color: $service-box-header-color;
+      }
+    }
+    @include card-box-shadow();
+    &:hover {
+      @include box-shadow_hover();
+    }
+    div.card-header {
+      span.project-display-name {
+        @include card_header();
+        white-space: normal !important;
+      }
+    }
+    h5.card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: $sec-nav-active-links-color;
+      font-family: $ec-headings-font-family;
+    }
+  }
+}
+
+.bg-finance {
+  background-color: $badge-finance-color;
+  color: $ec-bg-color;
+}
+
+.border-finance {
+  border-color: $badge-finance-color !important;
+}
+
+.bg-commodities {
+  background-color: $badge-commodities-color;
+  color: $ec-bg-color;
+}
+
+.border-commodities {
+  border-color: $badge-commodities-color !important;
+}
+
+.bg-construction {
+  background-color: $badge-construction-color;
+  color: $ec-bg-color;
+}
+
+.border-construction {
+  border-color: $badge-construction-color !important;
+}
+
+.text-black {
+  color: $ec-text-color;
+}
+
+.project-card-img-container {
+  img:hover {
+    animation: pulse .7s;
+  }
+}
+
+.card-no-hover {
+ &:hover {
+   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+   -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+ }
+}
+
+
+
+
