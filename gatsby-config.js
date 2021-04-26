@@ -16,9 +16,18 @@ module.exports = {
         // google analytics tracking code
         trackingIds: [
             'UA-109848057-2'
-        ]
+        ],
+        pluginConfig: {
+          head: true,
+        }
       }
-
+    },
+    {
+      resolve: `gatsby-plugin-linkedin-insight`,
+      options: {
+        partnerId: `3038226`,
+        includeInDevelopment: false,
+      },
     },
     `gatsby-transformer-csv`,
     {

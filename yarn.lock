@@ -7610,6 +7610,13 @@ gatsby-plugin-graphql-codegen@^2.7.1:
     fs-extra "^7.0.1"
     lodash.debounce "^4.0.8"
 
+gatsby-plugin-linkedin-insight@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-linkedin-insight/-/gatsby-plugin-linkedin-insight-1.0.1.tgz#93531b7f19675c83115eca05c5cfc49d880288f3"
+  integrity sha512-CjY1yUT0pv7ueD539SbdpQI2PIdrrpX7W+mfk9JnKYoURcBFP044GFaryuIgHqNTsi4X7CwO0YkF41i1j7SAqg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-manifest@2.4.34:
   version "2.4.34"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.34.tgz#3628df53ccf59e04e93eca397287484315fea715"
