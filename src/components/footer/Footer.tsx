@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                       />
                     </svg>
                     <span className="d-none d-sm-none d-md-none d-lg-inline-block d-xl-inline-block">
-                +91-8806413069
+                +91-9028146205
               </span>
                   </a>
                 </div>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                 <div className="col">
                   <a
                       className="hoverable"
-                      href="https://api.whatsapp.com/send?phone=918806413069"
+                      href="https://api.whatsapp.com/send?phone=919028146205"
                   >
                     <svg
                         className="ec-theme-color"
