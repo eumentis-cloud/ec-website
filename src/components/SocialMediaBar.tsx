@@ -10,7 +10,7 @@ const SocialMediaBar: React.FC = () => {
     return (
             <>
                 <div className="col-auto">
-                    <a href="https://linkedin.com/company/eumentis-cloud">
+                    <a href="https://linkedin.com/company/eumentis">
                         <img src={LinkedinLogo} alt="LinkedIn" className="social-media-icon" />
                     </a>
                 </div>
