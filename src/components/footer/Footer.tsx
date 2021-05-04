@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import './footer.scss';
 import LinkedInLogo from '../../images/svgAssets/linkedin.svg';
 import isEmail from 'validator/lib/isEmail';
