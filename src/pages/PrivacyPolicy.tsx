@@ -159,13 +159,6 @@ const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
                     example, changes to our practices or for other operational, legal or regulatory
                     reasons.
                   </p>
-
-                  <h5 className="card-title border-bottom pb-2">CONTACT US</h5>
-                  <p className="text-muted">
-                    For more information about our privacy practices, if you have questions, or if
-                    you would like to make a complaint, please contact us by e-mail at{' '}
-                    <a href="mailto:contact@eumentis.com">contact@eumentis.com</a>
-                  </p>
                 </div>
               </div>
             </div>
