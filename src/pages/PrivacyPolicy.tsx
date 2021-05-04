@@ -5,7 +5,7 @@ import '../scss/globals.scss';
 import LinkedinLogo from '../images/png/social_linkedin.png';
 import GoogleLogo from '../images/png/social_google.png';
 import FbLogo from '../images/png/social_facebook.png';
-import BingLogo from '../images/jpg/social_bing.jpg';
+import MsLogo from '../images/png/social_ms.png';
 
 // functional component
 const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
@@ -16,7 +16,7 @@ const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
           <h2 className="fs-1 text-center font-weight-bold">Eumentis Privacy Policy</h2>
           <p className="container text-center">
             This Privacy Policy describes how your personal information is collected, used, and
-            shared when you visit or make a purchase from{' '}
+            shared when you visit {' '}
             <a href="www.eumentis.com">www.eumentis.com</a> (the “Site”).
           </p>
           <div className="row justify-content-center mt-4">
@@ -121,22 +121,22 @@ const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
                   <div className="row">
                     <div className="col-auto">
                       <a href="https://www.google.com/settings/ads/anonymous">
-                        <img src={GoogleLogo} alt="google" height={25} />
+                        <img src={GoogleLogo} alt="google" height={30} />
                       </a>
                     </div>
                     <div className="col-auto">
                       <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out">
-                        <img src={LinkedinLogo} alt="LinkedIn" height={25} />
+                        <img src={LinkedinLogo} alt="LinkedIn" height={30} />
                       </a>
                     </div>
                     <div className="col-auto">
                       <a href="https://www.facebook.com/settings/?tab=ads">
-                        <img src={FbLogo} alt="facebook" height={25} />
+                        <img src={FbLogo} alt="facebook" height={30} />
                       </a>
                     </div>
                     <div className="col-auto">
                       <a href="https://advertise.bingads.microsoft.com/en-us/resources/policies/personalized-ads">
-                        <img src={BingLogo} alt="microsoft bing" height={25} />
+                        <img src={MsLogo} alt="microsoft bing" height={30} />
                       </a>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
                   <p className="text-muted">
                     For more information about our privacy practices, if you have questions, or if
                     you would like to make a complaint, please contact us by e-mail at{' '}
-                    <a href="mailto:abhi@eumentis.com">abhi@eumentis.com</a>
+                    <a href="mailto:contact@eumentis.com">contact@eumentis.com</a>
                   </p>
                 </div>
               </div>
