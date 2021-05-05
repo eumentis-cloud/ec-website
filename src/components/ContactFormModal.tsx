@@ -181,6 +181,7 @@ const ContactFormModal = () => {
                       Please enter a valid mobile number and try again
                     </div>
                   </div>
+                  <div className="form-text">Only Indian Mobile numbers</div>
                 </div>
 
                 <div className="mb-3">
