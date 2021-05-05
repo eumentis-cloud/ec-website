@@ -1,71 +1,11 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React from 'react';
 import './footer.scss';
 import LinkedInLogo from '../../images/svgAssets/linkedin.svg';
-import isEmail from 'validator/lib/isEmail';
-
-// contact form type
-type ContactFormType = {
-  // contact person's name
-  name: string;
-  // contact person's email
-  email: string;
-  // contact person's mobile no
-  mobile?: string;
-  // contact message
-  message: string;
-};
-
-// contact form default values
-const defaultFormValues: ContactFormType = {
-  name: '',
-  email: '',
-  mobile: '',
-  message: '',
-};
-
-// type to identify form errors
-type FormErrorsType = Array<'name' | 'email' | 'message' | 'mobile'>;
-
-// regex for indian mobile validations
-const indianMobileRegex: RegExp = /^[6-9]\d{9}$/;
+import ContactFormModal from '../ContactFormModal';
 
 // Functional Component
 const Footer: React.FC = () => {
-  // storing contact form values
-  const [formValues, setFormValues] = useState<ContactFormType>(defaultFormValues);
-  // state to store form errors for validation
-  const [formErrors, setFormErrors] = useState<FormErrorsType>([]);
-
-  // function to handle form submission
-  const handleFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // prevent default form submission
-    e.preventDefault();
-    // is email valid
-    const isEmailValid = isEmail(formValues.email);
-    // temp errors store before displaying errors on UI
-    let errors: FormErrorsType = [];
-
-    if (!isEmailValid || formValues.email === '') {
-      errors.push('email');
-    }
-    if (formValues.mobile && !indianMobileRegex.test(formValues.mobile)) {
-      errors.push('mobile');
-    }
-    if (formValues.name === '') {
-      errors.push('name');
-    }
-    if (formValues.message === '') {
-      errors.push('message');
-    }
-    setFormErrors(errors);
-    // when form has no errors
-    if (errors.length === 0) {
-      // form success
-      console.log('formValues', formValues);
-    }
-  };
-
   return (
     <>
       <footer>
@@ -168,7 +108,7 @@ const Footer: React.FC = () => {
           <div className="col footer-contact black-bg">
             <div className="row no-gutters">
               <div className="col">
-                <a className="hoverable" href="https://api.whatsapp.com/send?phone=919028146205">
+                <a className="hoverable" href="https://wa.me/919028146205">
                   <svg
                     className="ec-theme-color"
                     x="0px"
@@ -205,146 +145,7 @@ const Footer: React.FC = () => {
                     Write to us
                   </span>
                 </a>
-                <div
-                  className="modal fade"
-                  id="contactModal"
-                  tabIndex={-1}
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div className="modal-content">
-                      <div className="modal-header">
-                        <h5 className="modal-title" id="modalName">
-                          Write to us
-                        </h5>
-                        <button
-                          type="button"
-                          className="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        />
-                      </div>
-                      <div className="modal-body text-start">
-                        <form noValidate>
-                          <div className="mb-3">
-                            <label htmlFor="name" className="form-label">
-                              Name<sup className="text-danger">*</sup>
-                            </label>
-                            <input
-                              value={formValues.name}
-                              type="text"
-                              className={`form-control ${
-                                formErrors.includes('name') ? 'is-invalid' : ''
-                              }`}
-                              id="name"
-                              placeholder="Enter your name"
-                              required
-                              onChange={(e) => {
-                                setFormValues({ ...formValues, name: e.target.value });
-                              }}
-                            />
-                            <div className="invalid-feedback">Please enter Name and try again.</div>
-                          </div>
-                          <div className="mb-3">
-                            <label htmlFor="email" className="form-label">
-                              Email<sup className="text-danger">*</sup>
-                            </label>
-                            <input
-                              value={formValues.email}
-                              placeholder="Enter your email address"
-                              type="email"
-                              className={`form-control ${
-                                formErrors.includes('email') ? 'is-invalid' : ''
-                              }`}
-                              id="email"
-                              required
-                              onChange={({ target: { value } }) => {
-                                setFormValues({ ...formValues, email: value });
-                              }}
-                            />
-                            <div className="invalid-feedback">
-                              Please enter a valid email and try again.
-                            </div>
-                          </div>
-                          <div className="mb-3">
-                            <label htmlFor="mobile" className="form-label">
-                              Mobile Number
-                            </label>
-                            <div
-                              className={`input-group mb-1 mobile-input ${
-                                formErrors.includes('mobile') ? 'has-validation' : ''
-                              }`}
-                            >
-                              <span className="input-group-text" id="mobile-prefix">
-                                +91
-                              </span>
-                              <input
-                                value={formValues.mobile}
-                                type="text"
-                                className={`form-control ${
-                                  formErrors.includes('mobile') ? 'is-invalid' : ''
-                                }`}
-                                placeholder="Mobile Number"
-                                aria-label="Mobile Number"
-                                aria-describedby="mobile-prefix"
-                                onChange={({ target: { value } }) => {
-                                  setFormValues({ ...formValues, mobile: value });
-                                }}
-                              />
-                              <div className="invalid-feedback mobile-validation-text">
-                                Please enter a valid mobile number and try again
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="mb-3">
-                            <label htmlFor="message" className="form-label">
-                              Message<sup className="text-danger">*</sup>
-                            </label>
-                            <textarea
-                              value={formValues.message}
-                              onChange={({ target: { value } }) => {
-                                setFormValues({ ...formValues, message: value });
-                              }}
-                              required
-                              className={`form-control ${
-                                formErrors.includes('message') ? 'is-invalid' : ''
-                              }`}
-                              id="message"
-                              rows={1}
-                            />
-                            <div className="invalid-feedback">
-                              Please enter a message and try again
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div className="modal-footer">
-                        <button
-                          type="button"
-                          className="btn btn-secondary text-uppercase"
-                          data-bs-dismiss="modal"
-                          onClick={(): void => {
-                            setFormErrors([]);
-                            setFormValues(defaultFormValues);
-                          }}
-                        >
-                          Close
-                        </button>
-                        <button
-                          onClick={(e) => {
-                            handleFormSubmit(e);
-                          }}
-                          type="submit"
-                          className="text-uppercase btn btn-primary"
-                        >
-                          submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ContactFormModal />
               </div>
             </div>
           </div>
