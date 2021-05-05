@@ -85,6 +85,10 @@ const ContactFormModal = () => {
               className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
+              onClick={() => {
+                setFormErrors([]);
+                setFormValues(defaultFormValues);
+              }}
             />
           </div>
           <div className="modal-body text-start">
