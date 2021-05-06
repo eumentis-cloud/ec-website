@@ -58,9 +58,19 @@ const ContactFormModal = () => {
     setFormErrors(errors);
     // when form has no errors
     if (errors.length === 0) {
-      // form success
-      console.log('formValues', formValues);
-      setFormErrors(undefined);
+      fetch('https://uvcg11l2z5.execute-api.ap-south-1.amazonaws.com/production/contact', {
+        method: 'POST',
+        headers: {
+          'x-api-key': 'itT5v8hSTuaGeY5QeZS2d91fPCUDmMJ01sECnXC0',
+        },
+        body: JSON.stringify(formValues),
+      })
+        .then(() => {
+          setFormErrors(undefined);
+        })
+        .catch((err: Error) => {
+          console.log('form error', err);
+        });
     }
   };
 
@@ -225,7 +235,7 @@ const ContactFormModal = () => {
                   handleFormSubmit(e);
                 }}
                 type="submit"
-                className="text-uppercase btn btn-primary"
+                className="text-uppercase btn btn-primary align-items-center"
               >
                 submit
               </button>

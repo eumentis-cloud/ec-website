@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 </a>
               </div>
               <div className="col col-md-7 col-lg-6">
-                <a className="contact-call-container hoverable" href="tel:+918806413069">
+                <a className="contact-call-container hoverable" href="tel:+919028146205">
                   <svg
                     className="ec-theme-color"
                     x="0px"

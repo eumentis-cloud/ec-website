@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Eumentis Cloud',
     tagline:
-        'Digital transformation, Business digitization and automation, Online presence, Startup development, App development, IT automation',
+      'Digital transformation, Business digitization and automation, Online presence, Startup development, App development, IT automation',
     siteUrl: 'https://eumentis.com',
     author: 'Eumentis',
     twitter: 'https://twitter.com/eumentis_cloud',
@@ -14,13 +14,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // google analytics tracking code
-        trackingIds: [
-            'UA-109848057-2'
-        ],
+        trackingIds: ['UA-109848057-2'],
         pluginConfig: {
           head: true,
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-linkedin-insight`,
@@ -49,14 +47,14 @@ module.exports = {
       options: {
         name: `clientImages`,
         path: `${__dirname}/src/images/clients`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `techIcons`,
         path: `${__dirname}/src/images/tech`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -96,8 +94,8 @@ module.exports = {
       options: {
         rule: {
           include: /svgAssets/,
-        }
-      }
+        },
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
@@ -109,4 +107,4 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
   ],
-}
+};
