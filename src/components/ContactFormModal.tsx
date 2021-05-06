@@ -33,6 +33,8 @@ const ContactFormModal = () => {
   const [formValues, setFormValues] = useState<ContactFormType>(defaultFormValues);
   // state to store form errors for validation
   const [formErrors, setFormErrors] = useState<FormErrorsType | undefined>([]);
+  // state to show loading spinner when form submits successfully
+  const [showLoader, setShowLoader] = useState<boolean>(false);
 
   // function to handle form submission
   const handleFormSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -58,6 +60,7 @@ const ContactFormModal = () => {
     setFormErrors(errors);
     // when form has no errors
     if (errors.length === 0) {
+      setShowLoader(true);
       fetch('https://uvcg11l2z5.execute-api.ap-south-1.amazonaws.com/production/contact', {
         method: 'POST',
         headers: {
@@ -67,9 +70,11 @@ const ContactFormModal = () => {
       })
         .then(() => {
           setFormErrors(undefined);
+          setShowLoader(false);
         })
         .catch((err: Error) => {
           console.log('form error', err);
+          setShowLoader(false);
         });
     }
   };
@@ -236,8 +241,16 @@ const ContactFormModal = () => {
                 }}
                 type="submit"
                 className="text-uppercase btn btn-primary align-items-center"
+                disabled={showLoader && formErrors.length === 0}
               >
-                submit
+                {showLoader && formErrors.length === 0 ? (
+                  <span
+                    className="spinner-border spinner-border-sm text-white"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                ) : null}
+                <span className="ml-2 text-white">submit</span>
               </button>
             ) : null}
           </div>
