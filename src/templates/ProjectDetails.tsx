@@ -255,7 +255,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
       <Layout location={location}>
         <div>
           <div className="row">
-            <main role="main" className="col-md-12 ml-sm-auto col-lg-12 col-xl-12 px-0 py-0">
+            <main role="main" className="col-md-12 ms-sm-auto col-lg-12 col-xl-12 px-0 py-0">
               <div className="parallax-window shadow-sm">
                 <div className="container-fluid">
                   <nav aria-label="breadcrumb" className="d-flex justify-content-between">
@@ -273,7 +273,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                       <ol className="breadcrumb d-block d-sm-flex d-md-none bg-transparent">
                         <li className="breadcrumb-mobile">
                           <Link to={'/OurWork/'} className="text-black">
-                            <i className="fa fa-angle-left pr-1 text-black" aria-hidden="true" />
+                            <i className="fa fa-angle-start text-black" aria-hidden="true" />
                             Our Work
                           </Link>
                         </li>
@@ -282,7 +282,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                   </nav>
                   <div className="text-center rounded-0 border-0" id="project-main">
                     <span
-                      className={`project-title border-${setProjectCategoryBackgroundClass(
+                      className={`project-title  border-${setProjectCategoryBackgroundClass(
                         sector as ProjectCateoryType,
                       )}`}
                     >
@@ -304,14 +304,14 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                   >
                     <div className="col">
                       <div className="media client-details-wrapper d-block d-sm-block d-md-flex">
-                        <div className="d-flex justify-content-center align-items-center py-2 py-md-2">
+                        <div className="d-flex justify-content-center align-items-center py-2 py-md-2 me-md-3">
                           <ClientLogo imgAltText={clientName} clientLogo={clientLogo} />
                         </div>
                         <div className="media-body pt-5 pb-2 py-md-0 d-flex align-self-stretch justify-content-between flex-column">
-                          <h4 className="text-center text-sm-center text-md-left">{clientName}</h4>
-                          <div className="d-flex align-items-baseline py-2 py-md-0 justify-content-center justify-content-sm-center justify-content-md-start ml-0">
+                          <h4 className="text-center text-sm-center text-md-start">{clientName}</h4>
+                          <div className="d-flex align-items-baseline py-2 py-md-0 justify-content-center justify-content-sm-center justify-content-md-start ms-0">
                             <LocationIcon />
-                            <span className="card-subtitle mb-2 text-muted pl-2">
+                            <span className="card-subtitle mb-2 text-muted ps-2">
                               {city}, {state} ({countryCode})
                             </span>
                           </div>
@@ -337,7 +337,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                         <div className="media">
                           {demoVideoLinksData.length > 0 ? (
                             <div className="media-body video-wrapper justify-content-md-start justify-content-sm-center">
-                              <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">
+                              <h5 className="text-md-start text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">
                                 Demo Videos
                               </h5>
                               <div className="wrap demo-video-wrapper d-flex align-items-baseline justify-content-md-start justify-content-center">
@@ -360,7 +360,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                             !googlePlayLink2 &&
                             !appStoreLink &&
                             noAppsMessage === 'no' ? null : (
-                              <h5 className="text-md-left text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">
+                              <h5 className="text-md-start text-center py-2 py-md-0 d-flex justify-content-center justify-content-md-start">
                                 Links
                               </h5>
                             )}
@@ -369,7 +369,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                                 <div className="launch-website-badge-wrapper col d-flex justify-content-center justify-content-md-start">
                                   <a
                                     target="_blank"
-                                    className="ml-md-1 py-2 px-3 btn btn-primary launch-web-btn shadow-hover"
+                                    className="ms-md-1 py-2 pr-3 btn btn-primary launch-web-btn shadow-hover"
                                     href={launchWebsite}
                                     role="button"
                                   >
@@ -424,7 +424,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                               ) : null}
 
                               {!googlePlayLink && !appStoreLink && !googlePlayLink2 ? (
-                                <div className="text-center text-md-left col-12 d-flex col-sm-12 col-md-auto mt-2 no-app-link-wrapper justify-content-center justify-content-md-start">
+                                <div className="text-center text-md-start col-12 d-flex col-sm-12 col-md-auto mt-2 no-app-link-wrapper justify-content-center justify-content-md-start">
                                   <span>
                                     <i className="no-apps-msg">{setAppsMsg()}</i>
                                   </span>
@@ -440,7 +440,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
               </div>
 
               <section
-                className="row row-cols-1 row-cols-md-2 row-cols-lg-2 px-5"
+                className="row row-cols-1 row-cols-md-2 row-cols-lg-2 px-4"
                 id="project-details-section-2"
               >
                 <div className="col mb-4">
@@ -549,9 +549,9 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
               {/*                                                    <blockquote*/}
               {/*                                                        className="blockquote align-items-center text-center">*/}
               {/*                                                        <h5 className="mb-0 text-wrap d-flex justify-content-around">*/}
-              {/*                                                            <i className="fa fa-quote-left fa-2x quote-icon"*/}
+              {/*                                                            <i className="fa fa-quote-start fa-2x quote-icon"*/}
               {/*                                                               aria-hidden="true" /> {quote}*/}
-              {/*                                                            <i className="fa fa-quote-right fa-2x quote-icon"*/}
+              {/*                                                            <i className="fa fa-quote-end fa-2x quote-icon"*/}
               {/*                                                               aria-hidden="true" />*/}
               {/*                                                        </h5>*/}
               {/*                                                    </blockquote>*/}
@@ -608,22 +608,38 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                         .filter((clientData) => {
                           return clientData.node.id !== id;
                         })
-                        .map((filteredData) => (
-                          <SwiperSlide id="other-work-slide" key={filteredData.node.id}>
-                            <ProjectCard
-                              parentClassName="text-left"
-                              projectDisplayName={filteredData.node.projectDisplayName}
-                              clientLogo={filteredData.node.clientLogo}
-                              clientName={filteredData.node.clientName}
-                              city={filteredData.node.city}
-                              state={filteredData.node.state}
-                              countryCode={filteredData.node.countryCode}
-                              sector={filteredData.node.sector as ProjectCateoryType}
-                              projectCardDescription={filteredData.node.projectCardDescription}
-                              location={location}
-                            />
-                          </SwiperSlide>
-                        ))}
+                        .map((filteredData) => {
+                          console.log('filteredData', filteredData);
+                          return (
+                            <SwiperSlide id="other-work-slide" key={filteredData.node.id}>
+                              <Link
+                                to={
+                                  filteredData.node.clientName === 'Drona Lectures' ||
+                                  filteredData.node.clientName === 'VendR'
+                                    ? '/OurWork/'
+                                    : `/OurWork/${filteredData.node.clientName
+                                        .split(' ')
+                                        .join('-')}_${filteredData.node.projectDisplayName
+                                        .split(' ')
+                                        .join('-')}`
+                                }
+                              >
+                                <ProjectCard
+                                  parentClassName="text-start"
+                                  projectDisplayName={filteredData.node.projectDisplayName}
+                                  clientLogo={filteredData.node.clientLogo}
+                                  clientName={filteredData.node.clientName}
+                                  city={filteredData.node.city}
+                                  state={filteredData.node.state}
+                                  countryCode={filteredData.node.countryCode}
+                                  sector={filteredData.node.sector as ProjectCateoryType}
+                                  projectCardDescription={filteredData.node.projectCardDescription}
+                                  location={location}
+                                />
+                              </Link>
+                            </SwiperSlide>
+                          );
+                        })}
                   </Swiper>
                 </div>
               </section>

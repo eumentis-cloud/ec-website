@@ -16,12 +16,11 @@ const PrivacyPolicy: React.FC<LocationProps> = ({ location }) => {
           <h2 className="fs-1 text-center font-weight-bold">Eumentis Privacy Policy</h2>
           <p className="container text-center">
             This Privacy Policy describes how your personal information is collected, used, and
-            shared when you visit {' '}
-            <a href="www.eumentis.com">www.eumentis.com</a> (the “Site”).
+            shared when you visit <a href="www.eumentis.com">www.eumentis.com</a> (the “Site”).
           </p>
           <div className="row justify-content-center mt-4">
             <div className="col-lg-9">
-              <div className="card shadow rounded-3 border">
+              <div className="shadow rounded-3 border">
                 <div className="card-body">
                   <h5 className="card-title border-bottom pb-2">PERSONAL INFORMATION WE COLLECT</h5>
                   <p className="text-muted">

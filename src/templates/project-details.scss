@@ -230,7 +230,7 @@ nav.project-details-nav {
     height: calc(100vh + 8.5rem);
   }
   @include media-breakpoint-down(sm) {
-    height: calc(100vh + 12rem);
+    height: calc(100vh + 14rem);
   }
   @include media-breakpoint-up(md) {
     height: 75vh;
@@ -277,10 +277,10 @@ span.project-title {
     margin-top: -8vh;
   }
   @media (min-width: 1367px) {
-    margin-top: -4vh;
+    margin-top: -3vh;
   }
   @include media-breakpoint-up(xs) {
-    margin-top: -7vh;
+    margin-top: -3vh;
   }
 }
 
@@ -398,8 +398,6 @@ span.project-title {
   border-top-width: 1px !important;
   border-right-width: 1px !important;
   border-bottom-width: 1px !important;
-
-
 }
 
 
