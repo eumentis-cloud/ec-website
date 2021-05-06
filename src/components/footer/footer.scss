@@ -138,3 +138,16 @@ div.ReactModal__Content.ReactModal__Content--after-open {
   }
   justify-content: flex-end !important;
 }
+
+.mobile-input {
+  width: calc(100% + 10px) !important;
+  margin-left: -10px;
+}
+
+.mobile-validation-text {
+  margin-left: 10px !important;
+}
+
+.modal {
+  font-family: $ec-headings-font-family !important;
+}
