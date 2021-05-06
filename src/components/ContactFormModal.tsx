@@ -32,6 +32,10 @@ const ContactFormModal = () => {
   // storing contact form values
   const [formValues, setFormValues] = useState<ContactFormType>(defaultFormValues);
   // state to store form errors for validation
+  /*
+  initially this state initialises as empty array, but when no errors are present on form submission,
+  then we set as undefined when data is stored in db to display a thanks feedback
+  * */
   const [formErrors, setFormErrors] = useState<FormErrorsType | undefined>([]);
   // state to show loading spinner when form submits successfully
   const [showLoader, setShowLoader] = useState<boolean>(false);
@@ -69,6 +73,8 @@ const ContactFormModal = () => {
         body: JSON.stringify(formValues),
       })
         .then(() => {
+          /* setting this state to undefined so as to display thanks feedback message after data
+          gets stored in db */
           setFormErrors(undefined);
           setShowLoader(false);
         })
