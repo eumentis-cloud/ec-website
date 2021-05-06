@@ -30,7 +30,7 @@ const SocialMediaBar: React.FC = () => {
         </a>
       </div>
       <div className="col-auto">
-        <a href="https://medium.com/eumentis-cloud">
+        <a href="https://medium.com/eumentis">
           <img src={MediumLogo} alt="Medium" className="social-media-icon" />
         </a>
       </div>
