@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AllClientsDataType, ProjectCateoryType, SingleAssetFluidType } from '../utils/types';
 import Layout from '../layouts/Layout';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql, Link, useScrollRestoration } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import './project-details.scss';
 import LocationIcon from '../images/svgAssets/location.svg';
@@ -65,6 +65,15 @@ const defaultSliderConfig = {
 
 // FC
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }) => {
+  //
+  const scrollRestore = useScrollRestoration('page-component-ui-list');
+
+  useEffect(() => {
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+  });
+
   // fetching background image for project details page
   const {
     file,
@@ -366,7 +375,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                             )}
                             <div className="row d-flex align-items-start justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start align-items-baseline justify-content-center">
                               {launchWebsite ? (
-                                <div className="launch-website-badge-wrapper col d-flex justify-content-center justify-content-md-start">
+                                <div className="launch-website-badge-wrapper text-nowrap col d-flex justify-content-center justify-content-md-start">
                                   <a
                                     target="_blank"
                                     className="ms-md-1 py-2 pr-3 btn btn-primary launch-web-btn shadow-hover"
@@ -378,7 +387,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ location, pageContext }
                                 </div>
                               ) : null}
                               {googlePlayLink ? (
-                                <div className="text-center col d-flex justify-content-center justify-content-md-start justify-content-xxl-start">
+                                <div
+                                  style={{ marginLeft: -10 }}
+                                  className="text-center col d-flex justify-content-center justify-content-md-start justify-content-xxl-start"
+                                >
                                   <a href={googlePlayLink} target="_blank">
                                     <GooglePlayBadge alt="Google Play badge" />
                                   </a>

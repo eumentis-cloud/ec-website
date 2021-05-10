@@ -233,10 +233,10 @@ nav.project-details-nav {
     height: calc(100vh + 14rem);
   }
   @include media-breakpoint-up(md) {
-    height: 75vh;
+    height: 76vh;
   }
-  @media (min-width: 1367px) {
-    height: 56vh;
+  @media (min-width: 1600px) {
+    height: 60vh;
   }
 }
 
@@ -379,9 +379,9 @@ span.project-title {
   @include media-breakpoint-up(md) {
     height: 60vh !important;
   }
-  height: 50vh !important;
-  @media (min-width: 1367px) {
-    height: 40vh !important;
+  height: 55vh !important;
+  @media (min-width: 1600px) {
+    height: 50vh !important;
   }
 }
 
